@@ -51,9 +51,9 @@ mdファイル内のリンクソース(github.com/以下略)と
 
 <span style="color: #38761d;"><br>(参)<br>GithubのREADMEにGif画像を埋め込む - Qiita<br>https://qiita.com/yamataku29/items/fb14fb99f5024e01b4b8</span><br>
 
-![vttx](vtt.gif)
+![vttx](vttx.gif)
 
-<img alt="gif" src="vtt.gif" width=600>
+<img alt="gif" src="vttx.gif" width=600>
 
 
 `![vttx](vtt.gif)`
