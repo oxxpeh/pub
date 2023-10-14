@@ -41,7 +41,7 @@
 
 ![vttx](https://github.com/oxxpeh/pub/assets/145547859/f3fb992a-9ad4-47e9-a972-880c1577829d)
 
-gifファイルドラッグしたら埋め込めた、サイズ指定とか要らないならこれでよいかも
+gifファイルドラッグしたら埋め込めた、~~サイズ指定とか要らないならこれでよいかも~~
 
 mdファイル内のリンクソース(github.com/以下略)と
 
@@ -50,3 +50,13 @@ mdファイル内のリンクソース(github.com/以下略)と
 日本語って難しい・・・
 
 <span style="color: #38761d;"><br>(参)<br>GithubのREADMEにGif画像を埋め込む - Qiita<br>https://qiita.com/yamataku29/items/fb14fb99f5024e01b4b8</span><br>
+
+![vttx](vtt.gif)
+
+<img alt="gif" src="vtt.gif" width=600>
+
+
+`![vttx](vtt.gif)`
+`<img alt="gif" src="vtt.gif" width=600>`
+
+どちらもいけた。アップ直後はダメだったような・・・
