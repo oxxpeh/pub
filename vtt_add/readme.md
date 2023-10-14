@@ -56,7 +56,7 @@ mdファイル内のリンクソース(github.com/以下略)と
 <img alt="gif" src="vttx.gif" width=600>
 
 
-`![vttx](vtt.gif)`
-`<img alt="gif" src="vtt.gif" width=600>`
+`![vttx](vttx.gif)`
+`<img alt="gif" src="vttx.gif" width=600>`
 
 どちらもいけた。アップ直後はダメだったような・・・
