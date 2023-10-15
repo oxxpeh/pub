@@ -97,3 +97,7 @@ def! g:FF_Vtt_adj(arg_adjs: number, arg_st: number): number
     endfor
     return 0
 enddef
+
+command! -nargs=0 Vtti call g:FF_Vtt_ini()
+command! -nargs=+ Vtta call g:FF_Vtt_add(<args>)
+command! -nargs=+ Vttj call g:FF_Vtt_adj(<args>)
