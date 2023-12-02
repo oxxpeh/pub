@@ -1,0 +1,258 @@
+!pip install tabula-py
+import numpy as ii_np
+import pandas as ii_pd
+import pickle as ii_pc
+import plotly as ii_pl
+import plotly.graph_objects as ii_go
+import plotly.subplots as ii_ps
+import re as ii_re
+import tabula as ii_tb
+
+
+def ff_grp_d(aas_ff):
+    """
+    数字抽出
+    """
+    return(int(ii_re.sub(r"\D", "", aas_ff)))
+
+
+def ff_grp_n(aas_ff):
+    """
+    候補者氏名抽出
+    """
+    aas_cut = ii_re.sub(r"\r\(.*\)", '',aas_ff)
+    ll_nm = aas_cut.split('\r')
+    # print('@--')
+    # for nn in ll_nm:
+    #    print(nn)
+    if len(ll_nm) == 1:
+        return(ll_nm[0].replace(' ',''))
+    else:
+        return(ll_nm[1].replace(' ',''))
+
+
+def ff_grp_sth(aas_skn):
+    """
+    df_sth grep skn
+    投票数抽出
+    """
+    df_ff = df_sth[df_sth['name'] == aas_skn]
+    return (df_ff[['date', 'm_a', 'm_t', 'w_a', 'w_t', 'a_a', 'a_t']])
+
+
+def ff_grp_skk(aas_skn):
+    """
+    df_skk grep skn
+    候補者投票結果抽出
+    """
+    df_ff = df_skk[df_skk['s_name'] == aas_skn]
+    return (df_ff[['date','name','s','a','j','t','g','th','tr']])
+
+
+def ff_grp_pr_k(aas_ff='東京都') :
+    """
+    df_ks = 県人口抜粋
+    [全(p),日本人(p),男(p),女(p),若(p),老(p),出生(p),所帯(p)]
+    """
+    df_grp_ff = df_ks.loc[df_ks['k'] == aas_ff]
+    df_o_ff = ii_pd.DataFrame(columns=['a', 'ap', 'j', 'jp', 'm', 'mp', \
+                                       'w', 'wp', 'y', 'yp', 'o', 'op', \
+                                       'b', 'bp', 's','sp'])
+    ll_y = list(df_grp_ff['y'].unique())
+    ll_y.sort()
+    for aa_nn in ll_y :
+        df_t = df_grp_ff.loc[df_grp_ff['y'] == aa_nn]
+        ##print(df_t)
+        aai_b = ii_np.nan
+        for sr_nn in df_t.iterrows() :
+            if sr_nn[1]['t'] == 'A1101_総人口':
+                aai_a = sr_nn[1].v
+            elif sr_nn[1]['t'] == 'A1102_日本人人口':
+                aai_j = sr_nn[1].v
+            elif sr_nn[1]['t'] == 'A110201_日本人人口（男）':
+                aai_m = sr_nn[1].v
+            elif sr_nn[1]['t'] == 'A110202_日本人人口（女）':
+                aai_w = sr_nn[1].v
+            elif sr_nn[1]['t'] == 'A1301_15歳未満人口':
+                aai_y = sr_nn[1].v
+            elif sr_nn[1]['t'] == 'A1303_65歳以上人口':
+                aai_o = sr_nn[1].v
+            elif sr_nn[1]['t'] == 'A4101_出生数':
+                aai_b = sr_nn[1].v
+            elif sr_nn[1]['t'] == 'A7101_世帯数':
+                aai_s = sr_nn[1].v
+        ##print(f"zt:{aai_zt} zk:{aai_zk} kk:{aai_kk} a:{aai_a}")
+        df_o_ff.loc[aa_nn,['a', 'j', 'm', 'w', 'y', 'o', 'b', 's']] =\
+          [aai_a, aai_j, aai_m, aai_w, aai_y, aai_o, aai_b, aai_s,]
+    for aa_r in ['a', 'j', 'm', 'w', 'y', 'o', 'b', 's']:
+        df_o_ff[aa_r +'p'] = df_o_ff[aa_r] / df_o_ff[aa_r].shift() -1
+    return(df_o_ff)
+def ff_grp_pr_z(aas='東京都') :
+    """
+    df_zzk = zei一覧
+    単位 100万
+    [県,地方税,地方交付税,国庫支出金,歳入合計]
+    """
+    df_grp_ff = df_zzk.loc[df_zzk['団体名'] == aas]
+    df_o_ff = ii_pd.DataFrame(columns=['k', 'zt', 'zk', 'kk', 'a'])
+    ##print(df_o_ff.info())
+    ll_y = list(df_grp_ff['決算年度'].unique())
+    ll_y.sort()
+    for aa_nn in ll_y :
+        df_t = df_grp_ff.loc[df_grp_ff['決算年度'] == aa_nn]
+        ##print(df_t)
+        for sr_nn in df_t.iterrows() :
+    ##print(sr_nn)
+            if sr_nn[1]['行名称'] == '地方税' :
+                aai_zt = int(sr_nn[1]['001:決算額']/1000)
+            elif sr_nn[1]['行名称'] == '地方交付税' :
+                aai_zk = int(sr_nn[1]['001:決算額']/1000)
+                if aai_zk == 0 :
+                    aai_zk = ii_np.nan
+            elif sr_nn[1]['行名称'] == '国庫支出金' :
+                aai_kk = int(sr_nn[1]['001:決算額']/1000)
+                if aai_kk == 0 :
+                    aai_kk = ii_np.nan
+            elif sr_nn[1]['行名称'] == '（歳入合計）' :
+                aai_a = int(sr_nn[1]['001:決算額']/1000)
+        ##print(f"zt:{aai_zt} zk:{aai_zk} kk:{aai_kk} a:{aai_a}")
+        df_o_ff.loc[aa_nn,['k', 'zt', 'zk', 'kk', 'a']] = \
+          [aas, aai_zt, aai_zk, aai_kk, aai_a]
+    df_o_ff = df_o_ff.assign(zt_o = df_o_ff['zt'].shift())
+    df_o_ff = df_o_ff.assign(zk_o = df_o_ff['zk'].shift())
+    df_o_ff = df_o_ff.assign(kk_o = df_o_ff['kk'].shift())
+    df_o_ff = df_o_ff.assign(a_o = df_o_ff['a'].shift())
+    df_o_ff = df_o_ff.assign(zt_p = df_o_ff['zt'] / df_o_ff['zt_o'] -1)
+    df_o_ff = df_o_ff.assign(zk_p = df_o_ff['zk'] / df_o_ff['zk_o'] -1)
+    df_o_ff = df_o_ff.assign(kk_p = df_o_ff['kk'] / df_o_ff['kk_o'] -1)
+    df_o_ff = df_o_ff.assign(a_p = df_o_ff['a'] / df_o_ff['a_o'] * 100 -100)
+    ##print(df_o_ff)
+    return(df_o_ff)
+
+def ff_mk_grj3(ll_df_ff, ll_nm_ff, aas_fn_ff):
+    """
+    """
+    aas_slryellow = '181, 137, 0'
+    aas_slrorange = '203, 75, 22'
+    aas_slrred = '220, 50, 47'
+    aas_slrmagenta = '211, 54, 130'
+    aas_slrviolet = '108, 113, 196'
+    aas_slrblue = '38, 139, 210'
+    aas_slrcyan = '42, 161, 152'
+    aas_slrgreen = '133, 153, 0'
+    ll_clr = [aas_slrblue, aas_slrred, aas_slrcyan]
+    oo_fig_ff = ii_ps.make_subplots( rows=1, cols=1,
+                                             shared_xaxes=True,
+                                              specs=[[{"secondary_y": True}]])
+    for nn in range(3):
+        df_ff = ll_df_ff[nn]
+        df_ff = df_ff = df_ff.assign(md = df_ff.j - df_ff.y - df_ff.o)
+        gr_y = ii_go.Bar(x=df_ff.index, y=df_ff.y,
+                         marker_color=f"rgba({ll_clr[nn]}, 0.7)",
+                         offsetgroup=nn, name=ll_nm_ff[nn] + '～15')
+        gr_md = ii_go.Bar(x=df_ff.index, y=df_ff.md,
+                          marker_color=f"rgba({ll_clr[nn]}, 0.4)",
+                          offsetgroup=nn, base=df_ff.y,
+                          name=ll_nm_ff[nn] + '16～64')
+        gr_o = ii_go.Bar(x=df_ff.index, y=df_ff.o,
+                         marker_color=f"rgba({ll_clr[nn]}, 0.1)",
+                         offsetgroup=nn,
+                         base=df_ff.y + df_ff.md, name=ll_nm_ff[nn] + '65～')
+        gr_b = ii_go.Scatter(x=df_ff.index, y=df_ff.b,
+                             name=ll_nm_ff[nn] + '出生',
+                             line={'color':f"rgba({ll_clr[nn]}, 1)"})
+        oo_fig_ff.add_trace(gr_y, row=1, col=1)
+        oo_fig_ff.add_trace(gr_md, row=1, col=1)
+        oo_fig_ff.add_trace(gr_o, row=1, col=1)
+        oo_fig_ff.add_trace(gr_b, row=1, col=1, secondary_y=True)
+    ii_pl.offline.plot(oo_fig_ff, filename=aas_fn_ff + '.html',
+                       include_plotlyjs='cdn')
+    return (oo_fig_ff)
+
+
+def ff_mk_grz3(ll_df, ll_nm, aas_fn_out):
+    """
+    ll_df = [df_u, df_m, df_d]
+    ll_nm = [nmu, nmm, nmd]
+    df_ff['zt', 'zk', 'kk', 'a']
+    [地方税,地方交付税,国庫支出金,歳入合計]
+    ret)oo_figd
+    """
+    aas_slryellow = '181, 137, 0'
+    aas_slrorange = '203, 75, 22'
+    aas_slrred = '220, 50, 47'
+    aas_slrmagenta = '211, 54, 130'
+    aas_slrviolet = '108, 113, 196'
+    aas_slrblue = '38, 139, 210'
+    aas_slrcyan = '42, 161, 152'
+    aas_slrgreen = '133, 153, 0'
+    ll_clr = [aas_slrblue, aas_slrred, aas_slrcyan]
+    #ll_clr = ['38, 139, 210','220, 50 , 47', '42, 161, 152']
+    oo_fig = ii_go.Figure()
+    for nn in range(3):
+        df_ff = ll_df[nn]
+        aas_nm = ll_nm[nn]
+        aas_clr = ll_clr[nn]
+        df_ff = df_ff.assign(o=df_ff.a - df_ff.zt - df_ff.zk - df_ff.kk)
+        oo_fig.add_bar(x=df_ff.index, y=df_ff.zt,
+                       marker_color=f"rgba({aas_clr}, 0.9)",
+                       offsetgroup=nn + 1,
+                       name=aas_nm + '地方税')
+        oo_fig.add_bar(x=df_ff.index, y=df_ff.zk,
+                       marker_color=f"rgba({aas_clr}, 0.7)",
+                       offsetgroup=nn + 1,
+                      base=df_ff.zt, name = aas_nm + '地方交付税')
+        oo_fig.add_bar(x=df_ff.index, y=df_ff.kk,
+                       marker_color=f"rgba({aas_clr}, 0.5)",
+                       offsetgroup=nn + 1,
+                      base=df_ff.zt + df_ff.zk, name=aas_nm + '国庫支出金')
+        oo_fig.add_bar(x=df_ff.index, y= df_ff.o,
+                       marker_color=f"rgba({aas_clr}, 0.3)", offsetgroup=nn + 1,
+                       base=df_ff.zt + df_ff.zk + df_ff.kk, name=aas_nm + 'その他')
+    ii_pl.offline.plot(oo_fig,
+                       filename=aas_fn_out + '.html', include_plotlyjs='cdn')
+    return (oo_fig)
+
+
+def ff_mk_tb_pl2(df_ff, aas_out_ff, ll_hd_ff, ll_fmt_ff) :
+    """
+    表作成
+    out) html file
+    ret) oo_fig_ff
+    """
+    if ll_hd_ff == '' :
+        ll_hd_ff = list(df_ff.columns)
+    oo_fig_ff = ii_go.Figure()
+    oo_fig_ff.add_trace(ii_go.Table(\
+        header = dict(values=ll_hd_ff),
+        cells = dict(values=[df_ff.iloc[:,num] for num in range(len(df_ff.columns))],
+                     format=ll_fmt_ff)
+    ))
+    ii_pl.offline.plot(oo_fig_ff ,filename=f'{aas_out_ff}.html',
+                       include_plotlyjs='cdn')
+    return(oo_fig_ff)
+
+
+def ff_rc(fn_ff):
+    """
+    """
+    with open(fn_ff, 'rb') as fh_rd:
+        oo_cl_ff = ii_pc.loads(fh_rd.read())
+    return(oo_cl_ff)
+
+
+def ff_wc(fn_ff, oo_ff):
+    """
+    """
+    with open(fn_ff, 'wb') as fh_wr:
+        fh_wr.write(ii_pc.dumps(oo_ff))
+
+# -- 
+!curl --compressed -o df_skk.pck -L "https://drive.google.com/uc?export=download&id=1scfabgIlhv6ZMGwnKDyhfFrt-6tjgAWX"
+!curl --compressed -o df_sth.pck -L "https://drive.google.com/uc?export=download&id=12y-85-Hm1hGs9yHCnQGc62lxey-6PZqc"
+df_skk = ff_rc('df_skk.pck')
+df_sth = ff_rc('df_sth.pck')
+!curl --compressed -o df_zzk.pck -L "https://drive.google.com/uc?export=download&id=11WPeVfeyIxULcXLyGKxeycSxhohuDk5c"
+!curl --compressed -o df_ks.pck -L "https://drive.google.com/uc?export=download&id=18UgBhqzNbY-vnvi4fWxIhw3p8UozQJ5q"
+df_zzk = ff_rc('df_zzk.pck')
+df_ks = ff_rc('df_ks.pck')
