@@ -102,5 +102,5 @@ ll_pdf = list(ii_pt.Path('.').glob('oa*.pdf'))
 dd_out = {}
 for nn in ll_pdf:
     nn_hd = nn.name[0:5]
-    dd_out{f"ll-{nn_hd}"} = ii_ii_tb.read_pdf(nn, pages='all')
-    dd_out{f"dd-{nn_hd}"} = ff_mk_sum(dd_out{f"ll-{nn_hd}"})
+    dd_out[f"ll-{nn_hd}"] = ii_ii_tb.read_pdf(nn, pages='all')
+    dd_out[f"dd-{nn_hd}"] = ff_mk_sum(dd_out{f"ll-{nn_hd}"})
