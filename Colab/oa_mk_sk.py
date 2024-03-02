@@ -1,0 +1,106 @@
+!pip install tabula-py
+import datetime as ii_dt
+import numpy as ii_np
+import pandas as ii_pd
+import pathlib
+import plotly as ii_pl
+import plotly.subplots as ii_ps
+import tabula as ii_tb
+
+def ff_mk_r_gsu(df_x):
+    """
+    """
+    df_x['gain'] = (df_x.取引損益.replace(['円', ',', r'\.0{1,}'], ['', '', ''], regex=True)).astype('int64')
+    df_x['swap'] = (df_x.スワップ損益.replace(['円', ',', r'\.0{1,}'], ['', '', ''], regex=True)).astype('int64')
+    df_x['unt'] = (df_x.数量.replace(',', '', regex=True)).astype('int64')
+    return(df_x)
+
+
+def ff_mk_sum(llx):
+    """
+    """
+    dd_df = {}
+    ll_df = []
+    for nn in range(len(llx)):
+        if 'チケット' in llx[nn]:
+            # api1
+            # print(f"elif {nn}")
+            df_00 =llx[nn].copy()
+            df_00 =ii_pd.concat([df_00,df_00['Unnamed: 7'].str.split('円 ', expand=True)], axis=1).drop('Unnamed: 7', axis=1)
+            #df_00.rename(columns={"チケット":"チケット\r番号", "Unnamed: 0":"通貨ペア", "Unnamed: 1":"取引", "Unnamed: 2":"売買", "Unnamed: 3":"約定値", "Unnamed: 4":"数量", "Unnamed: 5":"約定日時", "Unnamed: 6":"取引損益", "Unnamed: 8":"手数料", "原取引":"原取引\r注文番号", "原取引.1":"原取引\r約定値段", 0:"スポット損益", 1:"スワップ損益"},inplace=True)
+            df_00.rename(columns={"Unnamed: 0":"通貨ペア", "Unnamed: 1":"取引", "Unnamed: 2":"売買", "Unnamed: 3":"約定値", "Unnamed: 4":"数量", "Unnamed: 5":"約定日時", "Unnamed: 6":"取引損益", "Unnamed: 8":"手数料", 0:"スポット損益", 1:"スワップ損益"},inplace=True)
+            df_00.dropna(inplace=True)
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益', '原取引']]
+            dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
+            # print(df_00.columns)
+        elif 'チケット\r番号' in llx[nn]:
+            # api2
+            # print(f"if チケット(\r)番号 {nn}")
+            df_00 = llx[nn].copy()
+            df_00.rename(columns={'チケット\r番号':'チケット','原取引\r注文番号':'原取引'}, inplace=True)
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益', '原取引']]
+            dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
+        elif 'チケット番号 通貨ペア' in llx[nn]:
+            # mt1
+            # print(f"if {nn}")
+            # llx[nn]['通貨ペア'] = ''
+            # llv = llx[nn]['チケット番号 通貨ペア'].values
+            # for nnn in range(len(llx[nn])):
+            #    llx[nn].loc[nnn, '通貨ペア'] = llv[nnn][-6:]
+            df_00 = llx[nn].copy()
+            df_00 = ii_pd.concat([df_00,df_00['チケット番号 通貨ペア'].str.split(' ', expand=True)], axis=1).drop('チケット番号 通貨ペア', axis=1)
+            df_00.rename(columns={0:'チケット', 1:'通貨ペア'}, inplace=True)
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益']]
+            dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
+        elif 'チケット番号' in llx[nn]:
+            # mt2
+            df_00 = llx[nn].copy()
+            df_00.rename(columns={'チケット番号':'チケット'}, inplace=True)
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益']]
+            dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
+        elif not '取引' in llx[nn]:
+            continue
+        ll_df += [dd_df['xx_'+ str(nn)]]
+    df_0 = ii_pd.concat(ll_df)
+    df_1 = df_0.loc[df_0['取引'] == '決済'].copy()
+    df_1.index = ii_pd.to_datetime(df_1.index)
+    df_1x = ff_mk_r_gsu(df_1)
+    df_1xm = df_1x.loc[df_1x['gain'] < 0].copy()
+    # df_1['gain'] = (df_1.取引損益.replace(['円', ','], ['', ''], regex=True)).astype('int64')
+    # df_1['swap'] = (df_1.スワップ損益.replace(['円', ','], ['', ''], regex=True)).astype('int64')
+    # df_1['unt'] = (df_1.数量.replace(',', '', regex=True)).astype('int64')
+    df_1a = df_1.loc[df_1['売買'] == '売'].copy()
+    df_1b = df_1.loc[df_1['売買'] == '買'].copy()
+    df_1ax = ff_mk_r_gsu(df_1a)
+    df_1bx = ff_mk_r_gsu(df_1b)
+    df_s = ii_pd.DataFrame()
+    df_s['exe'] = df_1x['取引'].resample('1D').count()
+    df_s['unt'] = df_1x['unt'].resample('1D').sum()
+    df_s['gain'] = df_1x['gain'].resample('1D').sum()
+    df_s['swap'] = df_1x['swap'].resample('1D').sum()
+    df_s['gm'] = df_1xm['gain'].resample('1D').sum()
+    df_s['gm_c'] = df_1xm['gain'].resample('1D').count()
+    df_s['a_exe'] = df_1ax['取引'].resample('1D').count()
+    df_s['a_unt'] = df_1ax['unt'].resample('1D').sum()
+    df_s['a_gain'] = df_1ax['gain'].resample('1D').sum()
+    df_s['a_swap'] = df_1ax['swap'].resample('1D').sum()
+    df_s['a_mx'] = df_1ax['gain'].resample('1D').max()
+    df_s['a_mn'] = df_1ax['gain'].resample('1D').min()
+    df_s['b_exe'] = df_1bx['取引'].resample('1D').count()
+    df_s['b_unt'] = df_1bx['unt'].resample('1D').sum()
+    df_s['b_gain'] = df_1bx['gain'].resample('1D').sum()
+    df_s['b_swap'] = df_1bx['swap'].resample('1D').sum()
+    df_s['b_mx'] = df_1bx['gain'].resample('1D').max()
+    df_s['b_mn'] = df_1bx['gain'].resample('1D').min()
+    df_s.fillna(0, inplace=True)
+    df_s = df_s.astype('int64')
+    return({'df_s':df_s, 'df_0':df_0, 'df_1':df_1, 'df_1a':df_1a, 'df_1b':df_1b})
+
+
+# -- read mk
+ll_pdf = list(ii_pt.Path('.').glob('oa*.pdf'))
+dd_out = {}
+for nn in ll_pdf:
+    nn_hd = nn.name[0:5]
+    dd_out{f"ll-{nn_hd}"} = ii_ii_tb.read_pdf(nn, pages='all')
+    dd_out{f"dd-{nn_hd}"} = ff_mk_sum(dd_out{f"ll-{nn_hd}"})
