@@ -1,5 +1,6 @@
 """
     oanda 取引履歴のpdf(oa-xx.pdf)から集計
+    MT5アカウントの取引履歴が基本、fxTradeアカウントはちょっと加工(スワップが日々入るとか、列名が違うとか)
     ver 0.03
     2024/03/03
     2024/03/02
@@ -36,11 +37,20 @@ def ff_mk_sum(llx):
             # api1
             # print(f"elif {nn}")
             df_00 =llx[nn].copy()
-            df_00 =ii_pd.concat([df_00,df_00['Unnamed: 7'].str.split('円 ', expand=True)], axis=1).drop('Unnamed: 7', axis=1)
-            #df_00.rename(columns={"チケット":"チケット\r番号", "Unnamed: 0":"通貨ペア", "Unnamed: 1":"取引", "Unnamed: 2":"売買", "Unnamed: 3":"約定値", "Unnamed: 4":"数量", "Unnamed: 5":"約定日時", "Unnamed: 6":"取引損益", "Unnamed: 8":"手数料", "原取引":"原取引\r注文番号", "原取引.1":"原取引\r約定値段", 0:"スポット損益", 1:"スワップ損益"},inplace=True)
-            df_00.rename(columns={"Unnamed: 0":"通貨ペア", "Unnamed: 1":"取引", "Unnamed: 2":"売買", "Unnamed: 3":"約定値", "Unnamed: 4":"数量", "Unnamed: 5":"約定日時", "Unnamed: 6":"取引損益", "Unnamed: 8":"手数料", 0:"スポット損益", 1:"スワップ損益"},inplace=True)
+            df_00 =ii_pd.concat([df_00,df_00['Unnamed: 7'].str.split('円 ',
+                     expand=True)], axis=1).drop('Unnamed: 7', axis=1)
+            # df_00.rename(columns={"チケット":"チケット\r番号", "Unnamed: 0":"通貨ペア", 
+            #   "Unnamed: 1":"取引", "Unnamed: 2":"売買", "Unnamed: 3":"約定値", 
+            #   "Unnamed: 4":"数量", "Unnamed: 5":"約定日時", "Unnamed: 6":"取引損益",
+            #   "Unnamed: 8":"手数料", "原取引":"原取引\r注文番号", "原取引.1":"原取引\r約定値段",
+            #   0:"スポット損益", 1:"スワップ損益"},inplace=True)
+            df_00.rename(columns={"Unnamed: 0":"通貨ペア", "Unnamed: 1":"取引", 
+              "Unnamed: 2":"売買", "Unnamed: 3":"約定値", "Unnamed: 4":"数量",
+              "Unnamed: 5":"約定日時", "Unnamed: 6":"取引損益", "Unnamed: 8":"手数料",
+              0:"スポット損益", 1:"スワップ損益"},inplace=True)
             df_00.dropna(inplace=True)
-            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益', '原取引']]
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値',
+              '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益', '原取引']]
             dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
             # print(df_00.columns)
         elif 'チケット\r番号' in llx[nn]:
@@ -48,7 +58,8 @@ def ff_mk_sum(llx):
             # print(f"if チケット(\r)番号 {nn}")
             df_00 = llx[nn].copy()
             df_00.rename(columns={'チケット\r番号':'チケット','原取引\r注文番号':'原取引'}, inplace=True)
-            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益', '原取引']]
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', 
+              '約定日時', '取引損益', 'スポット損益', 'スワップ損益', '原取引']]
             dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
         elif 'チケット番号 通貨ペア' in llx[nn]:
             # mt1
@@ -58,21 +69,25 @@ def ff_mk_sum(llx):
             # for nnn in range(len(llx[nn])):
             #    llx[nn].loc[nnn, '通貨ペア'] = llv[nnn][-6:]
             df_00 = llx[nn].copy()
-            df_00 = ii_pd.concat([df_00,df_00['チケット番号 通貨ペア'].str.split(' ', expand=True)], axis=1).drop('チケット番号 通貨ペア', axis=1)
+            df_00 = ii_pd.concat([df_00,df_00['チケット番号 通貨ペア'].str.split(' ', 
+              expand=True)], axis=1).drop('チケット番号 通貨ペア', axis=1)
             df_00.rename(columns={0:'チケット', 1:'通貨ペア'}, inplace=True)
-            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益']]
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量',
+              '約定日時', '取引損益', 'スポット損益', 'スワップ損益']]
             dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
         elif 'チケット番号' in llx[nn]:
             # mt2
             df_00 = llx[nn].copy()
             df_00.rename(columns={'チケット番号':'チケット'}, inplace=True)
-            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益']]
+            dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量',
+              '約定日時', '取引損益', 'スポット損益', 'スワップ損益']]
             dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
         elif '受取日時' in llx[nn]:
             df_swp0 = llx[nn].copy().dropna() 
             df_swp0['受取日時'] =df_swp0['受取日時'].astype('datetime64[ns]')
             df_swp0.set_index('受取日時', inplace=True)
-            df_swp0['損益'] = (df_swp0['損益'].replace(['円', ',', r'\.[0-9]{1,}'], ['', '', ''], regex=True)).astype('int64')
+            df_swp0['損益'] = (df_swp0['損益'].replace(['円', ',', r'\.[0-9]{1,}'], 
+              ['', '', ''], regex=True)).astype('int64')
             df_swp1 = df_swp0[['損益']].resample('1D').sum()
             df_swp = df_swp1[df_swp1['損益'] != 0]
             continue
@@ -135,5 +150,8 @@ for nn in ll_pdf:
 
 # -- sk spreadsheet line
 aai_n = 32
-aask = f"=SUM(B2:B{aai_n})  =SUM(C2:C{aai_n})	=SUM(D2:D{aai_n})	=SUM(E2:E{aai_n})	=SUM(F2:F{aai_n})	=SUM(G2:G{aai_n})	=SUM(H2:H{aai_n})	=SUM(I2:I{aai_n})	=SUM(J2:J{aai_n})	=SUM(K2:K{aai_n})	=MAX(L2:L{aai_n})	=MIN(M2:M{aai_n})	=SUM(N2:N{aai_n})	=SUM(O2:O{aai_n})	=SUM(P2:P{aai_n})	=SUM(Q2:Q{aai_n})	=MAX(R2:R{aai_n})	=min(S2:S{aai_n})"
+aask = f"=SUM(B2:B{aai_n})  =SUM(C2:C{aai_n})	=SUM(D2:D{aai_n})	=SUM(E2:E{aai_n})	=SUM(F2:F{aai_n})	"
+aask += f"=SUM(G2:G{aai_n})	=SUM(H2:H{aai_n})	=SUM(I2:I{aai_n})	=SUM(J2:J{aai_n})	=SUM(K2:K{aai_n})	"
+aask += f"=MAX(L2:L{aai_n})	=MIN(M2:M{aai_n})	=SUM(N2:N{aai_n})	=SUM(O2:O{aai_n})	=SUM(P2:P{aai_n})	"
+aask += f"=SUM(Q2:Q{aai_n})	=MAX(R2:R{aai_n})	=min(S2:S{aai_n})"
 
