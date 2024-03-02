@@ -1,6 +1,6 @@
 """
     oanda 取引履歴のpdf(oa-xx.pdf)から集計
-    ver 0.01
+    ver 0.02
     2024/03/02
     2024/03/02
     src) 
@@ -113,3 +113,8 @@ for nn in ll_pdf:
     nn_hd = nn.name[0:5]
     dd_out[f"ll-{nn_hd}"] = ii_tb.read_pdf(nn, pages='all')
     dd_out[f"dd-{nn_hd}"] = ff_mk_sum(dd_out[f"ll-{nn_hd}"])
+
+# -- sk spreadsheet line
+aai_n = 32
+aask = f"=SUM(B2:B{aai_n})  =SUM(C2:C{aai_n})	=SUM(D2:D{aai_n})	=SUM(E2:E{aai_n})	=SUM(F2:F{aai_n})	=SUM(G2:G{aai_n})	=SUM(H2:H{aai_n})	=SUM(I2:I{aai_n})	=SUM(J2:J{aai_n})	=SUM(K2:K{aai_n})	=MAX(L2:L{aai_n})	=MIN(M2:M{aai_n})	=SUM(N2:N{aai_n})	=SUM(O2:O{aai_n})	=SUM(P2:P{aai_n})	=SUM(Q2:Q{aai_n})	=MAX(R2:R{aai_n})	=min(S2:S{aai_n})"
+
