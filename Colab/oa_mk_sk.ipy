@@ -1,3 +1,12 @@
+"""
+    oanda 取引履歴のpdf(oa-xx.pdf)から集計
+    ver 0.01
+    2024/03/02
+    2024/03/02
+    src) 
+    out) dd_out[ll_xx,dd_xx] llxx:read pdf, dd_xx:etc (df_s 集計)
+"""
+
 !pip install tabula-py
 import datetime as ii_dt
 import numpy as ii_np
