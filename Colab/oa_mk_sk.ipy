@@ -1,7 +1,7 @@
 """
     oanda 取引履歴のpdf(oa-xx.pdf)から集計
-    ver 0.02
-    2024/03/02
+    ver 0.03
+    2024/03/03
     2024/03/02
     src) 
     out) dd_out[ll_xx,dd_xx] llxx:read pdf, dd_xx:etc (df_s 集計)
@@ -30,6 +30,7 @@ def ff_mk_sum(llx):
     """
     dd_df = {}
     ll_df = []
+    df_swp = ii_pd.DataFrame()
     for nn in range(len(llx)):
         if 'チケット' in llx[nn]:
             # api1
@@ -67,6 +68,13 @@ def ff_mk_sum(llx):
             df_00.rename(columns={'チケット番号':'チケット'}, inplace=True)
             dd_df['xx_'+ str(nn)] = df_00[['通貨ペア', '取引', '売買', '約定値', '数量', '約定日時', '取引損益', 'スポット損益', 'スワップ損益']]
             dd_df['xx_'+ str(nn)].set_index('約定日時', inplace = True)
+        elif '受取日時' in llx[nn]:
+            df_swp0 = llx[nn].copy().dropna() 
+            df_swp0['受取日時'] =df_swp0['受取日時'].astype('datetime64[ns]')
+            df_swp0.set_index('受取日時', inplace=True)
+            df_swp0['損益'] = (df_swp0['損益'].replace(['円', ',', r'\.[0-9]{1,}'], ['', '', ''], regex=True)).astype('int64')
+            df_swp1 = df_swp0[['損益']].resample('1D').sum()
+            df_swp = df_swp1[df_swp1['損益'] != 0]
         elif not '取引' in llx[nn]:
             continue
         ll_df += [dd_df['xx_'+ str(nn)]]
@@ -103,7 +111,14 @@ def ff_mk_sum(llx):
     df_s['b_mn'] = df_1bx['gain'].resample('1D').min()
     df_s.fillna(0, inplace=True)
     df_s = df_s.astype('int64')
-    return({'df_s':df_s, 'df_0':df_0, 'df_1':df_1, 'df_1a':df_1a, 'df_1b':df_1b})
+    if len(df_swp) != 0:
+        for nn in df_sws.itertuples():
+            df_s.loc[nn.Index, 'swap'] = nn.損益
+            if nn.損益 > 0:
+                df_s.loc[nn.Index, 'a_swap'] = nn.損益       
+            elif nn.損益 < 0:
+                df_s.loc[nn.Index, 'b_swap'] = nn.損益       
+    return({'df_s':df_s, 'df_0':df_0, 'df_1':df_1, 'df_1a':df_1a, 'df_1b':df_1b, 'df_swp':df_swp})
 
 
 # -- read mk
