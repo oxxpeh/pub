@@ -2,7 +2,7 @@
 import datetime as ii_dt
 import numpy as ii_np
 import pandas as ii_pd
-import pathlib
+import pathlib as ii_pt
 import plotly as ii_pl
 import plotly.subplots as ii_ps
 import tabula as ii_tb
