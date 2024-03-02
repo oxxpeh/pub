@@ -75,6 +75,7 @@ def ff_mk_sum(llx):
             df_swp0['損益'] = (df_swp0['損益'].replace(['円', ',', r'\.[0-9]{1,}'], ['', '', ''], regex=True)).astype('int64')
             df_swp1 = df_swp0[['損益']].resample('1D').sum()
             df_swp = df_swp1[df_swp1['損益'] != 0]
+            continue
         elif not '取引' in llx[nn]:
             continue
         ll_df += [dd_df['xx_'+ str(nn)]]
