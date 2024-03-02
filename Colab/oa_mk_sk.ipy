@@ -115,10 +115,13 @@ def ff_mk_sum(llx):
     if len(df_swp) != 0:
         for nn in df_sws.itertuples():
             df_s.loc[nn.Index, 'swap'] = nn.損益
+            df_s.loc[nn.Index, 'gain'] += nn.損益
             if nn.損益 > 0:
                 df_s.loc[nn.Index, 'a_swap'] = nn.損益       
+                df_s.loc[nn.Index, 'a_gain'] += nn.損益
             elif nn.損益 < 0:
                 df_s.loc[nn.Index, 'b_swap'] = nn.損益       
+                df_s.loc[nn.Index, 'b_gain'] += - nn.損益
     return({'df_s':df_s, 'df_0':df_0, 'df_1':df_1, 'df_1a':df_1a, 'df_1b':df_1b, 'df_swp':df_swp})
 
 
