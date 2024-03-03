@@ -1,7 +1,7 @@
 """
     oanda 取引履歴のpdf(oa-xx.pdf)から集計
     MT5アカウントの取引履歴が基本、fxTradeアカウントはちょっと加工(スワップが日々入るとか、列名が違うとか)
-    ver 0.03
+    ver 0.04
     2024/03/03
     2024/03/02
     src) 
@@ -15,6 +15,7 @@ import pandas as ii_pd
 import pathlib as ii_pt
 import plotly as ii_pl
 import plotly.subplots as ii_ps
+import re as ii_re
 import tabula as ii_tb
 
 def ff_mk_r_gsu(df_x):
@@ -144,9 +145,10 @@ def ff_mk_sum(llx):
 ll_pdf = list(ii_pt.Path('.').glob('oa*.pdf'))
 dd_out = {}
 for nn in ll_pdf:
-    nn_hd = nn.name[0:5]
-    dd_out[f"ll-{nn_hd}"] = ii_tb.read_pdf(nn, pages='all')
-    dd_out[f"dd-{nn_hd}"] = ff_mk_sum(dd_out[f"ll-{nn_hd}"])
+    # nn_hd = nn.name[0:5]
+    aas_hd = ii_re.search(r'oa-[^-]*', nn.name)
+    dd_out[f"ll-{aas_hd}"] = ii_tb.read_pdf(nn, pages='all')
+    dd_out[f"dd-{aas_hd}"] = ff_mk_sum(dd_out[f"ll-{aas_hd}"])
 
 # -- sk spreadsheet line
 aai_n = 32
