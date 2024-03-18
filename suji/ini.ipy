@@ -248,11 +248,11 @@ def ff_wc(fn_ff, oo_ff):
         fh_wr.write(ii_pc.dumps(oo_ff))
 
 # -- 
-!curl --compressed -o df_skk.pck -L "https://drive.google.com/uc?export=download&id=1scfabgIlhv6ZMGwnKDyhfFrt-6tjgAWX"
-!curl --compressed -o df_sth.pck -L "https://drive.google.com/uc?export=download&id=12y-85-Hm1hGs9yHCnQGc62lxey-6PZqc"
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_skk.pck"
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_sth.pck"
 df_skk = ff_rc('df_skk.pck')
 df_sth = ff_rc('df_sth.pck')
-!curl --compressed -o df_zzk.pck -L "https://drive.google.com/uc?export=download&id=11WPeVfeyIxULcXLyGKxeycSxhohuDk5c"
-!curl --compressed -o df_ks.pck -L "https://drive.google.com/uc?export=download&id=18UgBhqzNbY-vnvi4fWxIhw3p8UozQJ5q"
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_zzk.pck"
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_ks.pck"
 df_zzk = ff_rc('df_zzk.pck')
 df_ks = ff_rc('df_ks.pck')
