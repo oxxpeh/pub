@@ -146,7 +146,7 @@ ll_pdf = list(ii_pt.Path('.').glob('oa*.pdf'))
 dd_out = {}
 for nn in ll_pdf:
     # nn_hd = nn.name[0:5]
-    aas_hd = ii_re.search(r'oa-[^-]*', nn.name)
+    aas_hd = ii_re.search(r'oa-[^-]*', nn.name).group()
     dd_out[f"ll-{aas_hd}"] = ii_tb.read_pdf(nn, pages='all')
     dd_out[f"dd-{aas_hd}"] = ff_mk_sum(dd_out[f"ll-{aas_hd}"])
 
