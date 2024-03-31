@@ -158,7 +158,6 @@ aask = f"=SUM(B2:B{aai_n})  =SUM(C2:C{aai_n})	=SUM(D2:D{aai_n})	=SUM(E2:E{aai_n}
 aask += f"=SUM(G2:G{aai_n})	=SUM(H2:H{aai_n})	=SUM(I2:I{aai_n})	=SUM(J2:J{aai_n})	=SUM(K2:K{aai_n})	"
 aask += f"=MAX(L2:L{aai_n})	=MIN(M2:M{aai_n})	=SUM(N2:N{aai_n})	=SUM(O2:O{aai_n})	=SUM(P2:P{aai_n})	"
 aask += f"=SUM(Q2:Q{aai_n})	=MAX(R2:R{aai_n})	=min(S2:S{aai_n})"
-"""
 
 # -sk spreadsheet line
 aas_seet = 'mt_m'
@@ -185,9 +184,33 @@ aas_skn += f"=sumifs('{aas_seet}'!Q{aai_st}:Q{aai_ed},'{aas_seet}'!A{aai_st}:A{a
 aas_skn += f"=MAXIFS('{aas_seet}'!R{aai_st}:R{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
 aas_skn += f"=MINIFS('{aas_seet}'!S{aai_st}:S{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
 # print(aas_skn)
+"""
+def ff_mk_skn(aas_seet, aai_r, aai_st=2, aai_ed=1000):
+  """
+  """
+  aas_skn = ""
+  aas_skn += f"=sumifs('{aas_seet}'!B{aai_st}:B{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!C{aai_st}:C{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!D{aai_st}:D{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!E{aai_st}:E{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!F{aai_st}:F{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!G{aai_st}:G{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!H{aai_st}:H{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!I{aai_st}:I{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!J{aai_st}:J{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!K{aai_st}:K{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=MAXIFS('{aas_seet}'!L{aai_st}:L{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=MINIFS('{aas_seet}'!M{aai_st}:M{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!N{aai_st}:N{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!O{aai_st}:O{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!P{aai_st}:P{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=sumifs('{aas_seet}'!Q{aai_st}:Q{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=MAXIFS('{aas_seet}'!R{aai_st}:R{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  aas_skn += f"=MINIFS('{aas_seet}'!S{aai_st}:S{aai_ed},'{aas_seet}'!A{aai_st}:A{aai_ed}, \">=\"&A{aai_r},'{aas_seet}'!A{aai_st}:A{aai_ed}, \"<\"&A{aai_r + 1})	"
+  print(aas_skn)
+  return(aas_skn)
+
 
 print("@@ do")
 print("print dd_out['dd_xx']['df_s']")
-print("aas_seet = 'sheet-xx'")
-print("aai_r = row")
-print("print(aas_skn)")
+print("aas_skn = ff_mk_skn('mt-m', 99)")
