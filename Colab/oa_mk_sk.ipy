@@ -129,7 +129,7 @@ def ff_mk_sum(llx):
     df_s.fillna(0, inplace=True)
     df_s = df_s.astype('int64')
     if len(df_swp) != 0:
-        for nn in df_sws.itertuples():
+        for nn in df_swp.itertuples():
             df_s.loc[nn.Index, 'swap'] = nn.損益
             df_s.loc[nn.Index, 'gain'] += nn.損益
             if nn.損益 > 0:
