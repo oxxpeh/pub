@@ -212,5 +212,5 @@ def ff_mk_skn(aas_seet, aai_r, aai_st=2, aai_ed=1000):
 
 
 print("@@ do")
-print("print dd_out['dd_xx']['df_s']")
+print(f"print dd_out['dd_xx']['df_s'] key:{dd_out.keys()}")
 print("aas_skn = ff_mk_skn('mt-m', 99)")
