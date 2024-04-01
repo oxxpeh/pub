@@ -38,7 +38,7 @@ def ff_mk_sum(llx):
             # api1
             # print(f"elif {nn}")
             df_00 =llx[nn].copy()
-            df_00 =ii_pd.concat([df_00,df_00['Unnamed: 7'].str.split('円 ',
+            df_00 =ii_pd.concat([df_00,df_00['Unnamed: 7'].str.split(' ',
                      expand=True)], axis=1).drop('Unnamed: 7', axis=1)
             # df_00.rename(columns={"チケット":"チケット\r番号", "Unnamed: 0":"通貨ペア", 
             #   "Unnamed: 1":"取引", "Unnamed: 2":"売買", "Unnamed: 3":"約定値", 
