@@ -94,7 +94,7 @@ apt install -y
    zlib1g-dev
 ```
 ## configureのエラー対策
-コンパイルのことが基本わかっていないので推測だらけ…<BR>
+コンパイルのことが基本わかっていないので…<BR>
 「x265」と「aribb24」でエラー出力<BR>
 どちらも「ERROR: aribb24(x265) not found using pkg-config」<BR>
 見つからないわけではなく、ライブラリの確認時のオプションが間違っているためにエラーを出力<BR>
