@@ -32,6 +32,7 @@ docker run -it  --name ffm-b --hostname ffm-b --mount "type=bind,src=/tmp/,dst=/
 cp /FFmpeg/ffmpeg /host-tmp/
 # -- ホストへのコピーはスクリプトに入れてません
 ```
+コンテナの大きさは3Gぐらいに、ffmpegは30Mぐらいだったかな
 
 # 細工とか
 ## ffmpegのconfigureのオプション
