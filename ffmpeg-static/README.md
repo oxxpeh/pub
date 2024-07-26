@@ -7,8 +7,8 @@ ffmpegは「n7.0.1」<BR>
 「x265」 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
 (スクリプトmk-ffm.shでconfigure時に指定)
 
-dockerはほとんど使ったことがない…
-makeで「warning」が出るけど気にしない…
+dockerはほとんど使ったことがない…<BR>
+makeで「warning」が出るけど気にしない…<BR>
 glibcのライブラリを使用するのかな
 ```
 warning: Using 'dlopen' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
