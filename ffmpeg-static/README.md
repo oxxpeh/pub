@@ -34,7 +34,7 @@ cp /FFmpeg/ffmpeg /host-tmp/
 ```
 
 # 細工とか
-## ffmpegのconfigreのオプション
+## ffmpegのconfigureのオプション
 ```
 ./configure  \
     --enable-small \
