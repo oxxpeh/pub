@@ -40,6 +40,3 @@ sudo update-ca-certificates
 `alias kill-sq='kill $( pgrep squid )'`で停止コマンド設定<BR>
 `service squid stop`は使える
 
-``
-```
-```
