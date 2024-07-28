@@ -11,9 +11,9 @@ RUN chown -R proxy:proxy /srv/squid
 RUN chmod 750 /srv/squid/
 RUN /usr/lib/squid/security_file_certgen -c -s /srv/squid/ssl_db -M 4MB
 
-RUN openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout squid-d.key \
-  -out squid-d.crt -subj '/CN=squid-d' -days 3650
-RUN mv squid-d* /etc/squid
+RUN openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout squid-b.key \
+  -out squid-b.crt -subj '/CN=squid-b' -days 3650
+RUN mv squid-b* /etc/squid
 RUN mv /etc/squid/squid.conf /etc/squid.conf.org
 COPY squid.conf /etc/squid
 RUN <<EOF 
