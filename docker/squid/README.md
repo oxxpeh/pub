@@ -1,4 +1,4 @@
-# bumpなsquidを作るDockefile
+# bumpなsquidを作るDockerfile
 httpsもキャッシュしてくれるといいなと思いがんばってみた
 
 # 使い方
