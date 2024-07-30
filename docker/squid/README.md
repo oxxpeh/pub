@@ -27,7 +27,9 @@ sudo mkdir -p /usr/share/ca-certificates/oreore
 sudo cp squid-b.crt /usr/share/ca-certificates/oreore/
 sudo bash -c "echo 'oreore/squid-b.crt' >> /etc/ca-certificates.conf"
 sudo update-ca-certificates
-# -- 削除は以下
+```
+削除は以下
+```
 sudo bash -c "echo '!oreore/squid-b.crt' >> /etc/ca-certificates.conf'
 sudo update-ca-certificates
 ```
