@@ -43,14 +43,17 @@ sudo update-ca-certificates
 ## 透過型
 ポート「3129」に透過proxy、ポート「3130」に通常proxy<BR>
 コメント外して再起動とか、ポート追加して「run」か「nat追加」などで動作する予定<BR>
-透過の場合は宛先nat設定も必要<BR>
-以下はdockerコンテナに対しての宛先nat設定「172.17.0.2」はsquid コンテナのIP
+透過の場合は宛先nat設定とかも必要かも<BR>
+以下はdockerコンテナからの宛先nat設定例「172.17.0.2」はsquid コンテナのIP
+dockerホストで設定
+(「http」と「https」の宛先を変える)
 ```
 sudo iptables -S -t nat -A PREROUTING -s 172.17.0.2/32 -i docker0 -j ACCEPT
 sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 443 -j DNAT --to-destination 172.17.0.2:3129
 sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.2:3129
 ```
 ## iptablesおまけ
+ちがってたらごめんなさい
 ```mermaid
 flowchart LR
   text_1_ip[Incoming<BR>Packet]
