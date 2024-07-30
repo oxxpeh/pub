@@ -42,7 +42,7 @@ sudo update-ca-certificates
 イメージ作成中`service squid start`は使えてた
 ## 透過型
 ポート「3129」に透過proxy、ポート「3130」に通常proxy<BR>
-コメント外してbuildし直すか、nat追加などで動作する予定<BR>
+コメント外して再起動とか、ポート追加して「run」か「nat追加」などで動作する予定<BR>
 透過の場合は宛先nat設定も必要<BR>
 以下はdockerコンテナに対しての宛先nat設定「172.17.0.2」はsquid コンテナのIP
 ```
