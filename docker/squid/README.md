@@ -12,7 +12,7 @@ docker build -t squid-b-img .
 docker run -d -p 3128:3128 --name sq-b --hostname sq-b squid-b-img
 docker cp sq-b:/etc/squid/squid-b.crt .
 # -- squidで作成する証明書の発行機関の証明書をコピー
-# -- windwosでいうところの「信頼されたルート証明機関」にコピー
+# -- windwosでいうところの「信頼されたルート証明機関」にコピーをしないとエラーが
 ```
 
 # その他
