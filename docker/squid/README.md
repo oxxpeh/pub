@@ -43,8 +43,11 @@ sudo update-ca-certificates
 `alias kill-sq='kill $( pgrep squid )'`で停止コマンド設定<BR>
 イメージ作成中`service squid start`は使えてた
 ## 透過型
+(日本語が雑…)
 ポート「3129」に透過proxy、ポート「3130」に通常proxy<BR>
-コメント外して再起動とか、ポート追加して「run」か「nat追加」などで動作する予定<BR>
+コメント外して再起動とか、ポート追加して別途「run(-p 3129:3129 追科)」か<BR>
+「nat追加(sudo iptables -A DOCKER ! -i docker0 -p tcp -m tcp --dport 3129 -j DNAT --to-destination 172.17.0.2:3129)」<BR>
+などで動作する予定<BR>
 透過の場合は宛先nat設定とかも必要かも<BR>
 以下はdockerコンテナからの宛先nat設定例「172.17.0.2」はsquid コンテナのIP
 dockerホストで設定
