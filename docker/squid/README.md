@@ -36,7 +36,18 @@ sudo update-ca-certificates
 `export HTTPS_PROXY=http://172.16.31.28:3128`<BR>
 「172.16.31.28」はdockerホストのIPに
 ## service squid stop
-「/run/squid.pid」ファイルが残るようで`shutdown_lifetime 1 seconds`設定してもなんか駄目<BR>
+「/run/squid.pid」ファイルが残るようで<BR>
+`shutdown_lifetime 1 seconds`設定したらファイルは消えるけどなんか駄目<BR>
 `alias kill-sq='kill $( pgrep squid )'`で停止コマンド設定<BR>
-`service squid stop`は使える
+イメージ作成中`service squid start`は使えてた
+## 透過型
+ポート「3129」に透過proxy、ポート「3130」に通常proxy<BR>
+コメント外してbuildし直すか、nat追加で動作する予定<BR>
+透過の場合は宛先nat設定も必要
+以下はdockerマシンに対してのnat設定「172.17.0.2」はsquid dcokerのIP
+```
+sudo iptables -S -t nat -A PREROUTING -s 172.17.0.2/32 -i docker0 -j ACCEPT
+sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 443 -j DNAT --to-destination 172.17.0.2:3129
+sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.2:3129
+```
 
