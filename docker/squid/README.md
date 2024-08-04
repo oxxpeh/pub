@@ -38,6 +38,8 @@ sudo update-ca-certificates
 `export HTTPS_PROXY=http://172.16.31.28:3128`<BR>
 「172.16.31.28」はdockerホストのIPに
 ## service squid stop
+コンテナ異常停止したときにも「/run/squid.pid」が残ってコンテナ起動後にすぐ停止しちゃうので<BR>
+`pid_filename none`に変更
 「/run/squid.pid」ファイルが残るようで<BR>
 `shutdown_lifetime 1 seconds`設定したらファイルは消えるけどなんか駄目<BR>
 `alias kill-sq='kill $( pgrep squid )'`で停止コマンド設定<BR>
