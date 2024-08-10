@@ -18,7 +18,6 @@ RUN apt update && apt install -y \
     gperf \
     g++ \
     libfdk-aac-dev \
-    libx264-dev \
     libx265-dev \
     libaribb24-dev \
     libnuma-dev \
@@ -39,7 +38,7 @@ RUN apt update && apt install -y \
     yasm \
     zlib1g-dev
 
-RUN git clone https://github.com/FFmpeg/FFmpeg.git -b n7.0.1
+RUN git clone https://github.com/FFmpeg/FFmpeg.git -b n7.0.2
 RUN cp /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc \
   /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc.org
 RUN echo "Libs.private: -lm -lpng -lz -lm" >> \
@@ -65,8 +64,8 @@ cd FFmpeg
     --enable-gpl \
     --enable-libaribb24 \
     --enable-libfdk-aac \
-    --enable-libx264 \
-    --enable-libx265 && \
+    --enable-libx265 \
+    --disable-encoder=aac && \
     make -j \$1 && echo -e "\n@@ ldd ffmpeg" ; ldd ffmpeg ; \
     echo -e "\n@@ ffmpeg -codecs grep x26|aac|arib" ; \
     ./ffmpeg -codecs | grep "x26\|aac\|arib"
