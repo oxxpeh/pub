@@ -18,6 +18,7 @@ RUN apt update && apt install -y \
     gperf \
     g++ \
     libfdk-aac-dev \
+    libx264-dev \
     libx265-dev \
     libaribb24-dev \
     libnuma-dev \
@@ -44,6 +45,8 @@ RUN cp /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc \
 RUN echo "Libs.private: -lm -lpng -lz -lm" >> \
   /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc
 RUN sed -i.org  "s/-lgcc_s //g" /usr/lib/x86_64-linux-gnu/pkgconfig/x265.pc
+RUN cp /FFmpeg/libavformat/movenc.c /FFmpeg/libavformat/movenc.c.org
+COPY movenc.c /FFmpeg/libavformat/
 
 RUN <<EOF 
 cat <<- _eof_ > mk-ffm.sh
@@ -64,6 +67,7 @@ cd FFmpeg
     --enable-gpl \
     --enable-libaribb24 \
     --enable-libfdk-aac \
+    --enable-libx264 \
     --enable-libx265 \
     --disable-encoder=aac && \
     make -j \$1 && echo -e "\n@@ ldd ffmpeg" ; ldd ffmpeg ; \
