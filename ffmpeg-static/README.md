@@ -197,8 +197,6 @@ autoreconf -iv
 make -j && make install
 ```
 # 履歴
-## 2024/07/27
-・7.0.1で確認<BR>
 ## 2024/08/11
 ・7.0.2で確認<BR>
 ・mp4のデフォルトコーデックを「x265」、「fdk_aac」に変更<BR>
@@ -213,3 +211,5 @@ $ diff movenc.c.org movenc.c
 >     .p.video_codec     = CONFIG_LIBX265_ENCODER ?
 >                          AV_CODEC_ID_HEVC : AV_CODEC_ID_MPEG4,
 ```
+## 2024/07/27
+・7.0.1で確認<BR>
