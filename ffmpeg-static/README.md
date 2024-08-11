@@ -2,7 +2,7 @@
 Windows版は「ffmpeg-windows-build-helpers」でさくっと作れたけど<BR>
 native(linux)は作れなかったのでちょっとがんばった<BR>
 ubuntu24.04で確認<BR>
-ffmpegは「n7.0.1」<BR>
+ffmpegは「n7.0.2」<BR>
 (Dokcerファイルでgit時指定)<BR>
 「x265」 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
 (スクリプトmk-ffm.shでconfigure時に指定)
@@ -193,4 +193,19 @@ cd aribb24
 autoreconf -iv 
 ./configure
 make -j && make install
+```
+# 履歴
+## 2024/08/11
+・7.0.2用に変更<BR>
+・mp4のデフォルトコーデックを「x265」、「fdk_aac」に変更<BR>
+  「x265」はlibavformat/movenc.cの編集、<BR>
+  「fdk_aac」はconfigureで「aac」の削除<BR>
+```
+$ diff movenc.c.org movenc.c
+8290,8291c8290,8291
+<     .p.video_codec     = CONFIG_LIBX264_ENCODER ?
+<                          AV_CODEC_ID_H264 : AV_CODEC_ID_MPEG4,
+---
+>     .p.video_codec     = CONFIG_LIBX265_ENCODER ?
+>                          AV_CODEC_ID_HEVC : AV_CODEC_ID_MPEG4,
 ```
