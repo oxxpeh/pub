@@ -197,8 +197,10 @@ autoreconf -iv
 make -j && make install
 ```
 # 履歴
+## 2024/07/27
+・7.0.1で確認<BR>
 ## 2024/08/11
-・7.0.2用に変更<BR>
+・7.0.2で確認<BR>
 ・mp4のデフォルトコーデックを「x265」、「fdk_aac」に変更<BR>
   「x265」はlibavformat/movenc.cの編集、<BR>
   「fdk_aac」はconfigureで「aac」の削除<BR>
