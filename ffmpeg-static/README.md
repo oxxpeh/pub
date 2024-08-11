@@ -20,6 +20,7 @@ warning: Using 'getaddrinfo' in statically linked applications requires at runti
 mkdir ffm-b && cd ffm-b
 # -- 「ffm-b」でなくても何でも良いです
 curl --compressed -O https://raw.githubusercontent.com/oxxpeh/pub/main/ffmpeg-static/Dockerfile
+curl --compressed -O https://raw.githubusercontent.com/oxxpeh/pub/main/ffmpeg-static/movenc.c
 docker build -t ffm-b-img .
 # -- proxy必要なら 「--build-arg HTTP_PROXY=http://192.168.1.1:3128」とか
 # -- 「docker.io」だけではなく「docker-buildx」もaptでinstallしておく
