@@ -32,6 +32,7 @@ docker run -it  --name ffm-b --hostname ffm-b --mount "type=bind,src=/tmp/,dst=/
 # -- 「./mk-ffm.sh」だと無制限でjob作成
 cp /FFmpeg/ffmpeg /host-tmp/
 # -- ホストへのコピーはスクリプトに入れてません
+# -- docker cpとかでも
 ```
 コンテナの大きさは3Gぐらいに、ffmpegは30Mぐらいだったかな
 
