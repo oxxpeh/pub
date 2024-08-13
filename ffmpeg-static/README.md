@@ -55,7 +55,7 @@ cp /FFmpeg/ffmpeg /host-tmp/
     --enable-libfdk-aac \
     --enable-libx264 \
     --enable-libx265 \
-    --enable-libwebp 
+    --disable-encoder=aac
 ```
 ## コンテナにaptで入れてるパッケージ
 ```
