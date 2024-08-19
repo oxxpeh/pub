@@ -22,7 +22,7 @@ warning: Using 'dlopen' in statically linked applications requires at runtime th
 warning: Using 'getaddrinfo' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
 ```
 
-# 使い方
+## 使い方
 ```
 mkdir ffm-b && cd ffm-b
 # -- 「ffm-b」でなくても何でも良いです
@@ -43,8 +43,8 @@ cp /FFmpeg/ffmpeg /host-tmp/
 ```
 コンテナの大きさは3Gぐらいに、ffmpegは30Mぐらいだったかな
 
-# 細工とか
-## ffmpegのconfigureのオプション
+## 細工とか
+### ffmpegのconfigureのオプション
 ```
 ./configure  \
     --enable-small \
@@ -64,7 +64,7 @@ cp /FFmpeg/ffmpeg /host-tmp/
     --enable-libx265 \
     --disable-encoder=aac
 ```
-## コンテナにaptで入れてるパッケージ
+### コンテナにaptで入れてるパッケージ
 ```
 apt install -y
    archive\
@@ -103,7 +103,7 @@ apt install -y
    unzip\
    zlib1g-dev
 ```
-## configureのエラー対策
+### configureのエラー対策
 コンパイルのことが基本わかっていないので…<BR>
 「x265」と「aribb24」でエラー出力<BR>
 どちらも「ERROR: aribb24(x265) not found using pkg-config」<BR>
@@ -111,7 +111,7 @@ apt install -y
 configure実行後の「ffbuild/confg.log」で確認
 (対処後aptのパッケージではなく、ソース試してみたけどpcファイルの中身は同じ)<BR>
 
-### x265
+#### x265
 エラー<BR>
 /usr/bin/ld: cannot find -lgcc_s: No such file or directory<BR>
 対処<BR>
@@ -120,7 +120,7 @@ pkg-confgで使用する「/usr/lib/x86_64-linux-gnu/pkgconfig/x265.pc」の中�
 ```
 sed -i.org  "s/-lgcc_s //g" /usr/lib/x86_64-linux-gnu/pkgconfig/x265.pc
 ```
-### aribb24
+#### aribb24
 エラー 1<BR>
 undefined reference to `sqrt'<BR>
 対処 1<BR>
@@ -187,15 +187,15 @@ gcc -lz -Wl,--as-needed -Wl,-z,noexecstack -I/usr/local/include -L/usr/local/lib
 #-- 最後のオプションをいろいろ試した
 ```
 
-## ソースから作成
-### x265
+### ソースから作成
+#### x265
 ```
 git clone https://bitbucket.org/multicoreware/x265_git.git
 cd x265_git/build/linux
 ./make-Makefiles.bash
 make -j && make install
 ```
-### aribb24
+#### aribb24
 ```
 git clone https://code.videolan.org/jeeb/aribb24.git
 cd aribb24
@@ -203,8 +203,8 @@ autoreconf -iv
 ./configure
 make -j && make install
 ```
-# 履歴
-## 2024/08/11
+## 履歴
+### 2024/08/11
 ・7.0.2で確認<BR>
 ・mp4のデフォルトコーデックを「x265」、「fdk_aac」に変更<BR>
   「x265」はlibavformat/movenc.cの編集、<BR>
@@ -218,5 +218,5 @@ $ diff movenc.c.org movenc.c
 >     .p.video_codec     = CONFIG_LIBX265_ENCODER ?
 >                          AV_CODEC_ID_HEVC : AV_CODEC_ID_MPEG4,
 ```
-## 2024/07/27
+### 2024/07/27
 ・7.0.1で確認<BR>
