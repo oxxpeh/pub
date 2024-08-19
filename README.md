@@ -1,3 +1,3 @@
 # Test
 ## ffmpegをスタティックなライブラリで作るDockerファイル
-[リンク](ffmpeg-sttic.html)
+[リンク](ffmpeg-static.html)
