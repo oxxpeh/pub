@@ -1,10 +1,3 @@
----
-layout: default
-title: ffmpegをスタティックなライブラリで作るDockerファイル
-description: ffmpegをスタティックなライブラリで作るDockerファイル
-lang: ja_JP
----
-
 # ffmpegをスタティックなライブラリで作るDockerファイル
 Windows版は「ffmpeg-windows-build-helpers」でさくっと作れたけど<BR>
 native(linux)は作れなかったのでちょっとがんばった<BR>
