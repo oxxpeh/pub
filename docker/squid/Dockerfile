@@ -19,7 +19,7 @@ COPY squid.conf /etc/squid
 RUN <<EOF 
 cat <<- _eof_ >> ~/.bashrc
 export PS1='\u@\h:\W\n# '
-alias kill-sq='kill $( pgrep squid )'
+alias kill-sq='kill \$( pgrep squid )'
 _eof_
 EOF
 RUN ["squid", "-f", "/etc/squid/squid.conf", "--foreground", "-z"]
