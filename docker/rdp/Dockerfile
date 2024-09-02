@@ -1,5 +1,5 @@
 #  ://github.com/danchitnis/container-xrdp
-
+# https://gavann-it.com/2024/06/10/docker%E3%81%A7ubuntu24%E3%81%AE%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E6%8E%A5%E7%B6%9A%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%B3%E3%83%B3%E3%83%86/
 # FROM ubuntu:24.04 AS ububase
 FROM ubuntu:24.04
 
