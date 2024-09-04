@@ -3,3 +3,4 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 apt update && apt install -y firefox
 apt install -y $( apt list --upgradable 2> /dev/null| grep "/" | sed -s "s@/.*@@")
 apt autoremove -y 
+echo "@ -- rdp-cl-in end"
