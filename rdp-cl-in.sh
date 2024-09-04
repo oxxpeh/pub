@@ -30,7 +30,7 @@ cat << EOF > host-start.sh
 #!/bin/bash
 #-- 2024/09/05
 echo -e "@-- start\t\$( date )" >> /home/work/host-start-stop.log
-mount.cifs //172.16.200.54/data/ /mnt/cifs/ -o user=nyobita,password=xxx,uid=user,gid=user
+mount.cifs //172.16.200.54/data/ /mnt/cifs/ -o user=user,password=xxx,uid=user,gid=user
 EOF
 
 cat << EOF > host-stop.sh
