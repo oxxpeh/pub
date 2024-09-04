@@ -3,4 +3,5 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 apt update && apt install -y firefox
 apt install -y $( apt list --upgradable 2> /dev/null| grep "/" | sed -s "s@/.*@@")
 apt autoremove -y 
+su - user "curl -sSLf https://github.com/aclap-dev/vdhcoapp/releases/latest/download/install.sh | bash"
 echo "@ -- rdp-cl-in end"
