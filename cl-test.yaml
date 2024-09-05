@@ -1,0 +1,70 @@
+config:
+  user.network-config: |
+    version: 2
+    renderer: networkd
+    ethernets:
+      eth0:
+        addresses: [192.168.1.100/24]
+        routes:
+        - to: default
+          via: 192.168.1.1
+        nameservers:
+          addresses: [192.168.1.1,8.8.8.8]
+        dhcp6: false
+        accept-ra: false
+        link-local: [ ]
+  cloud-init.user-data: |
+    #cloud-config
+    ca-certs:
+      trusted: 
+      - |
+       -----BEGIN CERTIFICATE-----
+        CERTIFICATE CERTIFICATE 
+       -----END CERTIFICATE-----
+    apt:
+      proxy: http://192.168.1.10:3128
+      http_proxy: http://192.168.1.10:3128
+      https_proxy: http://192.168.1.10:3128
+    package_update: true
+    packages:
+      - curl
+      - lxqt
+      - openssh-server
+      - xrdp
+    users:
+      - default
+      - name: user
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
+        uid: 1001
+    chpasswd:
+      expire: falsee
+      users:
+        - {name: user, password: PassWord, type: text}
+    ssh_pwauth: true
+    timezone: Asia/Tokyo
+    locale: ja_JP.utf8
+    runcmd:
+      - [curl, -O, http://http://192.168.1.10/cl-init.sh]
+      - [bash, cl-init.sh]
+    write_files:
+      - content: |
+          export PRXY_ADD=http://192.168.1.10:3128
+          export HTTPS_PROXY=${PRXY_ADD}
+          export HTTP_PROXY=${PRXY_ADD}
+          export http_proxy=${PRXY_ADD}
+          export https_proxy=${PRXY_ADD}
+          export no_proxy=127.0.0.1,localhost,192.168.0.0/16
+          export NO_PROXY=127.0.0.1,localhost,192.168.0.0/16
+        path: /root/.bashrc
+        append: true
+    power_state:
+      delay: "+1"
+      mode: reboot
+      message: Bye Bye
+      timeout: 100
+devices:
+  eth0:
+    nictype: bridged
+    parent: br0
+    type: nic
