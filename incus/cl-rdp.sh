@@ -7,4 +7,4 @@ apt install -y $( apt list --upgradable 2> /dev/null| grep "/" | sed -s "s@/.*@@
 apt autoremove -y 
 
 
-echo "@ -- rdp-cl-in end"
+echo "@ -- cl-rdp end"
