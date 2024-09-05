@@ -24,7 +24,7 @@ cloud-init処理終了後再起動します
 incus config set test raw.apparmor "mount fstype=cifs,"
 incus config set test security.privileged true
 incus exec test apt install -y cifs-utils
-# -- GPU追加なら
+# -- GPU追加なら(ホストで)
 incus config device add test intelgpu gpu gid=44
 # -- incus config 使用したら再起動推奨
 incus restart test
@@ -63,3 +63,10 @@ lxqtいれると入るようで固定IP設定してても、「169.254.x.x」な
 ### netplan
 書式は同じだけど「user.network-config」で指定する必要があるもよう  
 時々`netplan apply`実行時に「not found」と怒られることがあった
+### profileで設定追加
+```
+incus config set test raw.apparmor "mount fstype=cifs,"
+incus config set test security.privileged true
+incus config device add test intelgpu gpu gid=44
+```
+yamlでの書き方がわからない…
