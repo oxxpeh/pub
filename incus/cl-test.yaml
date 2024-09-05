@@ -45,7 +45,7 @@ config:
     timezone: Asia/Tokyo
     locale: ja_JP.utf8
     runcmd:
-      - [curl, -O, http://http://192.168.1.10/cl-init.sh]
+      - [curl, -O, https://raw.githubusercontent.com/oxxpeh/pub/main/incus/cl-rdp.sh]
       - [bash, cl-init.sh]
     write_files:
       - content: |
