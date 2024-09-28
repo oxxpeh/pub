@@ -59,7 +59,46 @@ sudo iptables -S -t nat -A PREROUTING -s 172.17.0.2/32 -i docker0 -j ACCEPT
 sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 443 -j DNAT --to-destination 172.17.0.2:3129
 sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.2:3129
 ```
-## iptablesおまけ
+## bumpとwindows update
+証明書なんとか「0x800b0109」なエラーが出た。
+squidのログは
+```
+1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
+```
+update関連をbumpさせない対策はキャッシュしなくなるので… 
+Windowsの証明書では一部でOSなどに同梱(？)してるものをしてるものがあるようで 
+証明書の取得に失敗してTLS Handshake失敗することがあるようで。
+
+<span style="color: #38761d;"><br>(参)<br>Squid透過プロキシでEdgeの更新が出来なくなったのを解消する #squid - Qiita<br>https://qiita.com/ripple_naip/items/903e33ed1d1f308a5818</span><br>
+
+参照もとのようにMS関連コピーするのが良いのでしょうが、ログの出たものだけの対応を。
+```
+# squidコンテナ動作のホストで実施
+curl -O http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt
+docker cp MicRooCerAut2011_2011_03_22.crt sq-b:/tmp
+# squid動作のコンテナで実施
+mkdir /usr/share/ca-certificates/MS
+cp /tmp/MicRooCerAut2011_2011_03_22.crt /usr/share/ca-certificates/MS
+echo "MS/MicRooCerAut2011_2011_03_22.crt" >> /etc/ca-certificates.conf
+update-ca-certificates
+```
+updateできるようになったけど以下のログは出てる…
+```
+1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
+```
+キャッシュしてないようで「squid.conf」に以下追加
+```
+refresh_pattern .exe$ 0 20% 1440 override-expire override-lastmod \
+ignore-reload ignore-no-cache ignore-no-store ignore-private
+```
+設定数値はよくわかっていない…
+dockerファイルはそのうち修正予定…
+
+# 履歴
+## 2024/09/28
+windows update関連追記
+## 2024/07
+# iptablesおまけ
 ちがってたらごめんなさい
 ```mermaid
 flowchart LR
