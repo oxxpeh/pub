@@ -65,9 +65,9 @@ squidのログは
 ```
 1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
 ```
-update関連をbumpさせない対策はキャッシュしなくなるので… 
-Windowsの証明書では一部でOSなどに同梱(？)してるものをしてるものがあるようで 
-証明書の取得に失敗してTLS Handshake失敗することがあるようで。
+update関連をbumpさせない対策はキャッシュしなくなるので…  
+Windowsの証明書では一部でOSなどに同梱(？)してるものをしてるものがあるようで  
+証明書の取得に失敗してTLS Handshake失敗することがあるようで。  
 
 <span style="color: #38761d;"><br>(参)<br>Squid透過プロキシでEdgeの更新が出来なくなったのを解消する #squid - Qiita<br>https://qiita.com/ripple_naip/items/903e33ed1d1f308a5818</span><br>
 
@@ -91,9 +91,20 @@ updateできるようになったけど以下のログは出てる…
 refresh_pattern .exe$ 0 20% 1440 override-expire override-lastmod \
 ignore-reload ignore-no-cache ignore-no-store ignore-private
 ```
-設定数値はよくわかっていない… 
-dockerファイルはそのうち修正予定… 
+設定数値はよくわかっていない…   
+dockerファイルはそのうち修正予定…   
 (curl ip less とかも追加したいな)
+
+自動更新はプロキシの設定ではなくて「winhttp」の設定を見るもよう  
+(他でも書かれてましたが winhttpなんて知らんかった)
+<span style="color: #38761d;"><br>(参)<br>ブラウザのプロキシ設定を行い、手動でWindows Updateができるようになったのですが、自動更新が実行されません。自動更新が利用するプロキシの設定の仕方を教えてください。｜よくあるご質問｜法人向けクラウドサービスのbit-drive<br>https://faq2.bit-drive.ne.jp/support/traina-faq/result/21-2129?ds=&receptionId=1963044&receptionNum=1721304149539&page=1&inquiryWord=&categoryPath=148&selectedDataSourceId=&sort=_score&order=desc&attachedFile=false</span><br>
+```
+netsh winhttp set proxy 192.168.1.100:3172
+rem 確認するなら以下のコマンド。
+netsh winhttp show proxy
+rem リセットするなら以下のコマンド。
+rem netsh winhttp reset proxy
+```
 
 # 履歴
 ## 2024/09/28
