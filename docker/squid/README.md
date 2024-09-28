@@ -88,7 +88,7 @@ updateできるようになったけど以下のログは出てる…
 ```
 キャッシュしてないようで「squid.conf」に以下追加
 ```
-refresh_pattern .exe$ 0 20% 1440 override-expire override-lastmod \
+refresh_pattern (\.exe|\.cab)$ 0 20% 1440 override-expire override-lastmod \
 ignore-reload ignore-no-cache ignore-no-store ignore-private
 ```
 設定数値はよくわかっていない…   
