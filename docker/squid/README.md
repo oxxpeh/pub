@@ -61,7 +61,6 @@ sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 80 -j DNA
 ```
 ## bumpとwindows update
 証明書なんとか「0x800b0109」なエラーが出た。  
-(アップデートによってはダメなものがあるようで、そのときはプロキシ無しで…)
 squidのログは
 ```
 1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
@@ -83,7 +82,9 @@ cp /tmp/MicRooCerAut2011_2011_03_22.crt /usr/share/ca-certificates/MS
 echo "MS/MicRooCerAut2011_2011_03_22.crt" >> /etc/ca-certificates.conf
 update-ca-certificates
 ```
-updateできるようになったけど以下のログは出てる…
+updateできるようになったけど以下のログは出てる…  
+(アップデートによってはダメなものがあるようで、そのときはプロキシ無しで…)  
+
 ```
 1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
 ```
