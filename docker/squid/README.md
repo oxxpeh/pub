@@ -107,6 +107,8 @@ rem netsh winhttp reset proxy
 ```
 
 # 履歴
+## 2024/10/17
+ubuntu24.10 squidは6.10  
 ## 2024/09/28
 windows update関連追記
 ## 2024/07
