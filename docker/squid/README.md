@@ -60,7 +60,8 @@ sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 443 -j DN
 sudo iptables -S -t nat -A PREROUTING -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.2:3129
 ```
 ## bumpとwindows update
-証明書なんとか「0x800b0109」なエラーが出た。
+証明書なんとか「0x800b0109」なエラーが出た。  
+(アップデートによってはダメなものがあるようで、そのときはプロキシ無しで…)
 squidのログは
 ```
 1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
@@ -109,6 +110,7 @@ rem netsh winhttp reset proxy
 # 履歴
 ## 2024/10/17
 ubuntu24.10 squidは6.10  
+windows update関連の証明書はDockerfileに記載なし
 ## 2024/09/28
 windows update関連追記
 ## 2024/07
