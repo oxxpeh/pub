@@ -1,8 +1,8 @@
 # ffmpegをスタティックなライブラリで作るDockerファイル
 Windows版は「ffmpeg-windows-build-helpers」でさくっと作れたけど<BR>
 native(linux)は作れなかったのでちょっとがんばった<BR>
-ubuntu24.04で確認<BR>
-ffmpegは「n7.0.2」<BR>
+ubuntu24.10で確認<BR>
+ffmpegは「n7.1」<BR>
 (Dokcerファイルでgit時指定)<BR>
 「x265」 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
 (スクリプトmk-ffm.shでconfigure時に指定)
@@ -20,7 +20,6 @@ warning: Using 'getaddrinfo' in statically linked applications requires at runti
 mkdir ffm-b && cd ffm-b
 # -- 「ffm-b」でなくても何でも良いです
 curl --compressed -O https://raw.githubusercontent.com/oxxpeh/pub/main/ffmpeg-static/Dockerfile
-curl --compressed -O https://raw.githubusercontent.com/oxxpeh/pub/main/ffmpeg-static/movenc.c
 docker build -t ffm-b-img .
 # -- proxy必要なら 「--build-arg HTTP_PROXY=http://192.168.1.1:3128」とか
 # -- 「docker.io」だけではなく「docker-buildx」もaptでinstallしておく
@@ -197,6 +196,23 @@ autoreconf -iv
 make -j && make install
 ```
 ## 履歴
+### 2024/10/16
+・7.1で確認  
+movenc.cの変更は
+```
+    .p.name            = "mp4",
+    .p.long_name       = NULL_IF_CONFIG_SMALL("MP4 (MPEG-4 Part 14)"),
+    .p.mime_type       = "video/mp4",
+    .p.extensions      = "mp4",
+    .priv_data_size    = sizeof(MOVMuxContext),
+    .p.audio_codec     = AV_CODEC_ID_AAC,
+    .p.video_codec     = CONFIG_LIBX264_ENCODER ?
+                         AV_CODEC_ID_H264 : AV_CODEC_ID_MPEG4,
+```
+の「.p.name="mp4"」の位置が7.01から変わってたので  
+「.p.name="mp4"」直下の「.p.video_codec」の行を確認してパッチファイルの行番号を修正するスクリプト「pat.sh」を実行  
+(Dockerfileで作成)  
+
 ### 2024/08/11
 ・7.0.2で確認<BR>
 ・mp4のデフォルトコーデックを「x265」、「fdk_aac」に変更<BR>
