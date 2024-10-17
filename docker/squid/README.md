@@ -94,32 +94,36 @@ update-ca-certificates
 ```
 ~~updateできるようになったけど以下のログは出てる…~~  
 ~~(アップデートによってはダメなものがあるようで、そのときはプロキシ無しで…)~~  
-「Base 64 encoded X.509 (.CER)」形式に変更後なくなった 
+「Base 64 encoded X.509 (.CER)」形式に変更後なくなった   
 ログに「TCP_MISS_ABORTED」が出るのが増えたような…
+「DENIED」の近くで「msedge.api.cdp.microsoft.com」と「v10.events.data.microsoft.com」にアクセスしてた  
+このサーバの証明書の認証局情報から「http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt」が必要で  
+アクセスするけど認められてないってことかな…
+ログで送信元のクライアントipがない
 
 ```
 1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
 ```
-「Base 64 encoded X.509 (.CER)」形式の確認
+「Base 64 encoded X.509 (.CER)」形式の確認とか
 ```
-head -3 MicRoo2011_03_22.crt
+$ head -3 MicRoo2011_03_22.crt
 -----BEGIN CERTIFICATE-----
 MIIF7TCCA9WgAwIBAgIQP4vItfyfspZDtWnWbELhRDANBgkqhkiG9w0BAQsFADCB
 iDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1Jl
 
-head -3 MicRooCerAut2011_2011_03_22.crt 
+$ head -3 MicRooCerAut2011_2011_03_22.crt 
 00ՠ?ȵCil*H0
 01
   0     UUS10U
 Washington10URedmond10U
 360322221304Z01ration1200U)Microsoft Root Certificate Authority 20110
                0        UUS10U
-openssl x509   -in  MicRoo2011_03_22.crt | head -3
+$ openssl x509   -in  MicRoo2011_03_22.crt | head -3
 -----BEGIN CERTIFICATE-----
 MIIF7TCCA9WgAwIBAgIQP4vItfyfspZDtWnWbELhRDANBgkqhkiG9w0BAQsFADCB
 iDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1Jl
 
-openssl x509   -in MicRooCerAut2011_2011_03_22.crt | head -3
+$ openssl x509   -in MicRooCerAut2011_2011_03_22.crt | head -3
 -----BEGIN CERTIFICATE-----
 MIIF7TCCA9WgAwIBAgIQP4vItfyfspZDtWnWbELhRDANBgkqhkiG9w0BAQsFADCB
 iDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1Jl
@@ -131,6 +135,28 @@ Certificate:
         Serial Number:
             3f:8b:c8:b5:fc:9f:b2:96:43:b5:69:d6:6c:42:e1:44
 
+# -- 証明書変換前
+$ curl "https://msedge.api.cdp.microsoft.com"
+curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+
+# -- 証明書変換前ファイル指定
+$ curl --cacert MicRooCerAut2011_2011_03_22.crt  "https://msedge.api.cdp.microsoft.com"
+curl: (77) error setting certificate file: MicRooCerAut2011_2011_03_22.crt
+# -- 証明書変換後ファイル指定
+$ curl --cacert MicRoo2011_03_22.crt  "https://msedge.api.cdp.microsoft.com"
+
+$ curl -v --cacert MicRoo2011_03_22.crt  "https://msedge.api.cdp.microsoft.com"
+# -- 略
+< HTTP/2 404 
+< date: Thu, 17 Oct 2024 09:06:57 GMT
+< content-length: 0
+< 
+* Connection #0 to host msedge.api.cdp.microsoft.com left intact
 ```
 
 
