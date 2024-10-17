@@ -1,6 +1,10 @@
 FROM ubuntu:24.10
 
 RUN apt update && apt install -y \
+    curl \
+    iproute2 \
+    less \
+    net-tools \
     openssh-client \
     squidclient \
     squid-openssl \
