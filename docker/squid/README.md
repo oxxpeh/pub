@@ -99,7 +99,9 @@ update-ca-certificates
 「DENIED」の近くで「msedge.api.cdp.microsoft.com」と「v10.events.data.microsoft.com」にアクセスしてた  
 このサーバの証明書の認証局情報から「http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt」が必要で  
 アクセスするけど認められてないってことかな…
-ログで送信元のクライアントipがない
+ログで送信元のクライアントipがない  
+そういえば「update-ca-certificates」時に`warning: skipping XXX.crt,it does not contain exactly one certificate or CRL`  
+って出てた…
 
 ```
 1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
