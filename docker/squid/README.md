@@ -75,27 +75,73 @@ Windowsの証明書では一部でOSなどに同梱(？)してるものをして
 ```
 # squidコンテナ動作のホストで実施
 curl -O http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt
-docker cp MicRooCerAut2011_2011_03_22.crt sq-b:/tmp
+curl -O http://www.microsoft.com/pkiops/certs/Microsoft%20ECC%20Product%20Root%20Certificate%20Authority%202018.crt
+docker cp MicRooCerAut2011_2011_03_22.crt sq-b:/
+docker cp Microsoft%20ECC%20Product%20Root%20Certificate%20Authority%202018.crt sq-b:/
 # squid動作のコンテナで実施
 mkdir /usr/share/ca-certificates/MS
-cp /tmp/MicRooCerAut2011_2011_03_22.crt /usr/share/ca-certificates/MS
-echo "MS/MicRooCerAut2011_2011_03_22.crt" >> /etc/ca-certificates.conf
+openssl x509  -in Microsoft%20ECC%20Product%20Root%20Certificate%20Authority%202018.crt > Microsoft202018.crt
+openssl x509  -in MicRooCerAut2011_2011_03_22.crt > MicRoo2011_03_22.crt
+mv MicRoo2011_03_22.crt /usr/share/ca-certificates/MS
+mv Microsoft202018.crt /usr/share/ca-certificates/MS
+echo "MS/MicRoo2011_03_22.crt" >> /etc/ca-certificates.conf
+echo "MS/Microsoft202018.crt" >> /etc/ca-certificates.conf
+
+# バイナリファイルなのでコメント
+# cp /tmp/MicRooCerAut2011_2011_03_22.crt /usr/share/ca-certificates/MS
+# echo "MS/MicRooCerAut2011_2011_03_22.crt" >> /etc/ca-certificates.conf
 update-ca-certificates
 ```
-updateできるようになったけど以下のログは出てる…  
-(アップデートによってはダメなものがあるようで、そのときはプロキシ無しで…)  
+~~updateできるようになったけど以下のログは出てる…~~  
+~~(アップデートによってはダメなものがあるようで、そのときはプロキシ無しで…)~~  
+「Base 64 encoded X.509 (.CER)」形式に変更後なくなった 
+ログに「TCP_MISS_ABORTED」が出るのが増えたような…
 
 ```
 1727515232.448     23 - TCP_DENIED/403 3632 GET http://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt - HIER_NONE/- text/html
 ```
+「Base 64 encoded X.509 (.CER)」形式の確認
+```
+head -3 MicRoo2011_03_22.crt
+-----BEGIN CERTIFICATE-----
+MIIF7TCCA9WgAwIBAgIQP4vItfyfspZDtWnWbELhRDANBgkqhkiG9w0BAQsFADCB
+iDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1Jl
+
+head -3 MicRooCerAut2011_2011_03_22.crt 
+00ՠ?ȵCil*H0
+01
+  0     UUS10U
+Washington10URedmond10U
+360322221304Z01ration1200U)Microsoft Root Certificate Authority 20110
+               0        UUS10U
+openssl x509   -in  MicRoo2011_03_22.crt | head -3
+-----BEGIN CERTIFICATE-----
+MIIF7TCCA9WgAwIBAgIQP4vItfyfspZDtWnWbELhRDANBgkqhkiG9w0BAQsFADCB
+iDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1Jl
+
+openssl x509   -in MicRooCerAut2011_2011_03_22.crt | head -3
+-----BEGIN CERTIFICATE-----
+MIIF7TCCA9WgAwIBAgIQP4vItfyfspZDtWnWbELhRDANBgkqhkiG9w0BAQsFADCB
+iDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1Jl
+
+openssl x509 -text  -in /tmp/MicRooCerAut2011_2011_03_22.crt | head -5
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            3f:8b:c8:b5:fc:9f:b2:96:43:b5:69:d6:6c:42:e1:44
+
+```
+
+
 キャッシュしてないようで「squid.conf」に以下追加
 ```
 refresh_pattern (\.exe|\.cab)$ 0 20% 1440 override-expire override-lastmod \
 ignore-reload ignore-no-cache ignore-no-store ignore-private
 ```
 設定数値はよくわかっていない…   
-dockerファイルはそのうち修正予定…   
-(curl ip less とかも追加したいな)
+~~dockerファイルはそのうち修正予定…~~   
+~~(curl ip less とかも追加したいな)~~
 
 自動更新はプロキシの設定ではなくて「winhttp」の設定を見るもよう  
 (他でも書かれてましたが winhttpなんて知らんかった)
@@ -111,7 +157,7 @@ rem netsh winhttp reset proxy
 # 履歴
 ## 2024/10/17
 ubuntu24.10 squidは6.10  
-windows update関連の証明書はDockerfileに記載なし
+windows update関連の証明書追加はDockerfileに記載なし
 ## 2024/09/28
 windows update関連追記
 ## 2024/07
