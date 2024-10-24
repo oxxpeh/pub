@@ -55,10 +55,6 @@ declare -A dd_pref=(
 # aa_no_pref=${dd_pref["${1}"]}
 for nn_pr in ${dd_pref[@]} ; do
     for nn in ${ll_no[@]} ; do
-        # echo "@ -- ${nn_pr}"
-        # if [[ ! -f ${nn}.html ]] ; then
-        #     curl --compressed -o ${nn}.html "https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin/shikuchouson.html"
-        # fi
         if [[ ! -f ${nn_pr}/${nn}_${nn_pr}.html ]] ; then
             mkdir -p "${nn_pr}"
             curl --compressed -o ${nn_pr}/${nn}_${nn_pr}.html "https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin${nn}/shikuchouson_${nn_pr}.html"
