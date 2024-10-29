@@ -41,7 +41,7 @@ apt -y -U xrdp/oracular-proposed
 lxqtでfirefoxとthunderbirdのSNAPがインストールに時間がかかったり遅くて    
 aptの「--no-install-recommends」知ったので使ってみたら色々とやられた   
 わたしののようなシロウトは「--no-install-recommends」を使ってはいけない…  
-(aptでSNAP版外せるようにならないでしょうか…)
+(aptでSNAP版外せるようにならないでしょうか…)  
 『「lxqt」、「lubuntu-desktop」、「xbuntu-desktop」、「xfce4」』と  
 『「xrdp」「xrdp/oracular-proposed」』と『「--no-install-recommends」の有無』の組み合わせでいろいろやったけど  
 ・ xrdpの接続ができない  
