@@ -56,7 +56,7 @@ aptの「--no-install-recommends」知ったので使ってみたら色々とや
 ログはちゃんととってない…  
 「/var/log/xrdp.log 」「~/.xsession-errors」とか確認  
 ## その他
-### 「--no-install-recommends」」について  
+### 「--no-install-recommends」について  
 「Recommended(強い推し)」は勝手に入る(昔はちがったのか？)。  
 「Suggested(弱い推し)」は入らない。  
 それぞれ「--no-install-recommends」、「--install-suggests」で逆の動作にできそう  
