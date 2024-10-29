@@ -3,7 +3,7 @@ incusで Ubuntu 24.10 のxrdp作成したらいろいろと苦労したので
 ## まとめ
 1) 「proposed」のxrdpにする
 2) aptの「--no-install-recommends」はやめてみる  
-incusでlaunchするには  
+### incusでlaunchするには  
 ```
 curl -O "https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/rdp.yaml"
 incus profile create rdp
