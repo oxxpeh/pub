@@ -33,8 +33,3 @@ config:
       mode: reboot
       message: Bye Bye
       timeout: 100
-devices:
-  eth0:
-    nictype: bridged
-    parent: br0
-    type: nic
