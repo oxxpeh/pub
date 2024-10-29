@@ -19,9 +19,15 @@ incus network forward create incusbr0 192.168.1.100
 incus network forward port add incusbr0 192.168.1.100 tcp 3389  10.242.162.100 3389
 # -- 「user」の「Password」でchromeの入ったものにrdp接続できる予定 
 ```
-rdpの画面と日本語設定画面60%表示<BR>
+### rdpの画面と日本語設定画面(60%表示)
 <img src="https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/SS.jpg" alt="rdp画面" width="60%" height="60%"><BR> 
-<img src="https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/ss-nihongo.gif" alt="日本語設定画面" width="60%" height="60%"><BR>   
+<img src="https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/ss-nihongo.gif" alt="日本語設定画面" width="60%" height="60%"><BR>  
+「JA」->「日本語 - Mozc」 -> 「あ」 -> 「入力モード」 -> 「ひらがな」  
+以後は「半角/全角」で切替可能と思う  
+### 変な表示(60%表示)  
+ユーザディレクトリインポートしたものは普通に表示されてたので、どこかの設定かと…<BR>
+<img src="https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/ss-hen.jpg" alt="変な表示" width="60%" height="60%"><BR>  
+
 ## 1) 「proposed」のxrdpにする
 「0.9.24-5」が「0.10.1-2」になる  
 <br>(参)<br>xorg - Remote desktop connections from Windows to stopped working after upgrading to Ubuntu 24.10 - Ask Ubuntu<br>https://askubuntu.com/questions/1530296/remote-desktop-connections-from-windows-to-stopped-working-after-upgrading-to-ub<br><br>
