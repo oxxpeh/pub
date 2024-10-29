@@ -113,8 +113,7 @@ cloud-initでは以下の記載になる
 # cat /etc/apt/apt.conf.d/94cloud-init-config 
 Apt::Install-Recommends 'false'; 
 ```
-### incusコンテナ作成について
-24.10のイメージ作成。  
+### 24.10のイメージ作成。  
 cloud-initですませたいので「/etc/apt/sources.list.d/ubuntu.sources」を書き換えてます。  
 よくないやり方かもしれない…  
 「ubuntu-release-upgrader-core」aptで入れて  
