@@ -12,6 +12,7 @@ apt install -U -y xrdp/oracular-proposed
 
 # apt install -y $( apt list --upgradable 2> /dev/null| grep "/" | sed -s "s@/.*@@")
 apt autoremove -y
+apt clean
 echo "xfce4-session" > ~user/.xsession
 
 echo "@ -- cl-rdp end"
