@@ -55,6 +55,7 @@ aptの「--no-install-recommends」知ったので使ってみたら色々とや
 `echo "xfce4-session" > ~/.xsession`で接続できた  
 ログはちゃんととってない…  
 「/var/log/xrdp.log 」「~/.xsession-errors」とか確認  
+<span style="color: #38761d;"><br>(参)<br>Debian12のxrdpでroot以外でログインできなくなるのを解消した話<br>https://nyacom.net/?p=846</span><br>
 ## その他
 ### 「--no-install-recommends」について  
 「Recommended(強い推し)」は勝手に入る(昔はちがったのか？)。  
