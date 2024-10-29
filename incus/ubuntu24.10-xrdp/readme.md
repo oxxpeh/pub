@@ -19,7 +19,7 @@ incus network forward create incusbr0 192.168.1.100
 incus network forward port add incusbr0 192.168.1.100 tcp 3389  10.242.162.100 3389
 # -- 「user」の「Password」でchromeの入ったものにrdp接続できる予定 
 ```
-rdpの画面と日本語設定画面(gif)60%表示<BR>
+rdpの画面と日本語設定画面60%表示<BR>
 <img src="https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/SS.jpg" alt="rdp画面" width="60%" height="60%"><BR> 
 <img src="https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/ss-nihongo.gif" alt="日本語設定画面" width="60%" height="60%"><BR>   
 ## 1) 「proposed」のxrdpにする
