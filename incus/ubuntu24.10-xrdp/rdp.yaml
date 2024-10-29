@@ -1,0 +1,40 @@
+config:
+  cloud-init.user-data: |
+    #cloud-config
+    package_update: true
+    packages:
+      - cifs-utils
+      - curl
+      - fonts-noto-cjk-extra
+      - ibus-mozc
+      - language-pack-ja
+      - mozc-utils-gui
+      - openssh-server
+      - xubuntu-desktop-minimal
+    users:
+      - default
+      - name: user
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
+        uid: 1001
+    chpasswd:
+      expire: false
+      users:
+        - {name: user, password: Password, type: text}
+    ssh_pwauth: true
+    timezone: Asia/Tokyo
+    locale: ja_JP.utf8
+    runcmd:
+      - [adduser, user, video]
+      - [curl, -O, -O, https://raw.githubusercontent.com/oxxpeh/pub/main/incus/ubuntu24.10-xrdp/cl-rdp.sh]
+      - [bash, cl-rdp.sh]
+    power_state:
+      delay: 2
+      mode: reboot
+      message: Bye Bye
+      timeout: 100
+devices:
+  eth0:
+    nictype: bridged
+    parent: br0
+    type: nic
