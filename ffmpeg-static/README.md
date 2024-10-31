@@ -212,6 +212,12 @@ movenc.cの変更は
 の「.p.name="mp4"」の位置が7.01から変わってたので  
 「.p.name="mp4"」直下の「.p.video_codec」の行を確認してパッチファイルの行番号を修正するスクリプト「pat.sh」を実行  
 (Dockerfileで作成)  
+aptでのver  
+ffmpeg/oracular,now 7:7.0.2-3ubuntu1  
+libaribb24-dev/oracular,now 1.0.3-2.1build2  
+libx264-dev/oracular,now 2:0.164.3108+git31e19f9-2build1  
+libx265-dev/oracular,now 3.6-3  
+libfdk-aac-dev/oracular,now 2.0.2-3  
 
 ### 2024/08/11
 ・7.0.2で確認<BR>
