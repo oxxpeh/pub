@@ -1,6 +1,7 @@
 !pip install tabula-py
 import numpy as ii_np
 import pandas as ii_pd
+import pathlib as ii_pt
 import pickle as ii_pc
 import plotly as ii_pl
 import plotly.graph_objects as ii_go
@@ -29,6 +30,22 @@ def ff_grp_n(aas_ff):
         return(ll_nm[0].replace(' ',''))
     else:
         return(ll_nm[1].replace(' ',''))
+
+
+def ff_grp_k(aas_pf):
+  df_ks_2022 = df_ks[(df_ks.t == 'A1102_日本人人口') & \
+   (df_ks.y == '2022年度')].sort_values(by='v').copy()
+  df_ks_2022 = df_ks_2022.reset_index(drop=True)
+  df_zzk_2023 = df_zzk[(df_zzk['行名称'] == '（歳入合計）') &\
+                        (df_zzk['決算年度'] == 2023)].sort_values(by='001:決算額').copy()
+  df_zzk_2023 = df_zzk_2023.reset_index(drop=True)
+  aai_ks = df_ks_2022[df_ks_2022.k == aas_pf].index[0]
+  aai_zk = df_zzk_2023[df_zzk_2023.団体名	== aas_pf].index[0]
+  df_grp_ks = df_ks_2022.loc[aai_ks -2 : aai_ks + 2]
+  df_grp_zzk = df_zzk_2023.loc[aai_zk -2 : aai_zk + 2]
+  print(df_grp_ks)
+  print()
+  print(df_grp_zzk)
 
 
 def ff_grp_sth(aas_skn):
@@ -87,6 +104,8 @@ def ff_grp_pr_k(aas_ff='東京都') :
     for aa_r in ['a', 'j', 'm', 'w', 'y', 'o', 'b', 's']:
         df_o_ff[aa_r +'p'] = df_o_ff[aa_r] / df_o_ff[aa_r].shift() -1
     return(df_o_ff)
+
+
 def ff_grp_pr_z(aas='東京都') :
     """
     df_zzk = zei一覧
@@ -128,6 +147,7 @@ def ff_grp_pr_z(aas='東京都') :
     df_o_ff = df_o_ff.assign(a_p = df_o_ff['a'] / df_o_ff['a_o'] * 100 -100)
     ##print(df_o_ff)
     return(df_o_ff)
+
 
 def ff_mk_grj3(ll_df_ff, ll_nm_ff, aas_fn_ff):
     """
@@ -214,7 +234,7 @@ def ff_mk_grz3(ll_df, ll_nm, aas_fn_out):
     return (oo_fig)
 
 
-def ff_mk_tb_pl2(df_ff, aas_out_ff, ll_hd_ff, ll_fmt_ff) :
+def ff_mk_tb_pl2(df_ff, aas_out_ff, ll_hd_ff, ll_fmt_ff, ll_w=[]) :
     """
     表作成
     out) html file
@@ -224,6 +244,7 @@ def ff_mk_tb_pl2(df_ff, aas_out_ff, ll_hd_ff, ll_fmt_ff) :
         ll_hd_ff = list(df_ff.columns)
     oo_fig_ff = ii_go.Figure()
     oo_fig_ff.add_trace(ii_go.Table(\
+        columnwidth = ll_w,
         header = dict(values=ll_hd_ff),
         cells = dict(values=[df_ff.iloc[:,num] for num in range(len(df_ff.columns))],
                      format=ll_fmt_ff)
@@ -233,26 +254,12 @@ def ff_mk_tb_pl2(df_ff, aas_out_ff, ll_hd_ff, ll_fmt_ff) :
     return(oo_fig_ff)
 
 
-def ff_rc(fn_ff):
-    """
-    """
-    with open(fn_ff, 'rb') as fh_rd:
-        oo_cl_ff = ii_pc.loads(fh_rd.read())
-    return(oo_cl_ff)
-
-
-def ff_wc(fn_ff, oo_ff):
-    """
-    """
-    with open(fn_ff, 'wb') as fh_wr:
-        fh_wr.write(ii_pc.dumps(oo_ff))
-
-# -- 
-!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_skk.pck"
-!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_sth.pck"
-df_skk = ff_rc('df_skk.pck')
-df_sth = ff_rc('df_sth.pck')
-!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_zzk.pck"
-!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_ks.pck"
-df_zzk = ff_rc('df_zzk.pck')
-df_ks = ff_rc('df_ks.pck')
+# --
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_skk.csv"
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_sth.csv"
+df_skk = ii_pd.read_csv('df_skk.csv', index_col=0)
+df_sth = ii_pd.read_csv('df_sth.csv', index_col=0)
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_zzk.csv"
+!curl --compressed -O -L "https://github.com/oxxpeh/pub/raw/main/suji/df_ks.csv"
+df_zzk = ii_pd.read_csv('df_zzk.csv', index_col=0)
+df_ks = ii_pd.read_csv('df_ks.csv', index_col=0)
