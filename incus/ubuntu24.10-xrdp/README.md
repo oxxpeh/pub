@@ -1,7 +1,7 @@
 # Ubuntu 24.10 とxrdp
-incusで Ubuntu 24.10 のxrdp作成したらいろいろと苦労したので
+incusで Ubuntu 24.10 のxrdp作成したらいろいろと苦労したので  
 ## まとめ
-1) 「proposed」のxrdpにする
+1) 「proposed」のxrdpにする  
 2) aptの「--no-install-recommends」はやめてみる  
 ### incusでlaunchするには  
 ```
