@@ -1,9 +1,3 @@
----
-layout: default
-title: Ubuntu 24.10 とxrdp
-description: incusで Ubuntu 24.10 のxrdp作成したらいろいろと苦労したので
-lang: ja_JP
----
 # Ubuntu 24.10 とxrdp
 incusで Ubuntu 24.10 のxrdp作成したらいろいろと苦労したので  
 ## まとめ
