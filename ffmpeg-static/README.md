@@ -4,7 +4,7 @@ native(linux)は作れなかったのでちょっとがんばった<BR>
 ubuntu24.10で確認<BR>
 ffmpegは「n7.1」<BR>
 (Dokcerファイルでgit時指定)<BR>
-「x265」 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
+「svtav1」「x265」 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
 (スクリプトmk-ffm.shでconfigure時に指定)
 
 dockerはほとんど使ったことがない…<BR>
@@ -25,7 +25,11 @@ docker build -t ffm-b-img .
 # -- 「docker.io」だけではなく「docker-buildx」もaptでinstallしておく
 docker run -it  --name ffm-b --hostname ffm-b --mount "type=bind,src=/tmp/,dst=/host-tmp" ffm-b-img bash
 # -- ホスト側のマウント場所とか変更したい場合は修正を
-./mk-ffm.sh
+/mk-lib.sh
+# -- 「./mk-lib.sh 6」 とかでmake 時の job数の指定が可能と思う
+# -- 「./mk-lib.sh」だと無制限でjob作成
+# --
+/mk-ffm.sh
 # -- configureとmakeします
 # -- 「./mk-ffm.sh 6」 とかでmake 時の job数の指定が可能と思う
 # -- 「./mk-ffm.sh」だと無制限でjob作成
@@ -51,7 +55,9 @@ cp /FFmpeg/ffmpeg /host-tmp/
     --enable-version3 \
     --enable-gpl \
     --enable-libaribb24 \
+    --enable-libdav1d \    
     --enable-libfdk-aac \
+    --enable-libsvtav1 \
     --enable-libx264 \
     --enable-libx265 \
     --disable-encoder=aac
@@ -76,11 +82,15 @@ apt install -y
    git\
    gperf\
    g++\
-   libfdk-aac-dev\
-   libx264-dev\
-   libx265-dev\
    libaribb24-dev\
    libpng-dev\
+   libfdk-aac-dev\
+   libnuma-dev \
+   libsvtav1-dev \
+   libsvtav1dec-dev \
+   libsvtav1enc-dev \
+   libx264-dev\
+   libx265-dev\
    libtool\
    make\
    meson\
@@ -178,6 +188,10 @@ gcc -D_ISOC11_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_POSIX_C_SOURC
 gcc -lz -Wl,--as-needed -Wl,-z,noexecstack -I/usr/local/include -L/usr/local/lib -o test -o -laribb24 -lm -static
 #-- 最後のオプションをいろいろ試した
 ```
+#### libsvtav1
+aptで「dev」入れると、「libdav1d.a 」と「libSvtAv1Enc.a」が無い。
+「.so」はあるのでスタティックのときにダメになるもよう
+それぞれ「git clone」して「make」してできたもののコピー
 
 ### ソースから作成
 #### x265
@@ -196,6 +210,13 @@ autoreconf -iv
 make -j && make install
 ```
 ## 履歴
+### 2024/11/20
+svtav1は早い気がするので「svtav1」追加  
+svtav1は「-crf 40」ぐらいが良いような  
+(デフォルトは35) 
+movenc.cの変更も修正(hevc->av1)  
+40M超えてる…「hevc」とか消しても良いかも  
+
 ### 2024/10/16
 ・7.1で確認  
 movenc.cの変更は
