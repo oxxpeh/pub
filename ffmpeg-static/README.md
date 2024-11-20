@@ -189,25 +189,45 @@ gcc -lz -Wl,--as-needed -Wl,-z,noexecstack -I/usr/local/include -L/usr/local/lib
 #-- 最後のオプションをいろいろ試した
 ```
 #### libsvtav1
-aptで「dev」入れると、「libdav1d.a 」と「libSvtAv1Enc.a」が無い。
-「.so」はあるのでスタティックのときにダメになるもよう
-それぞれ「git clone」して「make」してできたもののコピー
+aptで「dev」入れると、「libdav1d.a 」と「libSvtAv1Enc.a」が無い。  
+「.so」はあるのでスタティックのときにダメになるもよう  
+それぞれ「git clone」して「make」などしてできたもののコピー
 
 ### ソースから作成
 #### x265
 ```
-git clone https://bitbucket.org/multicoreware/x265_git.git
+git clone --depth 1 https://bitbucket.org/multicoreware/x265_git.git
 cd x265_git/build/linux
 ./make-Makefiles.bash
 make -j && make install
 ```
 #### aribb24
 ```
-git clone https://code.videolan.org/jeeb/aribb24.git
+git clone --depth 1 https://code.videolan.org/jeeb/aribb24.git
 cd aribb24
 autoreconf -iv 
 ./configure
 make -j && make install
+```
+### dav1d
+```
+git clone --depth 1 https://code.videolan.org/videolan/dav1d.git
+cd dav1d/
+mkdir build && cd build
+meson setup ..  --default-library=static
+ninja
+cp src/libdav1d.a /usr/lib/x86_64-linux-gnu/
+```
+### SVT-AV1
+```
+git clone --depth 1 https://gitlab.com/AOMediaCodec/SVT-AV1.git
+cd SVT-AV1/
+mkdir build
+cd build/
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ..
+make -j 
+cp ../Bin/Release/libSvtAv1Enc.a /usr/lib/x86_64-linux-gnu/
+
 ```
 ## 履歴
 ### 2024/11/20
@@ -216,6 +236,15 @@ svtav1は「-crf 40」ぐらいが良いような
 (デフォルトは35) 
 movenc.cの変更も修正(hevc->av1)  
 40M超えてる…「hevc」とか消しても良いかも  
+```
+$ diff movenc.c.org movenc.c
+<     .p.video_codec     = CONFIG_LIBX264_ENCODER ?
+<                          AV_CODEC_ID_H264 : AV_CODEC_ID_MPEG4,
+---
+>     .p.video_codec     = AV_CODEC_ID_AV1,
+```
+[Dockerfile](https://raw.githubusercontent.com/oxxpeh/pub/3cab2e596dffcaf2383b5e06b2b73ae4725d665d/ffmpeg-static/Dockerfile)
+SHA:3cab2e596dffcaf2383b5e06b2b73ae4725d665d  
 
 ### 2024/10/16
 ・7.1で確認  
@@ -239,6 +268,8 @@ libaribb24-dev/oracular,now 1.0.3-2.1build2
 libx264-dev/oracular,now 2:0.164.3108+git31e19f9-2build1  
 libx265-dev/oracular,now 3.6-3  
 libfdk-aac-dev/oracular,now 2.0.2-3  
+[Dockerfile](https://raw.githubusercontent.com/oxxpeh/pub/38d458c31e392ad4f690eb67e5e61ad780a8b0d9/ffmpeg-static/Dockerfile)
+SHA:38d458c31e392ad4f690eb67e5e61ad780a8b0d9  
 
 ### 2024/08/11
 ・7.0.2で確認<BR>
