@@ -1,12 +1,13 @@
 # コーデックで比較
 2分のm2tsの動画の変換
+(cpu: 13th Gen Intel(R) Core(TM) i5-1340P)
 ## 比較
 ### h.264
   size= 31681KiB speed=4.62x  
   vmaf 59.93
 ### h.265 hevc
-  vmaf 55.49  
   size= 10604KiB speed=1.95x 
+  vmaf 55.49    
 ### SVT-AV1
 ・av1(def -preset 10 crf 35)  
   size= 13180KiB speed=7.89x  
