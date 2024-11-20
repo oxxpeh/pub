@@ -1,9 +1,12 @@
 # ffmpegをスタティックなライブラリで作るDockerファイル
-Windows版は「ffmpeg-windows-build-helpers」でさくっと作れたけど<BR>
-native(linux)は作れなかったのでちょっとがんばった<BR>
+~Windows版は「ffmpeg-windows-build-helpers」でさくっと作れたけど<BR>~
+https://www.gyan.dev/ffmpeg/builds/  か  
+https://github.com/BtbN/FFmpeg-Builds/releases  から落とすのが良いかと  
+linuxの配布版は「arribb24」が入ってなさそうなので  
+~native(linux)は作れなかったので~ちょっとがんばった<BR>
 ubuntu24.10で確認<BR>
 ffmpegは「n7.1」<BR>
-(Dokcerファイルでgit時指定)<BR>
+(Dokcerファイルで取得時に指定)<BR>
 「svtav1」「x265」 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
 (スクリプトmk-ffm.shでconfigure時に指定)
 
