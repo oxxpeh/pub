@@ -51,7 +51,7 @@
 ・h264_qsv  
  size=   21243KiB  speed=4.82x  
  VMAF score: 56.24  
-## Snapdragon® 695 5G Mobile Platform 2.2GHz + 1.8GHz オクタコア (6.1.2)
+## Snapdragon® 695 5G Mobile Platform 2.2GHz + 1.8GHz オクタコア (Android 6.1.2)
 ・SVT-AV1 crf 40  
  size=   10258kB speed=1.26x  
 ・h264   
