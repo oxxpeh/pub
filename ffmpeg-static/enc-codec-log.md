@@ -17,7 +17,6 @@ lags=--static --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb2
   libswscale      8.  3.100 /  8.  3.100
   libswresample   5.  3.100 /  5.  3.100
   libpostproc    58.  3.100 / 58.  3.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -86,7 +85,6 @@ ocketsphinx --enable-librsvg --enable-libjxl --enable-shared
   libswscale      8.  1.100 /  8.  1.100
   libswresample   5.  1.100 /  5.  1.100
   libpostproc    58.  1.100 / 58.  1.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -159,7 +157,6 @@ box/cross_compilers/mingw-w64-x86_64/x86_64-w64-mingw32 --enable-nonfree --enabl
   libswscale      8.  1.100 /  8.  1.100
   libswresample   5.  1.100 /  5.  1.100
   libpostproc    58.  1.100 / 58.  1.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -231,7 +228,6 @@ ib=x86_64-w64-mingw32-gcc-ranlib --nm=x86_64-w64-mingw32-gcc-nm --extra-version=
   libswscale      8.  6.100 /  8.  6.100
   libswresample   5.  4.100 /  5.  4.100
   libpostproc    58.  4.100 / 58.  4.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -312,7 +308,6 @@ x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw3
   libswscale      8.  6.100 /  8.  6.100
   libswresample   5.  4.100 /  5.  4.100
   libpostproc    58.  4.100 / 58.  4.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -378,7 +373,6 @@ x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw3
   libswscale      8.  6.100 /  8.  6.100
   libswresample   5.  4.100 /  5.  4.100
   libpostproc    58.  4.100 / 58.  4.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -532,7 +526,6 @@ x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw3
   libswscale      8.  6.100 /  8.  6.100
   libswresample   5.  4.100 /  5.  4.100
   libpostproc    58.  4.100 / 58.  4.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'test-nv5.mp4':
   Metadata:
     major_brand     : isom
@@ -612,7 +605,6 @@ nx --enable-librsvg --enable-libjxl --enable-shared
   libswscale      8.  1.100 /  8.  1.100
   libswresample   5.  1.100 /  5.  1.100
   libpostproc    58.  1.100 / 58.  1.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -668,7 +660,6 @@ nx --enable-librsvg --enable-libjxl --enable-shared
   libswscale      8.  1.100 /  8.  1.100
   libswresample   5.  1.100 /  5.  1.100
   libpostproc    58.  1.100 / 58.  1.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mpegts, from '../test.m2ts':
   Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
   Program 1
@@ -1015,7 +1006,6 @@ x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw3
   libswscale      8.  6.100 /  8.  6.100
   libswresample   5.  4.100 /  5.  4.100
   libpostproc    58.  4.100 / 58.  4.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'dtest-q5.mp4':
   Metadata:
     major_brand     : isom
@@ -1104,7 +1094,6 @@ x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw3
   libswscale      8.  6.100 /  8.  6.100
   libswresample   5.  4.100 /  5.  4.100
   libpostproc    58.  4.100 / 58.  4.100
-ffmpeg stats and -progress period set to 3600.
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'dtest-q4.mp4':
   Metadata:
     major_brand     : isom
@@ -1160,7 +1149,399 @@ Output #0, null, to 'pipe:':
  headers:0KiB muxing overhead: unknown
 frame= 3600 fps= 15 q=-0.0 Lsize=N/A time=00:02:00.00 bitrate=N/A speed=0.51x
 ```
-
-
-
-
+## Snapdragon® 695 5G Mobile Platform 2.2GHz + 1.8GHz オクタコア(xperia10m4)
+### 6.1.2 SVT-AV1
+```
+$ffmpeg -loglevel info  -y -i test.m2ts -c:v libsvtav1 -crf 40 testx.mp4
+ffmpeg version 6.1.2 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-proje
+ct d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=
+llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r27c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aar
+ch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --e
+nable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --en
+able-libfreetype --enable-libfribidi --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --en
+able-libopenmpt --enable-libopus --enable-librav1e --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4
+l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --
+enable-libxml2 --enable-libxvid --enable-libzimg --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-o
+s=android --extra-libs=-landroid-glob --disable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mpegts, from 'test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video (Main) ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 t
+br, 90k tbn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac (LC) ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> av1 (libsvtav1))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:       SVT-AV1 Encoder Lib v2.3.0
+Svt[info]: SVT [build]  :       Android (12285214, +pgo, +bolt, +lto, +mlgo, based on r522817b) Clang 18.0.2 (https://android.googlesource.com/toolchain
+/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)  64 bit
+Svt[info]: LIB Build date: Oct 30 2024 00:31:44
+Svt[info]: -------------------------------------------
+Svt[info]: Level of Parallelism: 4
+Svt[info]: Number of PPCS 59
+Svt[info]: [asm level on system : up to neon_dotprod]
+Svt[info]: [asm level selected : up to neon_dotprod]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile   tier (auto)     level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator               : 1440 / 1080 / 30000 / 1001
+Svt[info]: SVT [config]: bit-depth / color format                                       : 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct                                    : 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type                      : 161 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor                                         : CRF / 40
+Svt[info]: SVT [config]: AQ mode / variance boost                                       : 2 / 0
+Svt[info]: -------------------------------------------
+Output #0, mp4, to 'testx.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: av1 (av01 / 0x31307661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libsvtav1
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[out#0/mp4 @ 0xb4000072404260b0] video:8238kB audio:1920kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.973102%
+frame= 3600 fps= 38 q=40.0 Lsize=   10258kB time=00:02:00.08 bitrate= 699.7kbits/s dup=7 drop=0 speed=1.26x
+[aac @ 0xb4000073d0426c70] Qavg: 1420.264
+```
+### 6.1.2 libx264
+```
+$ffmpeg -loglevel info  -y -i test.m2ts -c:v libx264 test4.mp4
+ffmpeg version 6.1.2 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-proje
+ct d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=
+llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r27c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aar
+ch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --e
+nable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --en
+able-libfreetype --enable-libfribidi --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --en
+able-libopenmpt --enable-libopus --enable-librav1e --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4
+l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --
+enable-libxml2 --enable-libxvid --enable-libzimg --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-o
+s=android --extra-libs=-landroid-glob --disable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mpegts, from 'test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video (Main) ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 t
+br, 90k tbn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac (LC) ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0xb4000077c74403d0] using SAR=4/3
+[libx264 @ 0xb4000077c74403d0] using cpu capabilities: ARMv8 NEON
+[libx264 @ 0xb4000077c74403d0] profile High, level 4.0, 4:2:0, 8-bit
+[libx264 @ 0xb4000077c74403d0] 264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3
+ deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_
+pskip=1 chroma_qp_offset=-2 threads=12 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b
+_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree
+=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'test4.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[out#0/mp4 @ 0xb4000077b744ae10] video:29766kB audio:1920kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.403265%
+frame= 3600 fps= 26 q=-1.0 Lsize=   31814kB time=00:02:00.01 bitrate=2171.5kbits/s dup=7 drop=0 speed=0.863x
+[libx264 @ 0xb4000077c74403d0] frame I:55    Avg QP:18.34  size: 67692
+[libx264 @ 0xb4000077c74403d0] frame P:1069  Avg QP:21.09  size: 15653
+[libx264 @ 0xb4000077c74403d0] frame B:2476  Avg QP:22.68  size:  4048
+[libx264 @ 0xb4000077c74403d0] consecutive B-frames:  3.4%  5.9% 25.8% 64.8%
+[libx264 @ 0xb4000077c74403d0] mb I  I16..4: 22.5% 69.9%  7.6%
+[libx264 @ 0xb4000077c74403d0] mb P  I16..4:  5.1% 10.4%  1.2%  P16..4: 29.6%  4.6%  4.1%  0.0%  0.0%    skip:45.0%
+[libx264 @ 0xb4000077c74403d0] mb B  I16..4:  0.6%  0.8%  0.1%  B16..8: 22.5%  1.0%  0.1%  direct: 2.9%  skip:72.0%  L0:45.8% L1:52.7% BI: 1.5%
+[libx264 @ 0xb4000077c74403d0] 8x8 transform intra:62.7% inter:89.3%
+[libx264 @ 0xb4000077c74403d0] coded y,uvDC,uvAC intra: 34.0% 44.8% 13.0% inter: 5.4% 11.2% 0.6%
+[libx264 @ 0xb4000077c74403d0] i16 v,h,dc,p: 27% 45%  8% 20%
+[libx264 @ 0xb4000077c74403d0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 15% 44%  3%  2%  3%  2%  3%  2%
+[libx264 @ 0xb4000077c74403d0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 64% 10%  2%  2%  3%  2%  2%  1%
+[libx264 @ 0xb4000077c74403d0] i8c dc,h,v,p: 55% 22% 19%  3%
+[libx264 @ 0xb4000077c74403d0] Weighted P-Frames: Y:4.9% UV:3.9%
+[libx264 @ 0xb4000077c74403d0] ref P L0: 58.6%  6.0% 26.5%  8.7%  0.3%
+[libx264 @ 0xb4000077c74403d0] ref B L0: 75.9% 18.9%  5.2%
+[libx264 @ 0xb4000077c74403d0] ref B L1: 93.4%  6.6%
+[libx264 @ 0xb4000077c74403d0] kb/s:2029.98
+[aac @ 0xb4000077c743e9f0] Qavg: 1420.264
+```
+### 6.1.2 h264_mediacodec
+```
+$ffmpeg -loglevel info  -y -i test.m2ts -c:v h264_mediacodec test-mc4.mp4
+ffmpeg version 6.1.2 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-proje
+ct d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=
+llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r27c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aar
+ch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --e
+nable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --en
+able-libfreetype --enable-libfribidi --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --en
+able-libopenmpt --enable-libopus --enable-librav1e --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4
+l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --
+enable-libxml2 --enable-libxvid --enable-libzimg --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-o
+s=android --extra-libs=-landroid-glob --disable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mpegts, from 'test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video (Main) ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 t
+br, 90k tbn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac (LC) ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> h264 (h264_mediacodec))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[h264_mediacodec @ 0xb400007994ce2820] Use 1 as the default MediaFormat i-frame-interval, please set gop_size properly (>= fps)
+[h264_mediacodec @ 0xb400007994ce2820] Mediacodec encoder doesn't support AV_CODEC_FLAG_GLOBAL_HEADER. Use extract_extradata bsf when necessary.
+Output #0, mp4, to 'test-mc4.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 200 kb/s, 29.97 fps
+, 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 h264_mediacodec
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[mp4 @ 0xb400007824ceb410] Timestamps are unset in a packet for stream 0. This is deprecated and will stop working in the future. Fix your code to set t
+he timestamps properly
+[mp4 @ 0xb400007824ceb410] Encoder did not produce proper pts, making some up.
+[out#0/mp4 @ 0xb400007924ce9c10] video:52508kB audio:1920kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.188810%
+frame= 4393 fps= 39 q=-0.0 Lsize=   54531kB time=00:02:00.08 bitrate=3720.0kbits/s dup=7 drop=0 speed=1.08x
+[aac @ 0xb400007994ce5be0] Qavg: 1420.264
+```
+### 6.1.2 av1_mediacodec
+エラー出ないけど壊れてるみたい たぶんhw対応してないのでしょう(未確認)  
+```
+$ffmpeg -loglevel info  -y -i test.m2ts -c:v av1_mediacodec test-mca.mp4
+ffmpeg version 6.1.2 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Android (12470979, +pgo, +bolt, +lto, +mlgo, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-proje
+ct d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=
+llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r27c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aar
+ch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --e
+nable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --en
+able-libfreetype --enable-libfribidi --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --en
+able-libopenmpt --enable-libopus --enable-librav1e --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4
+l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --
+enable-libxml2 --enable-libxvid --enable-libzimg --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-o
+s=android --extra-libs=-landroid-glob --disable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mpegts, from 'test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video (Main) ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 t
+br, 90k tbn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac (LC) ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> av1 (av1_mediacodec))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+[av1_mediacodec @ 0xb4000075646628b0] Use 1 as the default MediaFormat i-frame-interval, please set gop_size properly (>= fps)
+[av1_mediacodec @ 0xb4000075646628b0] Mediacodec encoder doesn't support AV_CODEC_FLAG_GLOBAL_HEADER. Use extract_extradata bsf when necessary.
+Output #0, mp4, to 'test-mca.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: av1 (av01 / 0x31307661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 200 kb/s, 29.97 fps,
+ 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 av1_mediacodec
+  Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[out#0/mp4 @ 0xb4000075b466dbd0] video:8776kB audio:1920kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.754641%
+frame= 3600 fps= 27 q=-0.0 Lsize=   10777kB time=00:02:00.08 bitrate= 735.2kbits/s dup=7 drop=0 speed=0.915x
+[aac @ 0xb400007564667ef0] Qavg: 1420.264
+```
+### vmaf h264_mediacodec
+```
+$ ffmpeg-7.1.exe -loglevel info -i test-mc4.mp4 -i ../test.m2ts -lavfi lib
+vmaf='model=version=vmaf_v0.6.1' -f null -
+ffmpeg version N-117568-g31b5b3badc-20241016 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (crosstool-NG 1.26.0.120_4d36f27)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cros
+s-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disa
+ble-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libfreetype -
+-enable-libfribidi --enable-gmp --enable-libxml2 --enable-lzma --enable-fontconfig --enable-libharfb
+uzz --enable-libvorbis --enable-opencl --disable-libpulse --enable-libvmaf --disable-libxcb --disabl
+e-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --ena
+ble-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-
+ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcap
+tion --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enabl
+e-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enab
+le-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enabl
+e-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --en
+able-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame
+--enable-libuavs3d --disable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libs
+haderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --e
+nable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags=
+ --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=
+x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x8
+6_64-w64-mingw32-gcc-nm --extra-version=20241016
+  libavutil      59. 44.100 / 59. 44.100
+  libavcodec     61. 22.100 / 61. 22.100
+  libavformat    61.  9.100 / 61.  9.100
+  libavdevice    61.  4.100 / 61.  4.100
+  libavfilter    10.  6.100 / 10.  6.100
+  libswscale      8.  6.100 /  8.  6.100
+  libswresample   5.  4.100 /  5.  4.100
+  libpostproc    58.  4.100 / 58.  4.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'test-mc4.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+  Duration: 00:02:00.12, start: 0.000000, bitrate: 3718 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 14
+40x1080, 3580 kb/s, SAR 4:3 DAR 16:9, 29.97 fps, 29.97 tbr, 30k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc60.31.102 h264_mediacodec
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 131 kb/s (defa
+ult)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Input #1, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #1:0[0x1011]: Video: mpeg2video (Main) ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top firs
+t), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k tbn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #1:1[0x1100]: Audio: aac (LC) ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 (h264) -> libvmaf
+  Stream #1:0 (mpeg2video) -> libvmaf
+  libvmaf:default -> Stream #0:0 (wrapped_avframe)
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.9.100
+  Stream #0:0: Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 1440x1080 [SAR 4:3 DAR 16:9]
+, q=2-31, 200 kb/s, 29.97 fps, 29.97 tbn
+    Metadata:
+      encoder         : Lavc61.22.100 wrapped_avframe
+  Stream #0:1(und): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+    Metadata:
+      encoder         : Lavc61.22.100 pcm_s16le
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+[Parsed_libvmaf_0 @ 000002272db71140] VMAF score: 56.301679
+[out#0/null @ 000002272b669b00] video:1547KiB audio:22500KiB subtitle:0KiB other streams:0KiB global
+ headers:0KiB muxing overhead: unknown
+frame= 3600 fps= 15 q=-0.0 Lsize=N/A time=00:02:00.00 bitrate=N/A speed=0.51x
+```
+### vmaf av1_mediacodec
+```
+$ ffmpeg-7.1.exe -loglevel info -i test-mca.mp4 -i ../test.m2ts -lavfi lib
+vmaf='model=version=vmaf_v0.6.1' -f null -
+ffmpeg version N-117568-g31b5b3badc-20241016 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (crosstool-NG 1.26.0.120_4d36f27)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cros
+s-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disa
+ble-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libfreetype -
+-enable-libfribidi --enable-gmp --enable-libxml2 --enable-lzma --enable-fontconfig --enable-libharfb
+uzz --enable-libvorbis --enable-opencl --disable-libpulse --enable-libvmaf --disable-libxcb --disabl
+e-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --ena
+ble-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-
+ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcap
+tion --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enabl
+e-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enab
+le-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enabl
+e-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --en
+able-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame
+--enable-libuavs3d --disable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libs
+haderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --e
+nable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags=
+ --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=
+x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x8
+6_64-w64-mingw32-gcc-nm --extra-version=20241016
+  libavutil      59. 44.100 / 59. 44.100
+  libavcodec     61. 22.100 / 61. 22.100
+  libavformat    61.  9.100 / 61.  9.100
+  libavdevice    61.  4.100 / 61.  4.100
+  libavfilter    10.  6.100 / 10.  6.100
+  libswscale      8.  6.100 /  8.  6.100
+  libswresample   5.  4.100 /  5.  4.100
+  libpostproc    58.  4.100 / 58.  4.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 000001d53a8b0a40] moov atom not found
+[in#0 @ 000001d53a8bcf00] Error opening input: Invalid data found when processing input
+Error opening input file test-mca.mp4.
+Error opening input files: Invalid data found when processing input
+```
+### lspcu
+```
+$lscpu | grep Model
+Model name:                         Cortex-A55
+Model:                              0
+Model name:                         Cortex-A78
+Model:                              1
+```
