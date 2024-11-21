@@ -589,7 +589,7 @@ Output #0, null, to 'pipe:':
 frame= 3593 fps= 15 q=-0.0 Lsize=N/A time=00:02:00.00 bitrate=N/A speed=0.507x
 ```
 ## Intel(R) Celeron(R) J4005 CPU @ 2.00GHz
-### 7.02 hec_qsv
+### 7.02 hevc_qsv
 ```
 $ ffmpeg -loglevel info  -y -i ../test.m2ts -c:v hevc_qsv  dtest-q5.mp4
 ffmpeg version 7.0.2-3ubuntu1 Copyright (c) 2000-2024 the FFmpeg developers
