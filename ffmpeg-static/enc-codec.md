@@ -51,6 +51,14 @@
 ・h264_qsv  
  size=   21243KiB  speed=4.82x  
  VMAF score: 56.24  
+## Snapdragon® 695 5G Mobile Platform 2.2GHz + 1.8GHz オクタコア (6.1.2)
+・SVT-AV1 crf 40  
+ size=   10258kB speed=1.26x  
+・h264   
+ size=   31814kB speed=0.863x  
+・h264_mediacodec  
+ size=   54531kB speed=1.08x  
+ VMAF score: 56.30
 ## その他
 ### VMAF makeとか
 https://www.gyan.dev/ffmpeg/builds/ から落としたものにVMAFも入っていたと思う  
