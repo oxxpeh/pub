@@ -153,7 +153,7 @@ frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A
 [AVIOContext @ 0x5b38e631d240] Statistics: 148662416 bytes read, 2 seeks
 Conversion failed!
 ```
-「libva-dev」は「libdva.a」が無かった、その他にも「*.a」が無いのがあるのかも  
+「libva-dev」は「libva.a」が無かった、その他にも「*.a」が無いのがあるのかも  
 他で実行できても13thだと以下のエラー  
 ```
 [h264_qsv @ 0x57da2d249800] Use Intel(R) oneVPL to create MFX session, the required implementation version is 1.1
