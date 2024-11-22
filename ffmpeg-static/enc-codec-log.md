@@ -1545,3 +1545,605 @@ Model:                              0
 Model name:                         Cortex-A78
 Model:                              1
 ```
+## i5-7600T CPU @ 2.80GHz
+### h264_qsv (7.1)
+```
+./ffmpeg-204-qs -loglevel info  -i ../test.m2ts -c:v h264_qsv -c:a copy -y  xtestq.mp4
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.2)
+  configuration: --enable-small --disable-doc --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb24 --enable-libdav1d --enable-libfdk-aac --
+enable-libsvtav1 --enable-libvpl --enable-libx264 --enable-libx265 --disable-encoder=aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k t
+bn
+      Side data:
+        cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> h264 (h264_qsv))
+  Stream #0:1 -> #0:1 (copy)
+Press [q] to stop, [?] for help
+[h264_qsv @ 0x55dd81459280] Using the constant quantization parameter (CQP) by default. Please use the global_quality option and other options for a quali
+ty-based mode or the b option and other options for a bitrate-based mode if the default is not the desired choice.
+Output #0, mp4, to 'xtestq.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), nv12(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+      Metadata:
+        encoder         : Lavc61.19.100 h264_qsv
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 255 kb/s
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)
+    Last message repeated 133 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=8.94x
+    Last message repeated 146 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.37x
+    Last message repeated 143 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.43x
+    Last message repeated 140 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.44x
+    Last message repeated 137 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.38x
+    Last message repeated 157 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.57x
+    Last message repeated 153 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.68x
+    Last message repeated 155 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.76x
+    Last message repeated 153 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.82x
+    Last message repeated 127 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed= 9.7x
+    Last message repeated 137 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.65x
+    Last message repeated 133 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.59x
+    Last message repeated 146 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.61x
+    Last message repeated 146 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.62x
+    Last message repeated 151 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.65x
+    Last message repeated 143 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.65x
+    Last message repeated 142 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.65x
+    Last message repeated 134 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.61x
+    Last message repeated 112 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed= 9.5x
+    Last message repeated 114 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed= 9.4x
+    Last message repeated 113 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.31x
+    Last message repeated 109 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.22x
+    Last message repeated 111 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.15x
+    Last message repeated 117 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.09x
+    Last message repeated 112 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=9.03x
+    Last message repeated 113 times
+[h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=8.97x
+    Last message repeated 83 times
+[out#0/mp4 @ 0x55dd8159af40] video:18957KiB audio:3746KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.330731%
+```
+### hevc_qsv (7.1)
+```
+./ffmpeg-204-qs -loglevel verbose  -i ../test.m2ts -c:v hevc_qsv -c:a copy -y  xtestq5.mp4
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.2)
+  configuration: --enable-small --disable-doc --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb24 --enable-libdav1d --enable-libfdk-aac --
+enable-libsvtav1 --enable-libvpl --enable-libx264 --enable-libx265 --disable-encoder=aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mpegts @ 0x55f152943780] max_analyze_duration 5000000 reached at 5013333 microseconds st:1
+Input #0, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video, 1 reference frame ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first, left), 1440x1080 [SAR 4:3 DAR 16:9], 29
+.97 fps, 29.97 tbr, 90k tbn
+      Side data:
+        cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+[out#0/mp4 @ 0x55f152c2df40] No explicit maps, mapping streams automatically...
+[vost#0:0/hevc_qsv @ 0x55f1529ed900] Created video stream from input stream 0:0
+[aost#0:1/copy @ 0x55f152b47780] Created audio stream from input stream 0:1
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> hevc (hevc_qsv))
+  Stream #0:1 -> #0:1 (copy)
+[vost#0:0/hevc_qsv @ 0x55f1529ed900] Starting thread...
+[vf#0:0 @ 0x55f152af7f80] Starting thread...
+[vist#0:0/mpeg2video @ 0x55f1529ed680] [dec:mpeg2video @ 0x55f152992480] Starting thread...
+[in#0/mpegts @ 0x55f152943440] Starting thread...
+Press [q] to stop, [?] for help
+[graph -1 input from stream 0:0 @ 0x7f8bf8002440] w:1440 h:1080 pixfmt:yuv420p tb:1/90000 fr:30000/1001 sar:4/3 csp:bt709 range:tv
+[auto_scale_0 @ 0x7f8bf8002c80] w:iw h:ih flags:'' interl:0
+[format @ 0x7f8bf8003f40] auto-inserting filter 'auto_scale_0' between the filter 'Parsed_null_0' and the filter 'format'
+[auto_scale_0 @ 0x7f8bf8002c80] w:1440 h:1080 fmt:yuv420p csp:bt709 range:tv sar:4/3 -> w:1440 h:1080 fmt:nv12 csp:bt709 range:tv sar:4/3 flags:0x00000004
+[auto_scale_0 @ 0x7f8bf8002c80] [framesync @ 0x7f8bf8005ca8] Selected 1/90000 time base
+[auto_scale_0 @ 0x7f8bf8002c80] [framesync @ 0x7f8bf8005ca8] Sync level 1
+[graph -1 input from stream 0:0 @ 0x7f8bf8002440] video frame properties congruent with link at pts_time: 0.157833
+[hevc_qsv @ 0x55f152aec280] Encoder: input is system memory surface
+[hevc_qsv @ 0x55f152aec280] Use Intel(R) oneVPL to create MFX session, the required implementation version is 1.1
+[AVHWDeviceContext @ 0x7f8bf8076dc0] Trying to use DRM render node for device 0, with matching vendor id (0x8086).
+[AVHWDeviceContext @ 0x7f8bf8076dc0] libva: VA-API version 1.10.0
+[AVHWDeviceContext @ 0x7f8bf8076dc0] libva: User requested driver 'iHD'
+[AVHWDeviceContext @ 0x7f8bf8076dc0] libva: Trying to open /usr/local/lib/dri/iHD_drv_video.so
+[AVHWDeviceContext @ 0x7f8bf8076dc0] libva: Found init function __vaDriverInit_1_10
+[AVHWDeviceContext @ 0x7f8bf8076dc0] libva: va_openDriver() returns 0
+[AVHWDeviceContext @ 0x7f8bf8076dc0] Initialised VAAPI connection: version 1.10
+[AVHWDeviceContext @ 0x7f8bf8076dc0] VAAPI driver: Intel iHD driver for Intel(R) Gen Graphics - 20.4.2 (b1149d40).
+[AVHWDeviceContext @ 0x7f8bf8076dc0] Driver not found in known nonstandard list, using standard behaviour.
+[hevc_qsv @ 0x55f152aec280] Initialized an internal MFX session using hardware accelerated implementation
+[hevc_qsv @ 0x55f152aec280] Using the constant quantization parameter (CQP) by default. Please use the global_quality option and other options for a quali
+ty-based mode or the b option and other options for a bitrate-based mode if the default is not the desired choice.
+[hevc_qsv @ 0x55f152aec280] Using the constant quantization parameter (CQP) ratecontrol method
+[hevc_qsv @ 0x55f152aec280] profile: hevc main; level: 296
+[hevc_qsv @ 0x55f152aec280] GopPicSize: 248; GopRefDist: 8; GopOptFlag:; IdrInterval: 1
+[hevc_qsv @ 0x55f152aec280] TargetUsage: 4; RateControlMethod: CQP
+[hevc_qsv @ 0x55f152aec280] QPI: 20; QPP: 26; QPB: 33
+[hevc_qsv @ 0x55f152aec280] NumSlice: 1; NumRefFrame: 4
+[hevc_qsv @ 0x55f152aec280] RateDistortionOpt: unknown
+[hevc_qsv @ 0x55f152aec280] RecoveryPointSEI: unknown
+[hevc_qsv @ 0x55f152aec280] VDENC: OFF
+[hevc_qsv @ 0x55f152aec280] NalHrdConformance: OFF; VuiNalHrdParameters: OFF
+[hevc_qsv @ 0x55f152aec280] FrameRateExtD: 1001; FrameRateExtN: 30000
+[hevc_qsv @ 0x55f152aec280] IntRefType: 0; IntRefCycleSize: 0; IntRefQPDelta: 0
+[hevc_qsv @ 0x55f152aec280] MaxFrameSize: 0; MaxSliceSize: 0
+[hevc_qsv @ 0x55f152aec280] BitrateLimit: unknown; MBBRC: OFF; ExtBRC: OFF
+[hevc_qsv @ 0x55f152aec280] Trellis: auto
+[hevc_qsv @ 0x55f152aec280] RepeatPPS: OFF; NumMbPerSlice: 0; LookAheadDS: unknown
+[hevc_qsv @ 0x55f152aec280] AdaptiveI: unknown; AdaptiveB: unknown; BRefType:pyramid
+[hevc_qsv @ 0x55f152aec280] MinQPI: 1; MaxQPI: 51; MinQPP: 1; MaxQPP: 51; MinQPB: 1; MaxQPB: 51
+[hevc_qsv @ 0x55f152aec280] DisableDeblockingIdc: 0
+[hevc_qsv @ 0x55f152aec280] SkipFrame: no_skip
+[hevc_qsv @ 0x55f152aec280] PRefType: default
+[hevc_qsv @ 0x55f152aec280] GPB: ON
+[hevc_qsv @ 0x55f152aec280] TransformSkip: OFF
+[hevc_qsv @ 0x55f152aec280] IntRefCycleDist: 0
+[hevc_qsv @ 0x55f152aec280] LowDelayBRC: OFF
+[hevc_qsv @ 0x55f152aec280] MaxFrameSizeI: 0; MaxFrameSizeP: 0
+[hevc_qsv @ 0x55f152aec280] ScenarioInfo: 0
+[hevc_qsv @ 0x55f152aec280] NumTileColumns: 1; NumTileRows: 1
+Output #0, mp4, to 'xtestq5.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: hevc, 1 reference frame (hev1 / 0x31766568), nv12(tv, bt709, top coded first (swapped), left), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31,
+ 29.97 fps, 30k tbn
+      Metadata:
+        encoder         : Lavc61.19.100 hevc_qsv
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 255 kb/s
+[out#0/mp4 @ 0x55f152c2df40] Starting thread...
+Automatically inserted bitstream filter 'aac_adtstoasc'; args=''
+[in#0/mpegts @ 0x55f152943440] EOF while reading input:56.98 bitrate=1093.5kbits/s speed=3.71x
+[in#0/mpegts @ 0x55f152943440] Terminating thread with return code 0 (success)
+[vist#0:0/mpeg2video @ 0x55f1529ed680] [dec:mpeg2video @ 0x55f152992480] Decoder thread received EOF packet
+[vist#0:0/mpeg2video @ 0x55f1529ed680] [dec:mpeg2video @ 0x55f152992480] Decoder returned EOF, finishing
+[vist#0:0/mpeg2video @ 0x55f1529ed680] [dec:mpeg2video @ 0x55f152992480] Terminating thread with return code 0 (success)
+[auto_scale_0 @ 0x7f8bf8002c80] [framesync @ 0x7f8bf8005ca8] Sync level 0
+[vf#0:0 @ 0x55f152af7f80] Filtergraph returned EOF, finishing
+[vf#0:0 @ 0x55f152af7f80] All consumers returned EOF
+[vf#0:0 @ 0x55f152af7f80] Terminating thread with return code 0 (success)
+[vost#0:0/hevc_qsv @ 0x55f1529ed900] Encoder thread received EOF
+[vost#0:0/hevc_qsv @ 0x55f1529ed900] Non-monotonic DTS; previous: 3592589, current: 3591588; changing to 3592590. This may result in incorrect timestamps
+in the output file.
+[vost#0:0/hevc_qsv @ 0x55f1529ed900] Non-monotonic DTS; previous: 3592590, current: 3592589; changing to 3592591. This may result in incorrect timestamps
+in the output file.
+[vost#0:0/hevc_qsv @ 0x55f1529ed900] Terminating thread with return code 0 (success)
+[out#0/mp4 @ 0x55f152c2df40] All streams finished
+[out#0/mp4 @ 0x55f152c2df40] Terminating thread with return code 0 (success)
+[AVIOContext @ 0x55f152c20d40] Statistics: 16946611 bytes written, 2 seeks, 68 writeouts
+[out#0/mp4 @ 0x55f152c2df40] Output file #0 (xtestq5.mp4):
+[out#0/mp4 @ 0x55f152c2df40]   Output stream #0:0 (video): 3593 frames encoded; 3593 packets muxed (13023805 bytes);
+[out#0/mp4 @ 0x55f152c2df40]   Output stream #0:1 (audio): 5625 packets muxed (3836250 bytes);
+[out#0/mp4 @ 0x55f152c2df40]   Total: 9218 packets (16860055 bytes) muxed
+[out#0/mp4 @ 0x55f152c2df40] video:12719KiB audio:3746KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.513355%
+frame= 3593 fps=111 q=-0.0 Lsize=   16549KiB time=00:01:59.91 bitrate=1130.5kbits/s speed=3.69x
+[in#0/mpegts @ 0x55f152943440] Input file #0 (../test.m2ts):
+[in#0/mpegts @ 0x55f152943440]   Input stream #0:0 (video): 3595 packets read (133140569 bytes); 3593 frames decoded; 0 decode errors;
+[in#0/mpegts @ 0x55f152943440]   Input stream #0:1 (audio): 5625 packets read (3836250 bytes);
+[in#0/mpegts @ 0x55f152943440]   Total: 9220 packets (136976819 bytes) demuxed
+[AVIOContext @ 0x55f15294c400] Statistics: 148662416 bytes read, 2 seeks
+```
+### H265 (7.1)
+```
+./ffmpeg-204-qs -loglevel info -i ../test.m2ts -c:v libx265  -c:a copy -y  xtest-5.mp4
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.2)
+  configuration: --enable-small --disable-doc --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb24 --enable-libdav1d --enable-libfdk-aac --
+enable-libsvtav1 --enable-libvpl --enable-libx264 --enable-libx265 --disable-encoder=aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k t
+bn
+      Side data:
+        cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> hevc (libx265))
+  Stream #0:1 -> #0:1 (copy)
+Press [q] to stop, [?] for help
+x265 [info]: HEVC encoder version 3.2.1+1-b5c86a64bbbe
+x265 [info]: build info [Linux][GCC 9.3.0][64 bit] 8bit+10bit+12bit
+x265 [info]: using cpu capabilities: MMX2 SSE2Fast LZCNT SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+x265 [info]: Main profile, Level-4 (Main tier)
+x265 [info]: Thread pool created using 4 threads
+x265 [info]: Slices                              : 1
+x265 [info]: frame threads / pool features       : 2 / wpp(17 rows)
+x265 [info]: Coding QT: max CU size, min CU size : 64 / 8
+x265 [info]: Residual QT: max TU size, max depth : 32 / 1 inter / 1 intra
+x265 [info]: ME / range / subpel / merge         : hex / 57 / 2 / 3
+x265 [info]: Keyframe min / max / scenecut / bias: 25 / 250 / 40 / 5.00
+x265 [info]: Lookahead / bframes / badapt        : 20 / 4 / 2
+x265 [info]: b-pyramid / weightp / weightb       : 1 / 1 / 0
+x265 [info]: References / ref-limit  cu / depth  : 3 / off / on
+x265 [info]: AQ: mode / str / qg-size / cu-tree  : 2 / 1.0 / 32 / 1
+x265 [info]: Rate Control / qCompress            : CRF-28.0 / 0.60
+x265 [info]: tools: rd=3 psy-rd=2.00 early-skip rskip signhide tmvp b-intra
+x265 [info]: tools: strong-intra-smoothing lslices=6 deblock sao
+Output #0, mp4, to 'xtest-5.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: hevc (hev1 / 0x31766568), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx265
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 255 kb/s
+[out#0/mp4 @ 0x561840e7df40] video:8575KiB audio:3746KiB subtitle:0KiB other streams:0KiB global headers:2KiB muxing overhead: 0.696403%
+frame= 3593 fps= 23 q=29.1 Lsize=   12407KiB time=00:01:59.98 bitrate= 847.1kbits/s speed=0.782x
+x265 [info]: frame I:     39, Avg QP:27.93  kb/s: 9626.32
+x265 [info]: frame P:   1170, Avg QP:30.94  kb/s: 953.90
+x265 [info]: frame B:   2384, Avg QP:35.08  kb/s: 256.00
+x265 [info]: Weighted P-Frames: Y:2.2% UV:1.4%
+x265 [info]: consecutive B-frames: 9.5% 5.0% 71.5% 6.7% 7.3%
+
+encoded 3593 frames in 153.49s (23.41 fps), 584.97 kb/s, Avg QP:33.65
+```
+### SVT-AV1 (7.1)
+```
+./ffmpeg-204-qs -loglevel info  -i ../test.m2ts -c:v libsvtav1 -crf 40  -c:a copy -y  xtest-a.mp4
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.2)
+  configuration: --enable-small --disable-doc --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb24 --enable-libdav1d --enable-libfdk-aac --
+enable-libsvtav1 --enable-libvpl --enable-libx264 --enable-libx265 --disable-encoder=aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k t
+bn
+      Side data:
+        cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> av1 (libsvtav1))
+  Stream #0:1 -> #0:1 (copy)
+Press [q] to stop, [?] for help
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:       SVT-AV1 Encoder Lib v2.3.0
+Svt[info]: SVT [build]  :       GCC 9.4.0        64 bit
+Svt[info]: LIB Build date: Nov 22 2024 13:21:20
+Svt[info]: -------------------------------------------
+Svt[info]: Level of Parallelism: 3
+Svt[info]: Number of PPCS 42
+Svt[info]: [asm level on system : up to avx2]
+Svt[info]: [asm level selected : up to avx2]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile   tier (auto)     level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator               : 1440 / 1080 / 30000 / 1001
+Svt[info]: SVT [config]: bit-depth / color format                                       : 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct                                    : 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type                      : 161 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor                                         : CRF / 40
+Svt[info]: SVT [config]: AQ mode / variance boost                                       : 2 / 0
+Svt[info]: -------------------------------------------
+Output #0, mp4, to 'xtest-a.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: av1 (av01 / 0x31307661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libsvtav1
+  Stream #0:1: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 255 kb/s
+[out#0/mp4 @ 0x55958a35b600] video:8082KiB audio:3746KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.417056%
+frame= 3593 fps= 66 q=38.0 Lsize=   11877KiB time=00:02:00.00 bitrate= 810.8kbits/s speed=2.21x
+```
+### x264 (7.1)
+```
+./ffmpeg-204-qs -loglevel info  -i ../test.m2ts -c:v libx264  -c:a copy -y  xtest-4.mp4
+ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.2)
+  configuration: --enable-small --disable-doc --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb24 --enable-libdav1d --enable-libfdk-aac --
+enable-libsvtav1 --enable-libvpl --enable-libx264 --enable-libx265 --disable-encoder=aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k t
+bn
+      Side data:
+        cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (copy)
+Press [q] to stop, [?] for help
+[libx264 @ 0x55c37a48f280] using SAR=4/3
+[libx264 @ 0x55c37a48f280] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55c37a48f280] profile High, level 4.0
+[libx264 @ 0x55c37a48f280] 264 - core 155 r2917 0a84d98 - H.264/MPEG-4 AVC codec - Copyleft 2003-2018 - http://www.videolan.org/x264.html - options: cabac
+=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11
+ fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=
+3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtre
+e=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'xtest-4.mp4':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+      Metadata:
+        encoder         : Lavc61.19.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 255 kb/s
+[out#0/mp4 @ 0x55c37a5d0f40] video:29655KiB audio:3746KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.233918%
+frame= 3593 fps= 41 q=-1.0 Lsize=   33479KiB time=00:01:59.98 bitrate=2285.8kbits/s speed=1.37x
+[libx264 @ 0x55c37a48f280] frame I:54    Avg QP:18.36  size: 68002
+[libx264 @ 0x55c37a48f280] frame P:1073  Avg QP:21.10  size: 15638
+[libx264 @ 0x55c37a48f280] frame B:2466  Avg QP:22.68  size:  4021
+[libx264 @ 0x55c37a48f280] consecutive B-frames:  3.4%  6.4% 26.6% 63.6%
+[libx264 @ 0x55c37a48f280] mb I  I16..4: 21.8% 70.5%  7.7%
+[libx264 @ 0x55c37a48f280] mb P  I16..4:  4.9% 10.5%  1.2%  P16..4: 29.6%  4.7%  4.1%  0.0%  0.0%    skip:45.0%
+[libx264 @ 0x55c37a48f280] mb B  I16..4:  0.6%  0.8%  0.1%  B16..8: 22.5%  1.0%  0.1%  direct: 2.9%  skip:72.1%  L0:45.9% L1:52.6% BI: 1.5%
+[libx264 @ 0x55c37a48f280] 8x8 transform intra:63.7% inter:89.3%
+[libx264 @ 0x55c37a48f280] coded y,uvDC,uvAC intra: 34.0% 44.4% 12.8% inter: 5.4% 11.2% 0.6%
+[libx264 @ 0x55c37a48f280] i16 v,h,dc,p: 26% 46%  8% 20%
+[libx264 @ 0x55c37a48f280] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30% 17% 39%  3%  2%  3%  2%  3%  2%
+[libx264 @ 0x55c37a48f280] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 64%  8%  2%  2%  3%  2%  2%  1%
+[libx264 @ 0x55c37a48f280] i8c dc,h,v,p: 56% 22% 19%  3%
+[libx264 @ 0x55c37a48f280] Weighted P-Frames: Y:4.9% UV:4.0%
+[libx264 @ 0x55c37a48f280] ref P L0: 58.8%  5.9% 26.4%  8.6%  0.2%
+[libx264 @ 0x55c37a48f280] ref B L0: 75.9% 18.8%  5.3%
+[libx264 @ 0x55c37a48f280] ref B L1: 93.5%  6.5%
+[libx264 @ 0x55c37a48f280] kb/s:2024.07
+```
+### VMAF hevc_qsv
+```
+$ ffmpeg-7.1.exe -loglevel info -i xtestq5.mp4 -i ../test.m2ts -lavfi libvmaf='model=version=vmaf_v0
+.6.1' -f null -
+ffmpeg version N-117568-g31b5b3badc-20241016 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (crosstool-NG 1.26.0.120_4d36f27)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cros
+s-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disa
+ble-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libfreetype -
+-enable-libfribidi --enable-gmp --enable-libxml2 --enable-lzma --enable-fontconfig --enable-libharfb
+uzz --enable-libvorbis --enable-opencl --disable-libpulse --enable-libvmaf --disable-libxcb --disabl
+e-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --ena
+ble-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-
+ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcap
+tion --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enabl
+e-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enab
+le-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enabl
+e-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --en
+able-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame
+--enable-libuavs3d --disable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libs
+haderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --e
+nable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags=
+ --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=
+x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x8
+6_64-w64-mingw32-gcc-nm --extra-version=20241016
+  libavutil      59. 44.100 / 59. 44.100
+  libavcodec     61. 22.100 / 61. 22.100
+  libavformat    61.  9.100 / 61.  9.100
+  libavdevice    61.  4.100 / 61.  4.100
+  libavfilter    10.  6.100 / 10.  6.100
+  libswscale      8.  6.100 /  8.  6.100
+  libswresample   5.  4.100 /  5.  4.100
+  libpostproc    58.  4.100 / 58.  4.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'xtestq5.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:02:00.05, start: 0.000000, bitrate: 1129 kb/s
+  Stream #0:0[0x1](und): Video: hevc (Main) (hev1 / 0x31766568), yuv420p(tv, bt709, top coded first
+(swapped)), 1440x1080 [SAR 4:3 DAR 16:9], 869 kb/s, 29.97 fps, 29.97 tbr, 30k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc61.19.100 hevc_qsv
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 252 kb/s (defa
+ult)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Input #1, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #1:0[0x1011]: Video: mpeg2video (Main) ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top firs
+t), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k tbn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #1:1[0x1100]: Audio: aac (LC) ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 (hevc) -> libvmaf
+  Stream #1:0 (mpeg2video) -> libvmaf
+  libvmaf:default -> Stream #0:0 (wrapped_avframe)
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    encoder         : Lavf61.9.100
+  Stream #0:0: Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 1440x1080 [SAR 4:3 DAR 16:9]
+, q=2-31, 200 kb/s, 29.97 fps, 29.97 tbn
+    Metadata:
+      encoder         : Lavc61.22.100 wrapped_avframe
+  Stream #0:1(und): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+    Metadata:
+      encoder         : Lavc61.22.100 pcm_s16le
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+[Parsed_libvmaf_0 @ 00000277a7d4f8c0] VMAF score: 58.365238e=N/A speed=0.511x
+[out#0/null @ 00000277a7c8bfc0] video:1544KiB audio:22500KiB subtitle:0KiB other streams:0KiB global
+ headers:0KiB muxing overhead: unknown
+frame= 3593 fps= 15 q=-0.0 Lsize=N/A time=00:02:00.00 bitrate=N/A speed=0.511x
+```
+### VMAF h264_qsv
+```
+$ ffmpeg-7.1.exe -loglevel info -i xtestq.mp4 -i ../test.m2ts -lavfi libvmaf='model=version=vmaf_v0.
+6.1' -f null -
+ffmpeg version N-117568-g31b5b3badc-20241016 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (crosstool-NG 1.26.0.120_4d36f27)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cros
+s-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disa
+ble-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libfreetype -
+-enable-libfribidi --enable-gmp --enable-libxml2 --enable-lzma --enable-fontconfig --enable-libharfb
+uzz --enable-libvorbis --enable-opencl --disable-libpulse --enable-libvmaf --disable-libxcb --disabl
+e-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --ena
+ble-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-
+ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcap
+tion --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enabl
+e-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enab
+le-lv2 --enable-libvpl --enable-openal --enable-libopencore-amrnb --enable-libopencore-amrwb --enabl
+e-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-librav1e --enable-librubberband --en
+able-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libsvtav1 --enable-libtwolame
+--enable-libuavs3d --disable-libdrm --enable-vaapi --enable-libvidstab --enable-vulkan --enable-libs
+haderc --enable-libplacebo --enable-libvvenc --enable-libx264 --enable-libx265 --enable-libxavs2 --e
+nable-libxvid --enable-libzimg --enable-libzvbi --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags=
+ --extra-libs=-lgomp --extra-ldflags=-pthread --extra-ldexeflags= --cc=x86_64-w64-mingw32-gcc --cxx=
+x86_64-w64-mingw32-g++ --ar=x86_64-w64-mingw32-gcc-ar --ranlib=x86_64-w64-mingw32-gcc-ranlib --nm=x8
+6_64-w64-mingw32-gcc-nm --extra-version=20241016
+  libavutil      59. 44.100 / 59. 44.100
+  libavcodec     61. 22.100 / 61. 22.100
+  libavformat    61.  9.100 / 61.  9.100
+  libavdevice    61.  4.100 / 61.  4.100
+  libavfilter    10.  6.100 / 10.  6.100
+  libswscale      8.  6.100 /  8.  6.100
+  libswresample   5.  4.100 /  5.  4.100
+  libpostproc    58.  4.100 / 58.  4.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'xtestq.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:02:00.05, start: 0.000000, bitrate: 1554 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 14
+40x1080 [SAR 4:3 DAR 16:9], 1295 kb/s, 29.97 fps, 29.97 tbr, 30k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+      encoder         : Lavc61.19.100 h264_qsv
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 252 kb/s (defa
+ult)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Input #1, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #1:0[0x1011]: Video: mpeg2video (Main) ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top firs
+t), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k tbn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #1:1[0x1100]: Audio: aac (LC) ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 (h264) -> libvmaf
+  Stream #1:0 (mpeg2video) -> libvmaf
+  libvmaf:default -> Stream #0:0 (wrapped_avframe)
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.9.100
+  Stream #0:0: Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 1440x1080 [SAR 4:3 DAR 16:9]
+, q=2-31, 200 kb/s, 29.97 fps, 29.97 tbn
+    Metadata:
+      encoder         : Lavc61.22.100 wrapped_avframe
+  Stream #0:1(und): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+    Metadata:
+      encoder         : Lavc61.22.100 pcm_s16le
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+[Parsed_libvmaf_0 @ 000001d14342d200] VMAF score: 58.628097e=N/A speed=0.506x
+[out#0/null @ 000001d140fbc400] video:1544KiB audio:22500KiB subtitle:0KiB other streams:0KiB global
+ headers:0KiB muxing overhead: unknown
+frame= 3593 fps= 15 q=-0.0 Lsize=N/A time=00:02:00.00 bitrate=N/A speed=0.506x
+```
+### lscpu
+```
+lscpu | grep Model
+Model:                              158
+Model name:                         Intel(R) Core(TM) i5-7600T CPU @ 2.80GHz
+```
