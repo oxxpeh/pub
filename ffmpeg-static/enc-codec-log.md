@@ -1546,7 +1546,7 @@ Model name:                         Cortex-A78
 Model:                              1
 ```
 ## i5-7600T CPU @ 2.80GHz
-### h264_qsv (7.1)
+### 7.1 h264_qsv
 ```
 ./ffmpeg-204-qs -loglevel info  -i ../test.m2ts -c:v h264_qsv -c:a copy -y  xtestq.mp4
 ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
@@ -1642,8 +1642,9 @@ Output #0, mp4, to 'xtestq.mp4':
 [h264_qsv @ 0x55dd81459280] Warning during encoding: incompatible video parameters (5)ed=8.97x
     Last message repeated 83 times
 [out#0/mp4 @ 0x55dd8159af40] video:18957KiB audio:3746KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.330731%
+frame= 3593 fps=264 q=33.0 Lsize=   22778KiB time=00:01:59.98 bitrate=1555.2kbits/s speed=8.82x
 ```
-### hevc_qsv (7.1)
+### 7.1 hevc_qsv 
 ```
 ./ffmpeg-204-qs -loglevel verbose  -i ../test.m2ts -c:v hevc_qsv -c:a copy -y  xtestq5.mp4
 ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
@@ -1772,7 +1773,7 @@ frame= 3593 fps=111 q=-0.0 Lsize=   16549KiB time=00:01:59.91 bitrate=1130.5kbit
 [in#0/mpegts @ 0x55f152943440]   Total: 9220 packets (136976819 bytes) demuxed
 [AVIOContext @ 0x55f15294c400] Statistics: 148662416 bytes read, 2 seeks
 ```
-### H265 (7.1)
+### 7.1 H265
 ```
 ./ffmpeg-204-qs -loglevel info -i ../test.m2ts -c:v libx265  -c:a copy -y  xtest-5.mp4
 ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
@@ -1839,7 +1840,7 @@ x265 [info]: consecutive B-frames: 9.5% 5.0% 71.5% 6.7% 7.3%
 
 encoded 3593 frames in 153.49s (23.41 fps), 584.97 kb/s, Avg QP:33.65
 ```
-### SVT-AV1 (7.1)
+### 7.1 SVT-AV1
 ```
 ./ffmpeg-204-qs -loglevel info  -i ../test.m2ts -c:v libsvtav1 -crf 40  -c:a copy -y  xtest-a.mp4
 ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
@@ -1897,7 +1898,7 @@ Output #0, mp4, to 'xtest-a.mp4':
 [out#0/mp4 @ 0x55958a35b600] video:8082KiB audio:3746KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.417056%
 frame= 3593 fps= 66 q=38.0 Lsize=   11877KiB time=00:02:00.00 bitrate= 810.8kbits/s speed=2.21x
 ```
-### x264 (7.1)
+### 7.1 x264
 ```
 ./ffmpeg-204-qs -loglevel info  -i ../test.m2ts -c:v libx264  -c:a copy -y  xtest-4.mp4
 ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
@@ -1965,7 +1966,7 @@ frame= 3593 fps= 41 q=-1.0 Lsize=   33479KiB time=00:01:59.98 bitrate=2285.8kbit
 [libx264 @ 0x55c37a48f280] ref B L1: 93.5%  6.5%
 [libx264 @ 0x55c37a48f280] kb/s:2024.07
 ```
-### VMAF hevc_qsv
+### VMAF 7.1 hevc_qsv
 ```
 $ ffmpeg-7.1.exe -loglevel info -i xtestq5.mp4 -i ../test.m2ts -lavfi libvmaf='model=version=vmaf_v0
 .6.1' -f null -
@@ -2053,7 +2054,7 @@ Output #0, null, to 'pipe:':
  headers:0KiB muxing overhead: unknown
 frame= 3593 fps= 15 q=-0.0 Lsize=N/A time=00:02:00.00 bitrate=N/A speed=0.511x
 ```
-### VMAF h264_qsv
+### VMAF 7.1 h264_qsv
 ```
 $ ffmpeg-7.1.exe -loglevel info -i xtestq.mp4 -i ../test.m2ts -lavfi libvmaf='model=version=vmaf_v0.
 6.1' -f null -
