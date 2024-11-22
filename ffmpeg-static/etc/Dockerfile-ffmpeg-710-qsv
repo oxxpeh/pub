@@ -54,12 +54,6 @@ RUN apt update && apt install -y \
     zlib1g-dev
 
 # RUN git clone https://github.com/FFmpeg/FFmpeg.git -b n7.1
-# -- bump squid cert start
-RUN mkdir /usr/share/ca-certificates/oreore
-COPY squid-b.crt /usr/share/ca-certificates/oreore
-RUN echo "oreore/squid-b.crt" >> /etc/ca-certificates.conf
-RUN update-ca-certificates
-# -- bump squid cert end
 RUN curl -O "https://ffmpeg.org/releases/ffmpeg-${FF_VER}.tar.xz" 
 RUN tar fx ffmpeg-${FF_VER}.tar.xz
 RUN ln -s ffmpeg-${FF_VER} FFmpeg
@@ -167,13 +161,6 @@ RUN chmod +x  mk-ffm.sh
 RUN <<EOF 
 cat <<- _eof_ >> ~/.bashrc
 export PS1='\u@\h:\W\n# '
-export PRXY_ADD=http://172.16.200.47:3128
-export HTTPS_PROXY=${PRXY_ADD}
-export HTTP_PROXY=${PRXY_ADD}
-export http_proxy=${PRXY_ADD}
-export https_proxy=${PRXY_ADD}
-export no_proxy=127.0.0.1,localhost,172.16.0.0/12
-export NO_PROXY=127.0.0.1,localhost,172.16.0.0/12
 
 _eof_
 EOF
