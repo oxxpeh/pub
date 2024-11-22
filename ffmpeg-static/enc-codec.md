@@ -59,6 +59,19 @@
 ・h264_mediacodec  
  size=   54531kB speed=1.08x  
  VMAF score: 56.30
+## i5-7600T CPU @ 2.80GHz (7.1)
+・SVT-AV1 crf 40  
+ size=   11877KiB speed=2.21x  
+・hevc  
+ size=   12407KiB speed=0.782x  
+・h264  
+ size=   33479KiB speed=1.37x  
+・hevc_qsv  
+ size=   16549KiB speed=3.69x  
+ VMAF score: 58.36  
+・h264_qsv  
+ size=   22778KiB speed=8.82x 
+ VMAF score: 58.62  
 ## その他
 ### VMAF makeとか
 https://www.gyan.dev/ffmpeg/builds/ から落としたものにVMAFも入っていたと思う  
