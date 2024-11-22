@@ -104,5 +104,91 @@ cp install/lib/pkgconfig/libvvenc.pc /lib/x86_64-linux-gnu/pkgconfig/
 「-lgcc_s」の削除とか
 
 <span style="color: #38761d;"><br>(参)<br>Build · fraunhoferhhi/vvenc Wiki · GitHub<br>https://github.com/fraunhoferhhi/vvenc/wiki/Build#build-using-makefile</span><br>
+### qsv
+staticでの作成は挫折  
+作成は終わるけど実行すると「coredump」  
+sharedだどlibvplでの作成スクリプト「bootstrap」内でインストールしてくる以下のパッケージが無くても  
+```
+libpciaccess-dev libset-scalar-perl \                                                
+libva-glx2 libva-wayland2 libwayland-bin \  
+libxau-dev libxcb-randr0-dev libxcb-render0-dev \
+libxcb-shape0-dev libxcb-sync-dev libxcb-xfixes0-dev \
+libxcb1-dev libxdmcp-dev x11proto-dev xorg-sgml-doctools xtrans-dev \ﾚ
+libdrm-dev libva-dev libwayland-dev libx11-dev libx11-xcb-dev libxcb-dri3-dev \
+libxcb-present-dev wayland-protocols \
+python3-pip python3-wheel \
+```
+作成は終わるけど実行すると以下のエラー
+```
+[h264_qsv @ 0x5b38e631bf00] Initialized an internal MFX session using hardware accelerated implementation
+[h264_qsv @ 0x5b38e631bf00] Using the constant quantization parameter (CQP) by default. Please use the global_quality option and other options for a quali
+ty-based mode or the b option and other options for a bitrate-based mode if the default is not the desired choice.
+[h264_qsv @ 0x5b38e631bf00] Using the constant quantization parameter (CQP) ratecontrol method
+[h264_qsv @ 0x5b38e631bf00] Selected ratecontrol mode is unsupported
+[h264_qsv @ 0x5b38e631bf00] Current frame rate is unsupported
+[h264_qsv @ 0x5b38e631bf00] Current picture structure is unsupported
+[h264_qsv @ 0x5b38e631bf00] Current resolution is unsupported
+[h264_qsv @ 0x5b38e631bf00] Current pixel format is unsupported
+[h264_qsv @ 0x5b38e631bf00] some encoding parameters are not supported by the QSV runtime. Please double check the input parameters.
+[vost#0:0/h264_qsv @ 0x5b38e6345880] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.
+[vf#0:0 @ 0x5b38e63b6640] Error sending frames to consumers: Function not implemented
+[vf#0:0 @ 0x5b38e63b6640] Task finished with error code: -38 (Function not implemented)
+[vf#0:0 @ 0x5b38e63b6640] Terminating thread with return code -38 (Function not implemented)
+[vost#0:0/h264_qsv @ 0x5b38e6345880] Encoder thread received EOF
+[vost#0:0/h264_qsv @ 0x5b38e6345880] Could not open encoder before EOF
+[vost#0:0/h264_qsv @ 0x5b38e6345880] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/h264_qsv @ 0x5b38e6345880] Terminating thread with return code -22 (Invalid argument)
+[vist#0:0/mpeg2video @ 0x5b38e63455c0] [dec:mpeg2video @ 0x5b38e65090c0] Decoder returned EOF, finishing
+[vist#0:0/mpeg2video @ 0x5b38e63455c0] [dec:mpeg2video @ 0x5b38e65090c0] Terminating thread with return code 0 (success)
+[vist#0:0/mpeg2video @ 0x5b38e63455c0] All consumers of this stream are done
+[in#0/mpegts @ 0x5b38e6314800] EOF while reading input
+[in#0/mpegts @ 0x5b38e6314800] Terminating thread with return code 0 (success)
+[out#0/mp4 @ 0x5b38e6345740] Nothing was written into output file, because at least one of its streams received no packets.
+frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A    
+[AVIOContext @ 0x5b38e631c840] Statistics: 0 bytes written, 0 seeks, 0 writeouts
+[in#0/mpegts @ 0x5b38e6314800] Input file #0 (../test.m2ts):
+[in#0/mpegts @ 0x5b38e6314800]   Input stream #0:0 (video): 16 packets read (484170 bytes); 4 frames decoded; 0 decode errors; 
+[in#0/mpegts @ 0x5b38e6314800]   Input stream #0:1 (audio): 5625 packets read (3836250 bytes); 
+[in#0/mpegts @ 0x5b38e6314800]   Total: 5641 packets (4320420 bytes) demuxed
+[AVIOContext @ 0x5b38e631d240] Statistics: 148662416 bytes read, 2 seeks
+Conversion failed!
+```
+「libva-dev」は「libdva.a」が無かった、その他にも「*.a」が無いのがあるのかも  
+他で実行できても13thだと以下のエラー  
+```
+[h264_qsv @ 0x57da2d249800] Use Intel(R) oneVPL to create MFX session, the required implementation version is 1.1
+[AVHWDeviceContext @ 0x7f3bfc153000] Trying to use DRM render node for device 0, with matching kernel driver (i915).
+[AVHWDeviceContext @ 0x7f3bfc153000] libva: VA-API version 1.22.0
+[AVHWDeviceContext @ 0x7f3bfc153000] libva: User requested driver 'iHD'
+[AVHWDeviceContext @ 0x7f3bfc153000] libva: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+[AVHWDeviceContext @ 0x7f3bfc153000] libva: Found init function __vaDriverInit_1_22
+[AVHWDeviceContext @ 0x7f3bfc153000] libva: va_openDriver() returns 0
+[AVHWDeviceContext @ 0x7f3bfc153000] Initialised VAAPI connection: version 1.22
+[AVHWDeviceContext @ 0x7f3bfc153000] VAAPI driver: Intel iHD driver for Intel(R) Gen Graphics - 24.3.4 ().
+[AVHWDeviceContext @ 0x7f3bfc153000] Driver not found in known nonstandard list, using standard behaviour.
+[h264_qsv @ 0x57da2d249800] Error during set display handle
+: device failed (-17)
+[vost#0:0/h264_qsv @ 0x57da2d6fa4c0] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.
+[vf#0:0 @ 0x57da2d58afc0] Error sending frames to consumers: Input/output error
+[vf#0:0 @ 0x57da2d58afc0] Task finished with error code: -5 (Input/output error)
+[vf#0:0 @ 0x57da2d58afc0] Terminating thread with return code -5 (Input/output error)
+[vist#0:0/mpeg2video @ 0x57da2d2c76c0] [dec:mpeg2video @ 0x57da2d26d200] Decoder returned EOF, finishing
+[vist#0:0/mpeg2video @ 0x57da2d2c76c0] [dec:mpeg2video @ 0x57da2d26d200] Terminating thread with return code 0 (success)
+[vost#0:0/h264_qsv @ 0x57da2d6fa4c0] Encoder thread received EOF
+[vost#0:0/h264_qsv @ 0x57da2d6fa4c0] Could not open encoder before EOF
+[vist#0:0/mpeg2video @ 0x57da2d2c76c0] All consumers of this stream are done
+[vost#0:0/h264_qsv @ 0x57da2d6fa4c0] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/h264_qsv @ 0x57da2d6fa4c0] Terminating thread with return code -22 (Invalid argument)
+[in#0/mpegts @ 0x57da2d242180] Terminating thread with return code 0 (success)
+[out#0/mp4 @ 0x57da2d457140] Nothing was written into output file, because at least one of its streams received no packets.
+frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A dup=5 drop=0 speed=N/A    
+[AVIOContext @ 0x57da2d61bb80] Statistics: 0 bytes written, 0 seeks, 0 writeouts
+[in#0/mpegts @ 0x57da2d242180] Input file #0 (../test.m2ts):
+[in#0/mpegts @ 0x57da2d242180]   Input stream #0:0 (video): 22 packets read (559968 bytes); 10 frames decoded; 0 decode errors; 
+[in#0/mpegts @ 0x57da2d242180]   Input stream #0:1 (audio): 2853 packets read (1945948 bytes); 
+[in#0/mpegts @ 0x57da2d242180]   Total: 2875 packets (2505916 bytes) demuxed
+[AVIOContext @ 0x57da2d24acc0] Statistics: 71471248 bytes read, 2 seeks
+Conversion failed!
+```
 ### ログ
 [こちら](https://github.com/oxxpeh/pub/blob/main/ffmpeg-static/enc-codec-log.md)に全部ないですが。
