@@ -49,8 +49,20 @@ RUN apt update && apt install -y \
 RUN curl -O "https://ffmpeg.org/releases/ffmpeg-${FF_VER}.tar.xz" 
 RUN tar fx ffmpeg-${FF_VER}.tar.xz
 RUN ln -s ffmpeg-${FF_VER} FFmpeg
-RUN cd FFmpeg ; git clone --depth 1 https://code.videolan.org/videolan/dav1d.git
-RUN cd FFmpeg ; git clone --depth 1 https://gitlab.com/AOMediaCodec/SVT-AV1.git
+#RUN cd FFmpeg ; git clone --depth 1 https://code.videolan.org/videolan/dav1d.git
+#RUN cd FFmpeg ; git clone --depth 1 https://gitlab.com/AOMediaCodec/SVT-AV1.git
+RUN curl -L -O "https://code.videolan.org/videolan/dav1d/-/archive/1.5.0/dav1d-1.5.0.tar.bz2"
+RUN curl -L -O "https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v2.3.0/SVT-AV1-v2.3.0.tar.bz2"
+#RUN curl -L -O "https://github.com/intel/libvpl/archive/refs/tags/v2.13.0.tar.gz"
+#RUN curl -L -O "https://github.com/intel/libva/releases/download/2.22.0/libva-2.22.0.tar.bz2"
+RUN tar fx dav1d-1.5.0.tar.bz2
+RUN tar fx SVT-AV1-v2.3.0.tar.bz2
+#RUN tar fx v2.13.0.tar.gz
+#RUN tar fx libva-2.22.0.tar.bz2
+RUN mv dav1d-1.5.0 /FFmpeg/dav1d
+RUN mv SVT-AV1-v2.3.0 /FFmpeg/SVT-AV1
+#RUN mv libvpl-2.13.0 /FFmpeg/libvpl
+#RUN mv libva-2.22.0 /FFmpeg/libva
 RUN cp /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc \
   /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc.org
 RUN echo "Libs.private: -lm -lpng -lz -lm" >> \
