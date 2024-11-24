@@ -1,7 +1,7 @@
 
 # codec cpu での比較ログ
 ## 13th Gen Intel(R) Core(TM) i5-1340P
-### 7.1 SVT-AV1 crf 40
+### 7.1 SVT-AV1(fdcb885 2.3x) crf 40
 ```
 $ ~/ffmpeg -loglevel info  -y  -i ../test.m2ts -c:v libsvtav1 -crf 40  test-av.mp4
 ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
@@ -62,7 +62,7 @@ Output #0, mp4, to 'test-av.mp4':
 [out#0/mp4 @ 0x35e01d80] video:8082KiB audio:2047KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.975261%
 frame= 3593 fps=233 q=38.0 Lsize=   10227KiB time=00:02:00.00 bitrate= 698.2kbits/s speed=7.79x
 ```
-### 7.0.2 SVT-AV1 crf 40
+### 7.0.2 SVT-AV1(2.1.0) crf 40
 ```
 $ ffmpeg -loglevel info  -y  -i ../test.m2ts -c:v libsvtav1 -crf 40  test-av.mp4
 ffmpeg version 7.0.2-3ubuntu1 Copyright (c) 2000-2024 the FFmpeg developers
@@ -130,7 +130,128 @@ Output #0, mp4, to 'test-av.mp4':
 frame= 3600 fps=165 q=40.0 Lsize=   10232KiB time=00:02:00.00 bitrate= 698.5kbits/s dup=7 drop=0 speed=5.52x
 [aac @ 0x5e3894feabc0] Qavg: 1421.507
 ```
-
+### 6.1.2 SVT-AV1(c642bb0 2.3x) crf 40
+```
+~/ffmpeg-6a -loglevel info  -y -i ../test.m2ts -c:v libsvtav1 -crf 40 6test.mp4
+ffmpeg version 6.1.2 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14 (Ubuntu 14.2.0-4ubuntu2)
+  configuration: --enable-small --disable-shared --disable-debug --disable-doc --enable-static --pkg-config-flags=--static --extra-libs=-static --extra-cf
+lags=--static --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb24 --enable-libdav1d --enable-libfdk-aac --enable-libsvtav1 --enable-libx26
+4 --enable-libx265 --disable-encoder=aac
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k t
+bn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> av1 (libsvtav1))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (libfdk_aac))
+Press [q] to stop, [?] for help
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:       SVT-AV1 Encoder Lib c642bb0
+Svt[info]: SVT [build]  :       GCC 14.2.0       64 bit
+Svt[info]: LIB Build date: Nov 23 2024 17:13:16
+Svt[info]: -------------------------------------------
+Svt[info]: Level of Parallelism: 5
+Svt[info]: Number of PPCS 76
+Svt[info]: [asm level on system : up to avx2]
+Svt[info]: [asm level selected : up to avx2]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile   tier (auto)     level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator               : 1440 / 1080 / 30000 / 1001
+Svt[info]: SVT [config]: bit-depth / color format                                       : 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct                                    : 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type                      : 161 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor                                         : CRF / 40
+Svt[info]: SVT [config]: AQ mode / variance boost                                       : 2 / 0
+Svt[info]: -------------------------------------------
+Output #0, mp4, to '6test.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: av1 (av01 / 0x31307661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libsvtav1
+  Stream #0:1: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, s16, 139 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 libfdk_aac
+[out#0/mp4 @ 0x1f3e7880] video:8075kB audio:2047kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.976553%
+frame= 3600 fps=249 q=40.0 Lsize=   10221kB time=00:02:00.08 bitrate= 697.2kbits/s dup=7 drop=0 speed=8.29x
+```
+### 6.1.2 SVT-AV1(2.1) crf 40
+```
+~/ffmpeg-6a0 -loglevel info  -y -i ../test.m2ts -c:v libsvtav1 -crf 40 6test0.mp4
+ffmpeg version 6.1.2 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14 (Ubuntu 14.2.0-4ubuntu2)
+  configuration: --enable-small --disable-shared --disable-debug --disable-doc --enable-static --pkg-config-flags=--static --extra-libs=-static --extra-cf
+lags=--static --enable-nonfree --enable-version3 --enable-gpl --enable-libaribb24 --enable-libdav1d --enable-libfdk-aac --enable-libsvtav1 --enable-libx26
+4 --enable-libx265 --disable-encoder=aac
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mpegts, from '../test.m2ts':
+  Duration: 00:02:00.11, start: 1.400000, bitrate: 9589 kb/s
+  Program 1
+    Metadata:
+      service_name    : Service01
+      service_provider: FFmpeg
+  Stream #0:0[0x1011]: Video: mpeg2video ([2][0][0][0] / 0x0002), yuv420p(tv, bt709, top first), 1440x1080 [SAR 4:3 DAR 16:9], 29.97 fps, 29.97 tbr, 90k t
+bn
+    Side data:
+      cpb: bitrate max/min/avg: 20000000/0/0 buffer size: 9781248 vbv_delay: N/A
+  Stream #0:1[0x1100]: Audio: aac ([6][0][0][0] / 0x0006), 48000 Hz, stereo, fltp, 255 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mpeg2video (native) -> av1 (libsvtav1))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (libfdk_aac))
+Press [q] to stop, [?] for help
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:       SVT-AV1 Encoder Lib v2.1.0
+Svt[info]: SVT [build]  :       GCC 14.2.0       64 bit
+Svt[info]: LIB Build date: Nov 23 2024 18:08:10
+Svt[info]: -------------------------------------------
+Svt[info]: Number of logical cores available: 16
+Svt[info]: Number of PPCS 76
+Svt[info]: [asm level on system : up to avx2]
+Svt[info]: [asm level selected : up to avx2]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile   tier (auto)     level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator               : 1440 / 1080 / 30000 / 1001
+Svt[info]: SVT [config]: bit-depth / color format                                       : 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct                                    : 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type                      : 161 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor                                         : CRF / 40
+Svt[info]: SVT [config]: AQ mode / variance boost                                       : 2 / 0
+Svt[info]: -------------------------------------------
+Output #0, mp4, to '6test0.mp4':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: av1 (av01 / 0x31307661), yuv420p(tv, bt709, top coded first (swapped)), 1440x1080 [SAR 4:3 DAR 16:9], q=2-31, 29.97 fps, 30k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libsvtav1
+  Stream #0:1: Audio: aac (mp4a / 0x6134706D), 48000 Hz, stereo, s16, 139 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 libfdk_aac
+[out#0/mp4 @ 0x326da880] video:8214kB audio:2047kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.963343%
+frame= 3600 fps=193 q=40.0 Lsize=   10359kB time=00:02:00.08 bitrate= 706.7kbits/s dup=7 drop=0 speed=6.44x
+```
 ## windows i7-4770s
 ### 7.0.1 SVT-AV1 crf 40
 ```
