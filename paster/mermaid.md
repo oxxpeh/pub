@@ -1,6 +1,7 @@
 # paster で mermaid のカスタムファイル
-githubは「sjis」から「utf-8」に変換されるようなので  
-「utf-8」から「sjis」に変換して使用を  
+~~githubは「sjis」から「utf-8」に変換されるようなので~~  
+~~「utf-8」から「sjis」に変換して使用を~~  
+2回目の上書きからは変換されないのか
 https://mermaid.js.org/syntax/flowchart.html  
 などから拝借
 ```mermaid
