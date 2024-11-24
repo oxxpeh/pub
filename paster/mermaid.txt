@@ -3,7 +3,7 @@
 ; 2024/11/24
 ; sjis encodeed
 ; githubでは表示されないものやエラー含む
-; https://mermaid.js.org/syntax/pie.html
+; https://mermaid.js.org/syntax/flowchart.html
 +テンプレ
 flow(LR)|
 ```mermaid
