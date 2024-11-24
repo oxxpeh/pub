@@ -1,18 +1,18 @@
 ; - mermaid markdown
 ; 2024/11/24
 ; 2024/11/24
-; use utf-8 -> sjis encodeed
-; githubã§ã¯è¡¨ç¤ºã•ã‚Œãªã„ã‚‚ã®ã‚„ã‚¨ãƒ©ãƒ¼å«ã‚€
+; sjis encodeed
+; github‚Å‚Í•\Ž¦‚³‚ê‚È‚¢‚à‚Ì‚âƒGƒ‰[ŠÜ‚Þ
 ; https://mermaid.js.org/syntax/pie.html
-+ãƒ†ãƒ³ãƒ—ãƒ¬
++ƒeƒ“ƒvƒŒ
 flow(LR)|
 ```mermaid
   flowchart LR
-  xx01(é–‹å§‹)
-  xx02(çµ‚äº†)
-  xx03[å‡¦ç†]
-  xx04{åˆ¤æ–­}
-  xx05[å‡¦ç†]
+  xx01(ŠJŽn)
+  xx02(I—¹)
+  xx03[ˆ—]
+  xx04{”»’f}
+  xx05[ˆ—]
   xx01 --> xx03
   xx03 --> xx04
   xx04 -- Y --> xx05
@@ -24,18 +24,18 @@ flow(LR)|
 flow(UD)|
 ```mermaid
   flowchart TB
-  xx01(é–‹å§‹)
-  xx02(çµ‚äº†)
-  xx03[å‡¦ç†]
-  xx04{åˆ¤æ–­}
-  xx05[å‡¦ç†]
+  xx01(ŠJŽn)
+  xx02(I—¹)
+  xx03[ˆ—]
+  xx04{”»’f}
+  xx05[ˆ—]
   xx01 --> xx03
   xx03 --> xx04
   xx04 -- Y --> xx05
   xx04 -- N --> xx02
   xx05 --> xx02
 /E
-å…¥ã‚Œå­(subgraph)|
+“ü‚êŽq(subgraph)|
 ```mermaid
   flowchart LR
   XX1[XX1]
@@ -52,7 +52,7 @@ flow(UD)|
   sub_p --> XX2
 ```
 /E
-ã‚·ãƒ¼ã‚±ãƒ³ã‚¹(seq-D)|
+ƒV[ƒPƒ“ƒX(seq-D)|
 ```mermaid
   sequenceDiagram
   title Seq
@@ -63,7 +63,7 @@ flow(UD)|
   Yamada-)Sato: message 3
 ```
 /E
-ã‚¯ãƒ©ã‚¹(class)|
+ƒNƒ‰ƒX(class)|
 ```mermaid
   classDiagram
   note "note1"
@@ -92,7 +92,7 @@ flow(UD)|
   }
 ```
 /E
-çŠ¶æ…‹(State [[->[)|
+ó‘Ô(State [[->[)|
 ```mermaid
   stateDiagram-v2
   direction LR
@@ -147,7 +147,7 @@ gantt|
   another task      : 50d
 ```
 /E
-å††ã‚°ãƒ©ãƒ•|
+‰~ƒOƒ‰ƒt|
 ```mermaid
   pie title Titxx
   "AA" : 100
@@ -429,24 +429,24 @@ XX|
 ```
 /E
 ..
-+å›³
-é–‹å§‹çµ‚äº†	|(XX)
-å‡¦ç†	|[XX]
-åˆ¤æ–­	|{XX}
-è§’ä¸¸	|(XX)
-ã‚µãƒ–ãƒ«ãƒ¼ãƒãƒ³	|[[XX]]
++}
+ŠJŽnI—¹	|(XX)
+ˆ—	|[XX]
+”»’f	|{XX}
+ŠpŠÛ	|(XX)
+ƒTƒuƒ‹[ƒ`ƒ“	|[[XX]]
 DB	|[(XX)]
-å††	|((XX))
-ã‚¹ã‚¿ã‚¸ã‚¢ãƒ åž‹	|([XX])
-éžå¯¾ç§°	|>XX]
-å…­è§’	|{{XX}}
-å¹³è¡Œå››è¾ºå½¢(//)	|[/XX/]
-å¹³è¡Œå››è¾ºå½¢(\\)	|[\XX\]
-å°å½¢(/\)	|[/XX\]
-å°å½¢(\/)	|[\XX/]
-äºŒé‡å††	|(((XX)))
+‰~	|((XX))
+ƒXƒ^ƒWƒAƒ€Œ^	|([XX])
+”ñ‘ÎÌ	|>XX]
+˜ZŠp	|{{XX}}
+•½sŽl•ÓŒ`(//)	|[/XX/]
+•½sŽl•ÓŒ`(\\)	|[\XX\]
+‘äŒ`(/\)	|[/XX\]
+‘äŒ`(\/)	|[\XX/]
+“ñd‰~	|(((XX)))
 ..
-+å›³(etc)
++}(etc)
 ;https://mermaid.js.org/syntax/flowchart.html#expanded-node-shapes-in-mermaid-flowcharts-v11-3-0
 manual-file	|XX@{ shape: manual-file, label: "File Handling"}
 manual-input	|XX@{ shape: manual-input, label: "User Input"}
@@ -454,19 +454,27 @@ docs	|XX@{ shape: docs, label: "Multiple Documents"}
 procs	|XX@{ shape: procs, label: "Process Automation"}
 paper-tape	|XX@{ shape: paper-tape, label: "Paper Records"}
 ..
-+ç·š
-ç·š(---)| --- 
-ç·š(-- ãƒ†ã‚­ã‚¹ãƒˆ ---)| -- XXX --- 
-äºŒé‡ç·š(===)| === 
-äºŒé‡ç·š(ãƒ†ã‚­ã‚¹ãƒˆ)| == XXX === 
-ç‚¹ç·š(-.-)| -.-
-çŸ¢å°ç·š(-->)| --> 
-çŸ¢å°ç·š(-- ãƒ†ã‚­ã‚¹ãƒˆ >)| -- ãƒ†ã‚­ã‚¹ãƒˆ --> 
-çŸ¢å°ç·š(==>)| ==> 
-çŸ¢å°ç·š(--o)| --o 
-çŸ¢å°ç·š(--x)| --x 
-çŸ¢å°ç·š(-->)| --> 
-çŸ¢å°ç·š(-.->)| -.->
-çŸ¢å°ç·š(-. ãƒ†ã‚­ã‚¹ãƒˆ .->)| -. XXX .-> 
++ü
+ü(---)| --- 
+ü(----)| ---- 
+ü(-----)| ----- 
+ü(-- ƒeƒLƒXƒg ---)| -- XXX --- 
+“ñdü(===)| === 
+“ñdü(ƒeƒLƒXƒg)| == XXX === 
+“_ü(-.-)| -.-
+–îˆóü(-->)| --> 
+–îˆóü(--->)| ---> 
+–îˆóü(---->)| ----> 
+–îˆóü(-- ƒeƒLƒXƒg >)| -- ƒeƒLƒXƒg --> 
+–îˆóü(==>)| ==> 
+–îˆóü(--o)| --o 
+–îˆóü(--x)| --x 
+–îˆóü(-->)| --> 
+–îˆóü(-.->)| -.->
+–îˆóü(-. ƒeƒLƒXƒg .->)| -. XXX .-> 
 ..
-
++‚»‚Ì‘¼
+MD(‘¾Žš)|"` **XX** `"
+MD(ŽÎ‘Ì)|"` *XX* `"
+;MD(ŽæÁ‚µ)|"` ~~XX~~ `"
+..
