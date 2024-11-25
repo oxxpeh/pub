@@ -424,10 +424,6 @@ archi([[->[)|
 
 ```
 /E
-XX|
-```mermaid
-```
-/E
 ..
 +}
 ŠJŽnI—¹	|(XX)
@@ -477,4 +473,5 @@ paper-tape	|XX@{ shape: paper-tape, label: "Paper Records"}
 MD(‘¾Žš)|"` **XX** `"
 MD(ŽÎ‘Ì)|"` *XX* `"
 ;MD(ŽæÁ‚µ)|"` ~~XX~~ `"
+[[•ÏŠ·([[->[)     | [@! s/\[\[/[/g ]	
 ..
