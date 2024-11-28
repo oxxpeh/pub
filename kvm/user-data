@@ -1,7 +1,7 @@
 #cloud-config
 autoinstall:
   identity:
-    hostname: trxx
+    hostname: testxx
     password: $6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEowFys7LKyBAqsJD15ubNBDcAkT/
     realname: user
     username: user
