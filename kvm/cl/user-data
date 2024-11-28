@@ -26,7 +26,7 @@
     timeout: 100
   runcmd:
     - [touch, /root/ooo.out]
-    - [curl, -o, /root/cl-init.sh, https://raw.githubusercontent.com/oxxpeh/pub/kvm/cl/cl-init.sh]
+    - [curl, -o, /root/cl-init.sh, https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/cl/cl-init.sh]
     - [bash, /root/cl-init.sh]
     - [touch, /etc/cloud/cloud-init.disabled]
     - [sed, -i, "s/ubuntu/testxx/", /etc/hostname]
