@@ -1,0 +1,101 @@
+#cloud-config
+autoinstall:
+  apt:
+    proxy: http://172.16.200.47:3128
+    http_proxy: http://172.16.200.47:3128
+    https_proxy: http://172.16.200.47:3128
+  identity:
+    hostname: trxx
+    password: $6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEowFys7LKyBAqsJD15ubNBDcAkT/
+    realname: user
+    username: user
+  keyboard:
+    layout: jp
+    toggle: null
+    variant: ''
+  late-commands:
+    - curtin in-target -- touch /root/ooo.out
+    - curtin in-target -- curl -o /root/cl-init.sh http://172.16.200.182/cifs/files/VM/ISO/neti/at/cl-init.sh
+    - curtin in-target -- bash -c "sed -i.bak -e '/^%sudo/s/ ALL/NOPASSWD:ALL/g' /etc/sudoers"
+  locale: en_US.UTF-8
+  network:
+    ethernets:
+      enp1s0:
+        addresses:
+        - 172.16.200.171/24
+        routes:
+          - to: default
+            via: 172.16.200.251
+        nameservers:
+          addresses:
+          - 192.168.1.1
+          search: []
+    version: 2  
+  packages:
+    - curl
+    - iproute2
+    - net-tools
+    - vim
+  package_update: true
+  ssh:
+    install-server: true
+    authorized-keys:
+      - ssh-rsa AAAA
+    allow-pw: false
+  ssh_pwauth: true
+  storage:
+    config:
+    - ptable: gpt
+      path: /dev/vda
+      wipe: superblock-recursive
+      preserve: false
+      name: ''
+      grub_device: true
+      type: disk
+      id: disk-vda
+    - device: disk-vda
+      size: 1048576
+      flag: bios_grub
+      number: 1
+      preserve: false
+      grub_device: false
+      type: partition
+      id: partition-0
+    - device: disk-vda
+      size: 31138512896
+      wipe: superblock
+      flag: ''
+      number: 2
+      preserve: false
+      grub_device: false
+      type: partition
+      id: partition-1
+    - fstype: ext4
+      volume: partition-1
+      preserve: false
+      type: format
+      id: format-0
+    - path: /
+      device: format-0
+      type: mount
+      id: mount-0
+    - device: disk-vda
+      size: 1070596096
+      wipe: superblock
+      flag: swap
+      number: 3
+      preserve: false
+      grub_device: false
+      type: partition
+      id: partition-2
+    - fstype: swap
+      volume: partition-2
+      preserve: false
+      type: format
+      id: format-1
+    - path: ''
+      device: format-1
+      type: mount
+      id: mount-1
+  timezone: Asia/Tokyo
+  version: 1
