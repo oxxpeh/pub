@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo 'user:Password' | chpasswd
+echo 'root:Password' | chpasswd
 
 export DEBIAN_FRONTEND=noninteractive
 apt update
