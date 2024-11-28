@@ -1,9 +1,5 @@
 #cloud-config
 autoinstall:
-  apt:
-    proxy: http://172.16.200.47:3128
-    http_proxy: http://172.16.200.47:3128
-    https_proxy: http://172.16.200.47:3128
   identity:
     hostname: trxx
     password: $6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEowFys7LKyBAqsJD15ubNBDcAkT/
