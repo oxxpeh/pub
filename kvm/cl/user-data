@@ -1,0 +1,62 @@
+#cloud-config
+  locale: en_US.UTF-8
+  network:
+    version: 2
+    ethernets:
+      enp1s0:
+        addresses:
+        - 192.168.1.99/24
+        routes:
+          - to: default
+            via: 192.168.1.1
+        nameservers:
+          addresses:
+          - 192.168.1.1
+          search: []
+  packages:
+    - curl
+    - iproute2
+    - net-tools
+    - vim
+  package_update: true
+  power_state:
+    delay: 1
+    mode: poweroff
+    message: Bye Bye
+    timeout: 100
+  runcmd:
+    - [touch, /root/ooo.out]
+    - [curl, -o, /root/cl-init.sh, https://raw.githubusercontent.com/oxxpeh/pub/kvm/cl/cl-init.sh]
+    - [bash, /root/cl-init.sh]
+    - [touch, /etc/cloud/cloud-init.disabled]
+    - [sed, -i, "s/ubuntu/testxx/", /etc/hostname]
+  ssh_pwauth: true
+  timezone: Asia/Tokyo
+  users:
+    - name: user
+      sudo: ALL=(ALL) NOPASSWD:ALL
+      groups: users,admin,wheel
+      shell: /bin/bash
+      uid: 1001
+      ssh_authorized_keys:
+        - "ssh-rsa AAAA"
+  version: 1
+  write_files:
+    - content: |
+        network:
+          version: 2
+          ethernets:
+            enp1s0:
+              dhcp4: false
+              dhcp6: false
+              addresses:
+              - 192.168.1.99/24
+              routes:
+                - to: default
+                  via: 192.168.1.1
+              nameservers:
+                addresses:
+                - 192.168.1.1
+                search: []
+      path: /etc/netplan/90-net.yaml
+      permissions: '0600'
