@@ -58,5 +58,7 @@
                 addresses:
                 - 192.168.1.1
                 search: []
+              accept-ra: false
+              link-local: [ ]
       path: /etc/netplan/90-net.yaml
       permissions: '0600'
