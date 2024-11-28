@@ -12,7 +12,7 @@ autoinstall:
     variant: ''
   late-commands:
     - curtin in-target -- touch /root/ooo.out
-    - curtin in-target -- curl -o /root/ub-test-init.sh https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/at/cl-init.sh
+    - curtin in-target -- curl -o /root/cl-init.sh https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/at/cl-init.sh
     - curtin in-target -- bash -c "sed -i.bak -e '/^%sudo/s/ ALL/NOPASSWD:ALL/g' /etc/sudoers"
   locale: en_US.UTF-8
   network:
