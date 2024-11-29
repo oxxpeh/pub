@@ -1,6 +1,6 @@
 # kvmとubuntu24.10 とcloud-init
 ## まとめ
-・ISOよりhttps://cloud-images.ubuntu.com/のimg使用がよいかも
+・ISOよりhttps://cloud-images.ubuntu.com/ のimg使用がよいかも
 ## 作成例
 以下なvm作成予定  
 ・ユーザ追加  
