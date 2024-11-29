@@ -83,8 +83,7 @@ $6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEo
 [動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 6MBぐらい  
 8倍速の動画  
 [gif動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 5MBぐらい  
-上記動画(47秒ぐらい)の毎秒画面切り出して結合  
-切り出したjpgは50個ぐらいで2.5MBだったのに…  
+上記動画(47秒ぐらい)の毎秒画面切り出しで  
 
 
 
