@@ -19,7 +19,7 @@ qemu-img resize oracular-server-cloudimg-amd64.img +27G
 qemu-img create -b oracular-server-cloudimg-amd64.img -F qcow2 -f qcow2 test.qcow2
 # -- vm作成
 virt-install --import --name test --osinfo ubuntu24.10   --vcpus 2 --memory 8192 \
- --disk path=/home/work/test.qcow2 --network bridge=br0 \
+ --disk path=test.qcow2 \
  --graphics vnc,listen=0.0.0.0,port=59000 \
  --sysinfo system.serial='ds=nocloud;seedfrom=https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/cl'
 # -- 作成後電源落とすので
@@ -27,11 +27,12 @@ virsh start test
 ```
 ### ISOからのautoinstall
 ```
+curl -O https://ftp.udx.icscoe.jp/Linux/ubuntu-releases/oracular/ubuntu-24.10-live-server-amd64.iso
 virt-install --name test2 --osinfo ubuntu24.10   --vcpus 2 --memory 8192\
- --disk path=/home/work/test2.qcow2,size=30 \
- --network bridge=br0 --graphics vnc,listen=0.0.0.0,port=59001 \
+ --disk path=test2.qcow2,size=30 \
+ --graphics vnc,listen=0.0.0.0,port=59001 \
  --extra-args 'console=ttyS0,115200n8 --- console=ttyS0,115200n8' \
- --location '/mnt/cifs/files/VM/ISO/ubo.iso,kernel=casper/vmlinuz,initrd=casper/initrd' \
+ --location 'ubuntu-24.10-live-server-amd64.iso,kernel=casper/vmlinuz,initrd=casper/initrd' \
  --sysinfo system.serial='ds=nocloud;seedfrom=https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/at/' \
  --extra-args 'autoinstall' 
 # -- 作成後電源落とすので
@@ -70,4 +71,5 @@ $ virsh dumpxml test | grep -A5 "'smbios"
     </system>
   </sysinfo>
   <os>
+#### パスワードのハッシュ
 ```
