@@ -3,7 +3,7 @@
 ・ISOよりhttps://cloud-images.ubuntu.com/ のimg使用がよいかも
 ## 作成例
 以下なvm作成予定  
-・ユーザ追加  
+・ユーザ追加(user:Password)  
 ・ip設定  
 ・ssh鍵コピー  
 ・スクリプトコピー(img使用なら実行)  
