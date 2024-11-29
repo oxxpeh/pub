@@ -84,6 +84,43 @@ $6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEo
 sudo apt install guestfs-tools
 sudo virt-customize -v -x -a oracular-server-cloudimg-amd64.img -root-password password:Password
 ```
+#### 「--sysinfo」で設定できる項目
+```
+$ virt-install --sysinfo=?
+--sysinfo options:
+  clearxml
+  xpath[0-9]*.create
+  xpath[0-9]*.delete
+  xpath[0-9]*.set
+  xpath[0-9]*.value
+  baseBoard.asset
+  baseBoard.location
+  baseBoard.manufacturer
+  baseBoard.product
+  baseBoard.serial
+  baseBoard.version
+  bios.date
+  bios.release
+  bios.vendor
+  bios.version
+  chassis.asset
+  chassis.manufacturer
+  chassis.serial
+  chassis.sku
+  chassis.version
+  entry[0-9]*
+  entry[0-9]*.file
+  entry[0-9]*.name
+  oemStrings.entry[0-9]*
+  system.family
+  system.manufacturer
+  system.product
+  system.serial
+  system.sku
+  system.uuid
+  system.version
+  type
+```
 #### 動作画面へのリンク
 リンククリックでダウンロードします  
 [動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 6MBぐらい  
