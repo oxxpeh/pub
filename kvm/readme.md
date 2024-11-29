@@ -6,10 +6,10 @@
 ・ユーザ追加  
 ・ip設定  
 ・ssh鍵コピー  
-・スクリプトコピー(実行)  
+・スクリプトコピー(img使用なら実行)  
  「apache2 dstat htop」のインストールとパスワード変更  
-・「user-data」はgithub
-作成後
+・「user-data」はgithub  
+
 ### img使用
 ```
 curl -O "https://cloud-images.ubuntu.com/oracular/current/oracular-server-cloudimg-amd64.img"
@@ -79,6 +79,7 @@ openssl passwd -6 Password
 $6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEowFys7LKyBAqsJD15ubNBDcAk
 ```
 #### 動作画面へのリンク
+リンククリックでダウンロードします  
 [動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 6MBぐらい  
 8倍速の動画  
 [gif動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 5MBぐらい  
