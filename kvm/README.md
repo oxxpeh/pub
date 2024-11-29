@@ -78,6 +78,12 @@ $ virsh dumpxml test | grep -A5 "'smbios"
 openssl passwd -6 Password
 $6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEowFys7LKyBAqsJD15ubNBDcAk
 ```
+#### 「virt-customize」でパスワード変更
+イメージバラして、細工してまた包んでしてるから使わないで「cloud-init」とかのがいいかと
+```
+sudo apt install guestfs-tools
+sudo virt-customize -v -x -a oracular-server-cloudimg-amd64.img -root-password password:Password
+```
 #### 動作画面へのリンク
 リンククリックでダウンロードします  
 [動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 6MBぐらい  
