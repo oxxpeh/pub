@@ -9,6 +9,7 @@
 ・スクリプトコピー(実行)  
  「apache2 dstat htop」のインストールとパスワード変更  
 ・「user-data」はgithub
+作成後
 ### img使用
 ```
 curl -O "https://cloud-images.ubuntu.com/oracular/current/oracular-server-cloudimg-amd64.img"
@@ -21,6 +22,8 @@ virt-install --import --name test --osinfo ubuntu24.10   --vcpus 2 --memory 8192
  --disk path=/home/work/test.qcow2 --network bridge=br0 \
  --graphics vnc,listen=0.0.0.0,port=59000 \
  --sysinfo system.serial='ds=nocloud;seedfrom=https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/cl'
+# -- 作成後電源落とすので
+virsh start test
 ```
 ### ISOからのautoinstall
 ```
@@ -31,7 +34,8 @@ virt-install --name test2 --osinfo ubuntu24.10   --vcpus 2 --memory 8192\
  --location '/mnt/cifs/files/VM/ISO/ubo.iso,kernel=casper/vmlinuz,initrd=casper/initrd' \
  --sysinfo system.serial='ds=nocloud;seedfrom=https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/at/' \
  --extra-args 'autoinstall' 
-
+# -- 作成後電源落とすので
+virsh start test2
 ```
 `virsh console test`やvncviewerで確認
 ## 補足など
@@ -54,3 +58,16 @@ virt-install --name test2 --osinfo ubuntu24.10   --vcpus 2 --memory 8192\
 ip設定できてたときもあったと思うのですが「write_files」でyaml作成に…
 #### やっぱりスクリプト
 「user-data」の記述でできそうなことも、スクリプトで済むならそっちのほうが悩まなくて良いですかね  
+#### 「/etc/cloud/cloud-init.disabled」
+live ISOでインストールすると「/etc/cloud/cloud-init.disabled」ファイル作成されてcloud-initが無効に  
+img使用でも作成してます。  
+kvmの設定として「seedfrom=XXX」が残るので起動毎に実行されるので。
+```
+$ virsh dumpxml test | grep -A5 "'smbios"
+  <sysinfo type='smbios'>
+    <system>
+      <entry name='serial'>ds=nocloud;seedfrom=https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/cl</entry>
+    </system>
+  </sysinfo>
+  <os>
+```
