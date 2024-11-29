@@ -71,5 +71,19 @@ $ virsh dumpxml test | grep -A5 "'smbios"
     </system>
   </sysinfo>
   <os>
-#### パスワードのハッシュ
 ```
+#### パスワードのハッシュ
+<span style="color: #38761d;"><br>(参)<br>LinuxでSHA-512のパスワードハッシュ作成方法まとめ #Python - Qiita<br>https://qiita.com/yumenomatayume/items/2c77ec52e7b2257f6800</span><br>
+```
+openssl passwd -6 Password
+$6$RCQTZx3KQune5XBV$XTeLU5sMj1iLUqE0dRrs4lJmARI8jKL6iFAIGryHQv8Ld0PxZgn9e59DPtEowFys7LKyBAqsJD15ubNBDcAk
+```
+#### 動作画面へのリンク
+[動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 6MBぐらい  
+8倍速の動画  
+[gif動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 5MBぐらい  
+上記動画(47秒ぐらい)の毎秒画面切り出して結合  
+切り出したjpgは50個ぐらいで2.5MBだったのに…  
+
+
+
