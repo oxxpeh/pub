@@ -124,6 +124,23 @@ $ virt-install --sysinfo=?
 #### qemuでするなら
 `-smbios type=1,serial=ds='nocloud;s=http://10.0.2.2:8000/'`でいけるもよう
 <span style="color: #38761d;"><br>(参)<br>New user tutorial with QEMU - cloud-init 24.4 documentation<br>https://cloudinit.readthedocs.io/en/latest/tutorial/qemu.html</span><br>
+#### meta-dataでホスト名
+autoinstallで効く「identity」の「hostname」ではなくmeta-dataで指定みたい  
+EC2では「instance-id」に意味があるのでしょうが
+```
+instance-id: i-87018aed
+local-hostname: myhost.internal
+```
+#### live migration
+incusやDockerでなくkvm使用してる理由はストレージライブマイグレーションしたいからなので
+```
+virsh migrate --live --copy-storage-all --verbose XXXX qemu+ssh://user@host/system
+# -- 上だと差分イメージと元イメージ合わせたイメージが移行先にできた
+# -- イメージを先にコピーしといて以下だと差分になってたが「--copy-storage-all」でも同じだった
+# -- イメージがあるか無いかで動作が違う様子 
+virsh migrate --live --copy-storage-inc --verbose XXXX qemu+ssh://user@host/system
+
+```
 #### 動作画面へのリンク
 リンククリックでダウンロードします  
 [動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 6MBぐらい  
