@@ -1,6 +1,9 @@
 # kvmとubuntu24.10 とcloud-init
 ## まとめ
-・ISOよりhttps://cloud-images.ubuntu.com/ のimg使用がよいかも
+・ISOよりhttps://cloud-images.ubuntu.com/ のimg使用がよいかも  
+・「--cloud-init user-data='xx'」でがんばる  
+  「--sysinfo system.serial=」とか動作しなくなったので(わたしの環境だけかも)  
+
 ## 作成例
 以下なvm作成予定  
 ・ユーザ追加(user:Password)  
@@ -10,7 +13,24 @@
  「apache2 dstat htop」のインストールとパスワード変更  
 ・「user-data」はgithub  
 
-### img使用
+### img使用(--cloud-init)
+```
+curl -O "https://cloud-images.ubuntu.com/oracular/current/oracular-server-cloudimg-amd64.img"
+# -- 元は 3.5 GiBなので追加
+qemu-img resize oracular-server-cloudimg-amd64.img +27G
+# -- 差分イメージ作成
+qemu-img create -b oracular-server-cloudimg-amd64.img -F qcow2 -f qcow2 test.qcow2
+# -- vm作成
+curl -O https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/mp/mp-ud.txt
+curl -O https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/mp/meta.yaml
+curl -O https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/mp/net.yaml
+virt-install --import --name test --osinfo ubuntu24.10  \
+ --vcpus 2 --memory 8192 --disk path=test.qcow2  --cloud-init \
+  user-data='mp-ud.txt',network-config='net.yaml',meta-data='meta.yaml'
+# -- 作成後電源落とすので
+virsh start test
+```
+### img使用(--sysinfo)
 ```
 curl -O "https://cloud-images.ubuntu.com/oracular/current/oracular-server-cloudimg-amd64.img"
 # -- 元は 3.5 GiBなので追加
@@ -25,7 +45,7 @@ virt-install --import --name test --osinfo ubuntu24.10   --vcpus 2 --memory 8192
 # -- 作成後電源落とすので
 virsh start test
 ```
-### ISOからのautoinstall
+### ISOからのautoinstall(--sysinfo)
 ```
 curl -O https://ftp.udx.icscoe.jp/Linux/ubuntu-releases/oracular/ubuntu-24.10-live-server-amd64.iso
 virt-install --name test2 --osinfo ubuntu24.10   --vcpus 2 --memory 8192\
@@ -141,12 +161,27 @@ virsh migrate --live --copy-storage-all --verbose XXXX qemu+ssh://user@host/syst
 virsh migrate --live --copy-storage-inc --verbose XXXX qemu+ssh://user@host/system
 
 ```
-#### 動作画面へのリンク
+#### --cloud-init user-data='xx'
+xxで指定するのはMIMEマルチパート形式でないと怒られて無視されるようなので参照サイトの通りに実施して作成
+<span style="color: #38761d;"><br>(参)<br>cloud-initでシェルスクリプトとcloud-configを同時に使う | DevelopersIO<br>https://dev.classmethod.jp/articles/cloud-init-use-shell-and-cloud-config/</span><br>
+```
+apt install -y cloud-utils
+write-mime-multipart --output=mp-ud.txt \
+ test.sh:text/x-shellscript \
+ user-data:text/cloud-config
+```
+MIMEで符号化されてますがマルチバイト文字とか使用してないならそのまま修正してよさそう。
+指定したファイルをまとめてISOにして渡しているもよう
+#### 動作画面へのリンク(--sysinfo使用)
 リンククリックでダウンロードします  
 [動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 6MBぐらい  
 8倍速の動画  
 [gif動画](https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/virt-instx8.mp4) 5MBぐらい  
 上記動画(47秒ぐらい)の毎秒画面切り出しで  
-
-
-
+### 履歴
+#### 2024/12/10
+`--cloud-init user-data='xx'`での指定を追加  
+「--sysinfo」で動作しなくなってたので「--cloud-init user-data='xx'」で対応  
+「meta-data」、「network-config」での指定も可能になった、yaml形式(?)でなくjson形式(?)にしたらいけた模様  
+#### 2024/11/29
+とりあえず作成
