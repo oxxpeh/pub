@@ -1,0 +1,42 @@
+Content-Type: multipart/mixed; boundary="===============2841896970869824460=="
+MIME-Version: 1.0
+
+--===============2841896970869824460==
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="test.sh"
+
+#!/bin/bash
+touch /root/ppp.ppp
+
+--===============2841896970869824460==
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="user-data"
+
+#cloud-config
+  locale: en_US.UTF-8
+  power_state:
+    delay: 1
+    mode: poweroff
+    message: Bye Bye
+    timeout: 100
+  runcmd:
+    - [curl, -o, /root/test-init.sh, https://raw.githubusercontent.com/oxxpeh/pub/main/kvm/cl/cl-init.sh]
+    - [bash, /root/test-init.sh]
+    - [touch, /etc/cloud/cloud-init.disabled]
+  ssh_pwauth: true
+  timezone: Asia/Tokyo
+  users:
+    - name: user
+      sudo: ALL=(ALL) NOPASSWD:ALL
+      groups: users,admin,wheel
+      shell: /bin/bash
+      uid: 1000
+      ssh_authorized_keys:
+        - "ssh-rsa AAAA"
+  version: 1
+
+--===============2841896970869824460==--
