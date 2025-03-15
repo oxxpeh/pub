@@ -191,8 +191,8 @@ def ff_mk_fig(df_4p):
     #return(out_fig)
 
 
-def ff_set_pare(event):
-    select_element = ij_dc.getElementById("ll_pare")
+def ff_set_cur(event):
+    select_element = ij_dc.getElementById("ll_cur")
     selected_value = select_element.value
     if selected_value:
         dd_00['url_tgt'] = dd_00['url'][selected_value]
