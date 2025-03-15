@@ -199,13 +199,6 @@ def ff_set_pare(event):
         ij_wd.console.log(f"tgt {dd_00['url_tgt']}")
 
 
-def ff_wt_sec():
-    """
-    """
-    dt_nn = ii_dt.datetime.now()
-    ii_tm.sleep(10 - dt_nn.second % 10 - float(f"{dt_nn:.%f}")  )
-    ij_wd.console.log(f'@ {dt_nn} -- {10 - dt_nn.second % 10 - float(f"{dt_nn:.%f}")  }')
-
 dt_0 = ii_dt.datetime.now()
 ii_pys.display(f"開始は{dt_0:%Y年%m月%d日 %H:%M:%S.%f}です。", target="ele_date", append=False)
 
