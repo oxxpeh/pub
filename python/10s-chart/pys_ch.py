@@ -36,7 +36,7 @@ aas_cl_gry =  'rgb(128,128,128)'
 dd_00 = {}
 dd_00['url_tgt'] = ''
 dd_00['url'] = {}
-dd_00['url']['btc_jpy'] = 'https://172.16.200.182/cifs/tmp/memd/gmo_sck_tck_BTC_JPY.pck'
+dd_00['url']['btc_jpy'] = 'https://raw.githubusercontent.com/oxxpeh/pub/main/python/10s-chart/gmo_sck_tck_BTC_JPY.pck'
 dd_00['df_4p'] = ii_pd.DataFrame(columns=['date','opn', 'hgh', 'low', 'cls'])
 dd_00['df_4p'].set_index('date', inplace=True)
 
@@ -47,7 +47,6 @@ ele_out3 = ij_dc.getElementById("ele_out3")
 
 
 def ff_get_tck():
-    #rt = ii_rq.get('https://172.16.200.182/tr/gmo_sck_tck_XRP_JPY.pck')
     rt = ii_rq.get(dd_00['url_tgt'])
     df_tck = ii_pc.loads(rt.content)
     if not 'prc' in df_tck:
