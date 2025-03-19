@@ -202,6 +202,6 @@ def ff_set_cur(event):
 dt_0 = ii_dt.datetime.now()
 ii_pys.display(f"開始は{dt_0:%Y年%m月%d日 %H:%M:%S.%f}です。", target="ele_date", append=False)
 
-
-cb = ii_pn.state.add_periodic_callback(ff_lp_main, 10000)
+ff_lp_main()
+cb = ii_pn.state.add_periodic_callback(ff_lp_main, 30000)
 
