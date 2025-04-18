@@ -1,0 +1,766 @@
+# -- Test
+{data: [{close: !!python/object/apply:numpy._core.multiarray._reconstruct {args: [
+          &id001 !!python/name:numpy.ndarray '', !!python/tuple [0], !!binary "Yg==\n"],
+        state: !!python/tuple [1, !!python/tuple [277], &id002 !!python/object/apply:numpy.dtype {
+            args: [f8, false, true], state: !!python/tuple [3, <, null, null, null,
+              -1, -1, 0]}, false, !!binary "O99PjZfKYUBI4XoUru9hQFK4HoXrXWJAw/UoXI+6YkDNzMzMzKhiQOxRuB6Fk2JAf2q8dJOAYkA9\n\
+            CtejcNFiQKrx0k1iqGJA46WbxCAIY0Dy0k1iEOxiQOf7qfHSZWNAPQrXo3B9Y0CNl24Sg4hjQBsv\n\
+            3SQGtWNA2/l+aryoY0BiEFg5tLhjQBsv3SQGjWNAYOXQIts1Y0DP91Pjpb9iQLKd76fGt2JAj8L1\n\
+            KFxXY0DZzvdT40ljQPp+arx0E2NAg8DKoUUeY0ArhxbZzgdjQOxRuB6Fr2JAexSuR+GiYkB9PzVe\n\
+            upViQM3MzMzMxGFAYOXQItv5YUCcxCCwcphhQHnpJjEIyGFAEoPAyqFFYkA5tMh2vgtiQEoMAiuH\n\
+            cmJAPzVeuklUYkD4U+Olm1BiQOXQItv5NmNArkfhehSuY0BCYOXQIrtjQF66SQwCF2RAH4XrUbga\n\
+            ZEAGgZVDi/hjQHWTGARWqmNA8tJNYhCYY0DhehSuR6ljQBkEVg4tnmNAK4cW2c5zY0DRItv5fnZj\n\
+            QO58PzVeHmNAtvP91HjJY0BEi2zn+1FjQEjhehSuJ2NAc2iR7XzzYkAEVg4tsuliQH0/NV667WJA\n\
+            kxgEVg6hYkApXI/C9WBiQDVeukkMwmJAQmDl0CLPYkBvEoPAysViQNV46SYxqGJAYOXQItuJYkBU\n\
+            46WbxIRiQGq8dJMYhGJAsHJoke0cYkCe76fGSxNiQA4tsp3vn2FARrbz/dTMYUCNl24Sg8RhQH9q\n\
+            vHSTHGJAYhBYObRYYkA3iUFg5axiQESLbOf7sWJAyXa+nxrvYkAtsp3vp6piQLpJDAIrs2JAO99P\n\
+            jZe6YkAUrkfherBiQFTjpZvEqGJAw/UoXI+qYkDsUbgehYtiQB+F61G4emJAUrgehet5YkAZBFYO\n\
+            LUZiQLByaJHtTGJAXI/C9SgsYkD2KFyPwh1iQB+F61G4tmFAFK5H4XqkYUBxPQrXo7hhQLKd76fG\n\
+            V2FALbKd76fCYUAxCKwcWghiQClcj8L19GFAZmZmZma6YUCPwvUoXGthQPyp8dJNfmFA16NwPQqT\n\
+            YUBqvHSTGDxhQKRwPQrX92BAke18PzXaYEBI4XoUrgdhQFCNl24Sw2BApHA9Cte3YECq8dJNYoRg\n\
+            QC/dJAaBmWBA30+Nl25WYEAEVg4tsnlgQBBYObTI3mBAO99PjZf6YECiRbbz/QxhQM/3U+Olw2BA\n\
+            yXa+nxprYECiRbbz/WRgQH0/NV66OWBAAiuHFtkuYEA730+Nl/ZfQClcj8L1gGBA/Knx0k1iYECW\n\
+            Q4ts55tgQH0/NV66FWFA0SLb+X4SYUDpJjEIrMhgQOxRuB6FY2FA9P3UeOmKYUCq8dJNYlhhQLBy\n\
+            aJHtVGJAPQrXo3BtYkBcj8L1KHRiQNejcD0Kl2JAw/UoXI8qYkAX2c73UxdiQArXo3A96mFAokW2\n\
+            8/3cYUA1XrpJDNJhQL6fGi/dhGFA8tJNYhA4YUD2KFyPwh1hQI/C9Shcr2BA16NwPQrfYECuR+F6\n\
+            FKZgQJqZmZmZAWFAO99PjZdOYUDD9ShcjwJhQJqZmZmZ5WBAPQrXo3DlYEAfhetRuN5gQD0K16Nw\n\
+            zWBA7FG4HoVbYEA9CtejcMVfQGZmZmZm9l9AUrgeheslYEBSuB6F61FgQMP1KFyPOmBAmpmZmZkN\n\
+            YEBqvHSTGJxfQBSuR+F6FF9Aj8L1KFyfXkCkcD0K14NeQHsUrkfhyl1A/tR46SZRXUBGtvP91LBc\n\
+            QFCNl24S41xAc2iR7Xy/XECNl24Sg9hcQAAAAAAA0FxACKwcWmTLXEBCYOXQImtcQGq8dJMYjFxA\n\
+            UrgehevhXEAxCKwcWsRcQGZmZmZmllxAukkMAitnXEAOLbKd71dcQHE9CtejMFxAoBov3SRWXECs\n\
+            HFpkO39cQKAaL90kdlxAmpmZmZlZXEAAAAAAAIBcQD0K16NwXVxAzczMzMyMXED2KFyPwg1cQI2X\n\
+            bhKDwFtApHA9CterW0DhehSuR3lbQArXo3A9eltAPzVeuklsW0CkcD0K13NbQI/C9Shcb1tAFK5H\n\
+            4XpkW0D0/dR46Y5bQI/C9ShcZ1tAcT0K16OgW0BOYhBYOYRbQGDl0CLbgVtAw/UoXI/CW0BxPQrX\n\
+            o7BbQJqZmZmZiVtAcT0K16NoW0BmZmZmZl5bQDMzMzMzc1tAXI/C9Sg8W0CR7Xw/NVZbQGiR7Xw/\n\
+            JVtAMQisHFpUW0D0/dR46fZaQAAAAAAAMFtAUrgehetpW0B7FK5H4apbQKabxCCwaltAi2zn+6k5\n\
+            W0Atsp3vpz5bQH0/NV66EVtAx0s3iUGgWkBiEFg5tFhaQF66SQwCO1pAuB6F61FYWkA1XrpJDCpa\n\
+            QLx0kxgE7llAw/UoXI/yWUAdWmQ73/9ZQE5iEFg5zFlA+FPjpZvkWUAzMzMzM9NZQGDl0CLbAVpA\n\
+            qvHSTWIIWkA9CtejcAVaQHnpJjEI9FlAuB6F61EoWkDJdr6fGtdZQO58PzVeKlpAXI/C9SgsWkDw\n\
+            p8ZLN1laQPYoXI/CZVpAzczMzMxUWkCyne+nxmNaQDVeukkMIlpAKVyPwvWIWkACK4cW2Y5aQL6f\n\
+            Gi/dVFpAhxbZzvdzWkBcj8L1KKRaQCuHFtnOd1pAXrpJDAJ7WkArhxbZzodaQEa28/3UwFpA7nw/\n\
+            NV66WkD0/dR46d5aQPYoXI/CzVpA16NwPQq3WkDZzvdT49VaQEw3iUFgZVtAJzEIrBzyWkBmZmZm\n\
+            ZuZaQDVeukkMylpAz/dT46WrWkAZBFYOLbpaQOXQItv53lpAQmDl0CLjWkCcxCCwchhbQKJFtvP9\n\
+            HFtAuB6F61H4WkBmZmZmZrZbQJqZmZmZ+VpA16NwPQpXWkDdJAaBlQNbQFyPwvUo5FtAqMZLN4lx\n\
+            W0CPwvUoXG9bQNejcD0KF1tAMzMzMzNTW0CamZmZmYlbQK5H4XoUXltAhetRuB4FW0A=\n"]},
+      high: !!python/object/apply:numpy._core.multiarray._reconstruct {args: [*id001,
+          !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [1, !!python/tuple [
+            277], *id002, false, !!binary "w/UoXI8CYkCiRbbz/YhiQMHKoUW2z2JALbKd76fmYkBiEFg5tMRiQO58PzVepmJABFYOLbLpYkBI\n\
+            4XoUrt9iQI2XbhKDDGNABFYOLbJZY0Cq8dJNYnxjQA4tsp3vh2NAeekmMQiYY0B1kxgEVsZjQOOl\n\
+            m8Qg3GNAZmZmZmbCY0Cmm8QgsMJjQJqZmZmZvWNAi2zn+6k5Y0AIrBxaZOdiQEJg5dAiV2NAMQis\n\
+            HFp8Y0AOLbKd75djQIlBYOXQVmNATmIQWDk8Y0BEi2zn+yVjQPyp8dJNymJA/Knx0k2yYkBcj8L1\n\
+            KKBiQMHKoUW2T2JApHA9CtcPYkCamZmZmflhQB+F61G4ZmJAlkOLbOdHYkCLbOf7qYFiQM3MzMzM\n\
+            rGJARrbz/dR8YkBeukkMAmdjQFYOLbKds2NA7FG4HoXbY0D2KFyPwjlkQFg5tMh2PmRAGy/dJAYp\n\
+            ZEAfhetRuPpjQE5iEFg5yGNAMzMzMzOvY0Atsp3vp7ZjQJHtfD81pmNAhetRuB6ZY0DfT42Xbn5j\n\
+            QPT91HjpBmRANV66SQzOY0AMAiuHFlljQDEIrBxaLGNA0SLb+X7+YkBQjZduEv9iQN0kBoGV+2JA\n\
+            aJHtfD+lYkAK16NwPdJiQF66SQwC22JAcT0K16PYYkC4HoXrUdxiQGZmZmZmsmJAppvEILCSYkCD\n\
+            wMqhRZZiQH0/NV66mWJA4XoUrkdNYkCsHFpkOz9iQEJg5dAi22FAw/UoXI8eYkACK4cW2VJiQIcW\n\
+            2c73b2JAEoPAyqG1YkBkO99Pjb9iQJMYBFYO/WJAJQaBlUPzYkAlBoGVQ/diQDeJQWDl2GJAsp3v\n\
+            p8a/YkBKDAIrh7piQIXrUbgexWJALbKd76e2YkAtsp3vp45iQGZmZmZmfmJAhxbZzvd7YkCHFtnO\n\
+            92tiQLgehetRVGJAy6FFtvNRYkAAAAAAACBiQAaBlUOL/GFAy6FFtvO5YUA730+Nl75hQFyPwvUo\n\
+            4GFA8KfGSzcdYkCgGi/dJCJiQB1aZDvf+2FA/tR46Sa9YUDRItv5fo5hQOf7qfHSnWFAukkMAiuX\n\
+            YUAdWmQ731dhQGq8dJMY+GBAVOOlm8Q4YUDLoUW28xFhQCPb+X5q5GBAL90kBoHBYEBcj8L1KLhg\n\
+            QF66SQwCs2BA8tJNYhCgYEBWDi2yneNgQIXrUbgePWFAMzMzMzMjYUD4U+OlmxBhQMHKoUW242BA\n\
+            vp8aL92cYEBYObTIdmZgQMHKoUW2Y2BAWDm0yHZyYECWQ4ts55tgQNv5fmq82GBAAAAAAADQYEBC\n\
+            YOXQIi9hQJqZmZmZRWFACKwcWmQ7YUD4U+Olm3xhQPLSTWIQyGFAmpmZmZmZYUAZBFYOLXJiQLpJ\n\
+            DAIrm2JAH4XrUbi2YkCR7Xw/Nf5iQHNoke18m2JAke18PzUuYkCwcmiR7RxiQEa28/3UPGJAAiuH\n\
+            FtkeYkA5tMh2vh9iQBKDwMqhmWFAXI/C9Sg4YUAIrBxaZCdhQC2yne+n8mBA1XjpJjHwYECJQWDl\n\
+            0C5hQOOlm8QgXGFAjZduEoNsYUAnMQisHBJhQGq8dJMYIGFAiUFg5dAWYUAzMzMzM/NgQOf7qfHS\n\
+            0WBAF9nO91NfYEAQWDm0yAJgQClcj8L1OGBAyXa+nxprYEBSuB6F61lgQHnpJjEIaGBAKVyPwvUs\n\
+            YEDdJAaBlatfQOxRuB6FK19AO99PjZdGX0Cyne+nxpteQJqZmZmZ2V1A16NwPQpXXUCkcD0K1/Nc\n\
+            QGIQWDm08FxADi2yne/3XED2KFyPwhVdQMuhRbbz5VxApHA9CtfrXEDByqFFtsNcQFg5tMh29lxA\n\
+            SgwCK4cWXUDn+6nx0s1cQEa28/3UoFxAmpmZmZmRXEB3vp8aL31cQD0K16NwfVxAtvP91HjhXECu\n\
+            R+F6FL5cQCUGgZVDk1xAzczMzMycXECHFtnO95NcQM3MzMzMrFxA9ihcj8KdXEC4HoXrURBcQKJF\n\
+            tvP9BFxAiUFg5dCyW0DfT42XbopbQPhT46WbnFtAexSuR+GaW0D+1HjpJpFbQDvfT42XjltAJQaB\n\
+            lUOzW0ACK4cW2ZZbQEw3iUFgpVtAy6FFtvOlW0DNzMzMzKxbQFyPwvUozFtAJzEIrBzqW0CBlUOL\n\
+            bMdbQNv5fmq8tFtAy6FFtvN1W0CF61G4HpVbQNv5fmq8jFtA46WbxCBgW0D8qfHSTXJbQM3MzMzM\n\
+            bFtAHVpkO99XW0A9CtejcDVbQNNNYhBYcVtAAAAAAACwW0DZzvdT471bQIPAyqFFdltAj8L1KFxX\n\
+            W0D0/dR46U5bQPCnxks3KVtAMQisHFqsWkBmZmZmZo5aQF66SQwCa1pA8KfGSzdxWkBqvHSTGDxa\n\
+            QC/dJAaBBVpAxSCwcmgZWkC8dJMYBAZaQLbz/dR4+VlAKVyPwvX4WUBvEoPAyglaQIXrUbgeJVpA\n\
+            8tJNYhAwWkBiEFg5tDBaQEa28/3USFpAxSCwcmhpWkCR7Xw/NVZaQOxRuB6FQ1pAHVpkO99vWkCs\n\
+            HFpkO29aQNejcD0Kh1pA+n5qvHRzWkDNzMzMzGxaQLTIdr6filpAYhBYObSYWkAX2c73U6NaQPhT\n\
+            46WbvFpAYOXQItupWkAzMzMzM8NaQJHtfD81nlpA7FG4HoWDWkB7FK5H4eJaQKRwPQrX21pAtMh2\n\
+            vp/yWkDD9ShcjwpbQKJFtvP93FpAKVyPwvXoWkBQjZduEmtbQFg5tMh2dltAzczMzMz8WkASg8DK\n\
+            oQVbQOF6FK5H8VpAI9v5fmrEWkAdWmQ73+daQHsUrkfhAltAKVyPwvUYW0CcxCCwclhbQEoMAiuH\n\
+            LltA5/up8dLtW0C4HoXrUeBbQLgehetRIFtAokW28/0kW0DByqFFtutbQDvfT42XDlxAf2q8dJOI\n\
+            W0C28/3UeIFbQAwCK4cWUVtAg8DKoUWOW0DD9Shcj5JbQFyPwvUobFtAL90kBoFdW0A=\n"]},
+      low: !!python/object/apply:numpy._core.multiarray._reconstruct {args: [*id001,
+          !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [1, !!python/tuple [
+            277], *id002, false, !!binary "c2iR7XyzYUBSuB6F68FhQMUgsHJoEWJAUI2XbhKrYkCamZmZmYViQPCnxks3UWJAGQRWDi1eYkBE\n\
+            i2zn+5FiQC/dJAaBnWJAokW28/3kYkAhsHJokd1iQC2yne+nNmNAppvEILBaY0BCYOXQIl9jQGQ7\n\
+            30+Nh2NAnMQgsHKAY0BKDAIrh4pjQClcj8L1JGNA2c73U+O1YkCNl24Sg5RiQB+F61G4rmJAYhBY\n\
+            ObQoY0CBlUOLbBNjQBsv3SQG6WJAN4lBYOX4YkAfhetRuKJiQNejcD0Km2JA9P3UeOlqYkAj2/l+\n\
+            arRhQESLbOf7wWFA/Knx0k1yYUA3iUFg5YhhQBSuR+F6uGFArkfhehTuYUDTTWIQWAFiQKAaL90k\n\
+            QmJAbxKDwMq1YUB3vp8aL01iQFK4HoXr/WJAz/dT46VrY0BzaJHtfKtjQN9PjZduCmRASOF6FK7X\n\
+            Y0DNzMzMzKRjQB+F61G4dmNAWmQ7309RY0ArhxbZzotjQDm0yHa+b2NAXrpJDAIzY0Coxks3iRlj\n\
+            QJ7vp8ZL+2JAtMh2vp9OY0C0yHa+nyJjQDVeukkM8mJA5/up8dLZYkBiEFg5tOBiQLByaJHtnGJA\n\
+            +n5qvHRPYkCe76fGS09iQEoMAiuHpmJAfT81Xrq1YkAv3SQGgZ1iQLKd76fGc2JAjZduEoM8YkD4\n\
+            U+Olm1RiQFpkO99PGWJAWmQ730/tYUCwcmiR7ZhhQCuHFtnOh2FAc2iR7Xy7YUBKDAIrh55hQEjh\n\
+            ehSus2FAGy/dJAZVYkDb+X5qvGRiQIPAyqFFpmJAmpmZmZmpYkCamZmZmZliQBkEVg4tqmJAz/dT\n\
+            46WXYkCTGARWDoViQL6fGi/daGJAz/dT46WHYkAZBFYOLWpiQFTjpZvEPGJAf2q8dJNAYkA1XrpJ\n\
+            DA5iQClcj8L1EGJAVOOlm8QUYkAxCKwcWrBhQLx0kxgElmFAYOXQIttBYUB9PzVeujVhQN0kBoGV\n\
+            J2FAbxKDwMrBYUDZzvdT491hQK5H4XoUpmFAAAAAAABgYUBcj8L1KFhhQPYoXI/CTWFASOF6FK4v\n\
+            YUA3iUFg5fRgQEjhehSut2BADi2yne+vYEAAAAAAAKBgQLbz/dR4sWBACtejcD16YEBkO99PjVNg\n\
+            QFyPwvUoTGBA7FG4HoUzYEApXI/C9XBgQOxRuB6Fw2BAj8L1KFznYEBMN4lBYL1gQLTIdr6fZmBA\n\
+            qMZLN4k5YEBSuB6F6wFgQAAAAAAAIGBA2c73U+PNX0DsUbgehdtfQN0kBoGVL2BAAAAAAABYYECa\n\
+            mZmZmVFgQPLSTWIQ0GBAexSuR+HCYEDsUbgehbNgQClcj8L1QGFAGy/dJAY1YUBvEoPAyk1hQBSu\n\
+            R+F6NGJAw/UoXI8iYkCF61G4HkViQB+F61G4JmJAAAAAAADwYUCDwMqhReZhQMP1KFyPimFAQmDl\n\
+            0CKzYUB7FK5H4YJhQBBYObTIMmFAKVyPwvX4YEBxPQrXo5BgQB+F61G4dmBAnMQgsHJMYECPwvUo\n\
+            XI9gQOF6FK5H8WBAUrgehesBYUC4HoXrUdhgQEjhehSuz2BASOF6FK7HYEAfhetRuG5gQM3MzMzM\n\
+            TGBAhetRuB61X0CF61G4HpVfQI/C9Shcv19Aj8L1KFzfX0AzMzMzMxNgQOxRuB6Fu19AH4XrUbiO\n\
+            X0CamZmZmQlfQH9qvHSTkF5AAAAAAABQXkAUrkfhesRdQMP1KFyPUl1Aw/UoXI+yXEBI4XoUrqdc\n\
+            QLgehetRmFxAcT0K16OwXEC4HoXrUbhcQLgehetRiFxAXI/C9ShcXEAUrkfhemRcQM3MzMzMXFxA\n\
+            CtejcD26XEBSuB6F65FcQDMzMzMzU1xA16NwPQpHXEAX2c73UzNcQAAAAAAAIFxA4XoUrkdBXECk\n\
+            cD0K12NcQFyPwvUoLFxA4XoUrkdRXECuR+F6FE5cQLgehetRWFxAKVyPwvUIXEDD9Shcj7JbQAAA\n\
+            AAAAoFtA9ihcj8JFW0CF61G4HkVbQPYoXI/CZVtAMzMzMzNjW0C4HoXrUVhbQIXrUbgeRVtAcT0K\n\
+            16NgW0Bcj8L1KCxbQIXrUbgeVVtAUrgehetBW0DsUbgehWtbQAAAAAAAYFtAKVyPwvWYW0DsUbge\n\
+            hWtbQIXrUbgeZVtACtejcD1KW0BQjZduElNbQFK4HoXrIVtAw/UoXI8iW0AUrkfhehRbQKRwPQrX\n\
+            E1tA16NwPQrnWkDNzMzMzNxaQIXrUbgeJVtArkfhehQ+W0D2KFyPwlVbQLgehetRGFtAhetRuB4l\n\
+            W0BI4XoUrg9bQPYoXI/ClVpAKVyPwvU4WkDJdr6fGjdaQLgehetRGFpAhetRuB4lWkDhehSuR+FZ\n\
+            QDMzMzMz01lAj8L1KFzfWUCkcD0K16NZQOxRuB6Fu1lArkfhehTOWUBmZmZmZrZZQMP1KFyP8llA\n\
+            KVyPwvXoWUDXo3A9CudZQEjhehSu51lACtejcD3KWUApXI/C9chZQB+F61G4/llApHA9CtcTWkAA\n\
+            AAAAAEBaQFpkO99PVVpAjZduEoM4WkA/NV66SfxZQARWDi2yDVpA9P3UeOluWkBg5dAi21FaQHsU\n\
+            rkfhSlpAFK5H4XpEWkB7FK5H4WpaQHE9CtejUFpAKVyPwvUIWkCamZmZmWlaQLgehetRqFpA16Nw\n\
+            PQqnWkBI4XoUrr9aQMP1KFyPglpAuB6F61GoWkDD9Shcj6JaQGZmZmZm1lpAMzMzMzPDWkDD9Shc\n\
+            j8JaQD0K16NwrVpAPQrXo3B9WkCF61G4HpVaQHE9Ctej0FpAmpmZmZm5WkDsUbgehQtbQClcj8L1\n\
+            uFpAH4XrUbjuWkBI4XoUrkdaQAisHFpkS1lAPQrXo3A9WkAfhetRuN5aQLgehetRaFtAw/UoXI9i\n\
+            W0AzMzMzMxNbQMP1KFyPEltAKVyPwvVIW0AAAAAAAGBbQLgehetR6FpAFK5H4Xr0WkA=\n"]},
+      name: Candle, open: !!python/object/apply:numpy._core.multiarray._reconstruct {
+        args: [*id001, !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [
+          1, !!python/tuple [277], *id002, false, !!binary "eekmMQj4YUAQWDm0yDJiQMdLN4lBtGJA3SQGgZWrYkBI4XoUrpdiQJ7vp8ZLc2JANV66SQzWYkBE\n\
+            i2zn+6liQEoMAiuHBmNA16NwPQrnYkCNl24Sg1hjQBkEVg4tcmNA+FPjpZuIY0AzMzMzM7djQIts\n\
+            5/uppWNAukkMAiu3Y0DXo3A9CotjQGQ730+NM2NADi2yne+/YkAAAAAAALRiQO58PzVeRmNAMzMz\n\
+            MzNLY0C+nxov3RRjQAAAAAAACGNAGy/dJAYdY0CcxCCwcrBiQEjhehSuo2JAPzVeukmYYkCyne+n\n\
+            xsdhQNV46SYx/GFArBxaZDuXYUCWQ4ts58NhQKabxCCwQmJA6SYxCKwAYkBGtvP91HRiQNejcD0K\n\
+            V2JAg8DKoUVOYkAUrkfhejRjQFyPwvUorGNAqvHSTWLEY0Cyne+nxhdkQMuhRbbzGWRArkfhehT2\n\
+            Y0Bg5dAi26ljQKwcWmQ7l2NArkfhehSmY0A3iUFg5ZxjQKwcWmQ7c2NAmpmZmZl1Y0Coxks3iRlj\n\
+            QGIQWDm0vGNAtMh2vp9OY0AzMzMzMyNjQDMzMzMz82JA9ihcj8LpYkAAAAAAAOxiQKjGSzeJoWJA\n\
+            5/up8dJhYkAzMzMzM79iQKwcWmQ7z2JAZmZmZmbCYkDP91PjpadiQEa28/3UjGJAexSuR+GCYkDd\n\
+            JAaBlYdiQGq8dJMYHGJAJzEIrBwSYkB7FK5H4ZphQCGwcmiRzWFAbxKDwMrBYUC+nxov3RxiQH0/\n\
+            NV66VWJAN4lBYOWsYkCwcmiR7bRiQB+F61G47mJAMzMzMzOrYkDZzvdT47FiQOF6FK5HuWJAYOXQ\n\
+            ItutYkAzMzMzM6NiQJZDi2znr2JAhetRuB6JYkAAAAAAAHhiQEw3iUFgWWJAvHSTGARGYkCwcmiR\n\
+            7UxiQHE9CtejLGJAg8DKoUUeYkB7FK5H4bZhQG8Sg8DKoWFAO99PjZe2YUCDwMqhRVZhQMdLN4lB\n\
+            xGFAuB6F61EIYkAlBoGVQ/NhQPhT46WbuGFABoGVQ4tsYUDfT42Xbn5hQDEIrBxalGFAHVpkO98/\n\
+            YUDD9Shcj/ZgQN9PjZdu2mBAL90kBoEFYUDHSzeJQcBgQESLbOf7uWBAhxbZzveDYEBcj8L1KKhg\n\
+            QBkEVg4tUmBAg8DKoUV6YECNl24Sg7xgQEJg5dAi/2BA8KfGSzcNYUACK4cW2cZgQKJFtvP9aGBA\n\
+            AiuHFtmOYEAtsp3vpzZgQKabxCCwLmBAz/dT46XzX0AZBFYOLX5gQJqZmZmZXWBAarx0kxiYYEBC\n\
+            YOXQIv9gQCUGgZVDD2FAnMQgsHLQYEC6SQwCK2dhQI/C9Shch2FA8KfGSzdlYUBYObTIdmZiQD81\n\
+            XrpJeGJAAiuHFtmCYkB9PzVeuo1iQBBYObTIKmJAGy/dJAYVYkCYbhKDwO5hQNv5fmq83GFAarx0\n\
+            kxjMYUCiRbbz/YRhQI/C9ShcM2FAg8DKoUUaYUDLoUW2861gQIts5/up4WBAexSuR+GmYEA5tMh2\n\
+            vgNhQFyPwvUoUGFAwcqhRbYDYUCe76fGS+dgQIXrUbge5WBAsp3vp8bfYEDNzMzMzMxgQDMzMzMz\n\
+            W2BAK4cW2c7HX0CuR+F6FPZfQDMzMzMzK2BACtejcD1SYEBkO99PjTtgQB1aZDvfD2BA7nw/NV6a\n\
+            X0Boke18Pw1fQKabxCCwol5Aw/UoXI+CXkBxPQrXo8hdQD0K16NwVV1AMzMzMzO7XEAtsp3vp85c\n\
+            QHE9CtejwFxAkxgEVg7VXED2KFyPws1cQOF6FK5H0VxA/Knx0k1qXEBkO99PjYdcQNnO91Pj5VxA\n\
+            AiuHFtnGXEB1kxgEVpZcQLpJDAIrZ1xA8KfGSzdRXEBaZDvfTzVcQDEIrBxabFxAMQisHFp8XEDh\n\
+            ehSuR3lcQNejcD0KV1xASgwCK4eGXEDy0k1iEGBcQFK4HoXrkVxAH4XrUbgOXEDwp8ZLN7lbQNEi\n\
+            2/l+qltAQmDl0CJ7W0AUrkfhenRbQAAAAAAAcFtAoBov3SR2W0DXo3A9Cm9bQJ7vp8ZLZ1tAIbBy\n\
+            aJGNW0A5tMh2vmdbQA4tsp3vn1tAVOOlm8SAW0CPwvUoXIdbQNV46SYxwFtA/tR46SaxW0AhsHJo\n\
+            kY1bQI/C9ShcZ1tASgwCK4deW0Av3SQGgXVbQPyp8dJNOltAxSCwcmhRW0C6SQwCKydbQPyp8dJN\n\
+            UltANV66SQz6WkBkO99PjS9bQDMzMzMza1tA8KfGSzepW0Av3SQGgW1bQJHtfD81JltAukkMAis/\n\
+            W0A9CtejcBVbQFK4HoXroVpAnMQgsHJYWkAbL90kBjlaQCGwcmiRVVpA5/up8dItWkDwp8ZLN/FZ\n\
+            QH0/NV668VlAAiuHFtn2WUB1kxgEVsZZQDm0yHa+31lAAiuHFtneWUBmZmZmZv5ZQEoMAiuHBlpA\n\
+            3SQGgZUDWkBSuB6F6/FZQJqZmZmZKVpAUI2XbhLTWUA5tMh2vh9aQPyp8dJNKlpAK4cW2c5XWkAC\n\
+            K4cW2W5aQMuhRbbzXVpA3SQGgZVrWkC0yHa+nyJaQIPAyqFFhlpADAIrhxaRWkBg5dAi22laQI2X\n\
+            bhKDeFpAWmQ730+lWkDD9Shcj3paQBkEVg4tclpA9P3UeOl+WkB9PzVeusFaQP7UeOkmuVpAbxKD\n\
+            wMrhWkC0yHa+n8paQIXrUbgetVpATDeJQWDdWkA9CtejcGVbQNejcD0K71pATmIQWDnsWkCNl24S\n\
+            g9BaQAAAAAAAuFpATDeJQWC1WkC+nxov3dxaQDeJQWDl6FpAokW28/0UW0CTGARWDh1bQArXo3A9\n\
+            6lpAMQisHFrEW0CcxCCwcphaQNnO91Pj7VlA1XjpJjHYWkAIrBxaZNtbQMUgsHJocVtAIbByaJFt\n\
+            W0BmZmZmZhZbQG8Sg8DKOVtAuB6F61GIW0DFILByaGFbQAisHFpk81pAlkOLbOdbW0A=\n"]},
+      type: candlestick, x: !!python/object/apply:numpy._core.multiarray._reconstruct {
+        args: [*id001, !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [
+          1, !!python/tuple [277], &id003 !!python/object/apply:numpy.dtype {args: [
+              O8, false, true], state: !!python/tuple [3, '|', null, null, null, -1,
+              -1, 63]}, false, [!!timestamp '2025-04-18 00:00:00', !!timestamp '2025-04-11
+              00:00:00', !!timestamp '2025-04-04 00:00:00', !!timestamp '2025-03-28
+              00:00:00', !!timestamp '2025-03-21 00:00:00', !!timestamp '2025-03-14
+              00:00:00', !!timestamp '2025-03-07 00:00:00', !!timestamp '2025-02-28
+              00:00:00', !!timestamp '2025-02-21 00:00:00', !!timestamp '2025-02-14
+              00:00:00', !!timestamp '2025-02-07 00:00:00', !!timestamp '2025-01-31
+              00:00:00', !!timestamp '2025-01-24 00:00:00', !!timestamp '2025-01-17
+              00:00:00', !!timestamp '2025-01-10 00:00:00', !!timestamp '2025-01-03
+              00:00:00', !!timestamp '2024-12-27 00:00:00', !!timestamp '2024-12-20
+              00:00:00', !!timestamp '2024-12-13 00:00:00', !!timestamp '2024-12-06
+              00:00:00', !!timestamp '2024-11-29 00:00:00', !!timestamp '2024-11-22
+              00:00:00', !!timestamp '2024-11-15 00:00:00', !!timestamp '2024-11-08
+              00:00:00', !!timestamp '2024-11-01 00:00:00', !!timestamp '2024-10-25
+              00:00:00', !!timestamp '2024-10-18 00:00:00', !!timestamp '2024-10-11
+              00:00:00', !!timestamp '2024-10-04 00:00:00', !!timestamp '2024-09-27
+              00:00:00', !!timestamp '2024-09-20 00:00:00', !!timestamp '2024-09-13
+              00:00:00', !!timestamp '2024-09-06 00:00:00', !!timestamp '2024-08-30
+              00:00:00', !!timestamp '2024-08-23 00:00:00', !!timestamp '2024-08-16
+              00:00:00', !!timestamp '2024-08-09 00:00:00', !!timestamp '2024-08-02
+              00:00:00', !!timestamp '2024-07-26 00:00:00', !!timestamp '2024-07-19
+              00:00:00', !!timestamp '2024-07-12 00:00:00', !!timestamp '2024-07-05
+              00:00:00', !!timestamp '2024-06-28 00:00:00', !!timestamp '2024-06-21
+              00:00:00', !!timestamp '2024-06-14 00:00:00', !!timestamp '2024-06-07
+              00:00:00', !!timestamp '2024-05-31 00:00:00', !!timestamp '2024-05-24
+              00:00:00', !!timestamp '2024-05-17 00:00:00', !!timestamp '2024-05-10
+              00:00:00', !!timestamp '2024-05-03 00:00:00', !!timestamp '2024-04-26
+              00:00:00', !!timestamp '2024-04-19 00:00:00', !!timestamp '2024-04-12
+              00:00:00', !!timestamp '2024-04-05 00:00:00', !!timestamp '2024-03-29
+              00:00:00', !!timestamp '2024-03-22 00:00:00', !!timestamp '2024-03-15
+              00:00:00', !!timestamp '2024-03-08 00:00:00', !!timestamp '2024-03-01
+              00:00:00', !!timestamp '2024-02-23 00:00:00', !!timestamp '2024-02-16
+              00:00:00', !!timestamp '2024-02-09 00:00:00', !!timestamp '2024-02-02
+              00:00:00', !!timestamp '2024-01-26 00:00:00', !!timestamp '2024-01-19
+              00:00:00', !!timestamp '2024-01-12 00:00:00', !!timestamp '2024-01-05
+              00:00:00', !!timestamp '2023-12-29 00:00:00', !!timestamp '2023-12-22
+              00:00:00', !!timestamp '2023-12-15 00:00:00', !!timestamp '2023-12-08
+              00:00:00', !!timestamp '2023-12-01 00:00:00', !!timestamp '2023-11-24
+              00:00:00', !!timestamp '2023-11-17 00:00:00', !!timestamp '2023-11-10
+              00:00:00', !!timestamp '2023-11-03 00:00:00', !!timestamp '2023-10-27
+              00:00:00', !!timestamp '2023-10-20 00:00:00', !!timestamp '2023-10-13
+              00:00:00', !!timestamp '2023-10-06 00:00:00', !!timestamp '2023-09-29
+              00:00:00', !!timestamp '2023-09-22 00:00:00', !!timestamp '2023-09-15
+              00:00:00', !!timestamp '2023-09-08 00:00:00', !!timestamp '2023-09-01
+              00:00:00', !!timestamp '2023-08-25 00:00:00', !!timestamp '2023-08-18
+              00:00:00', !!timestamp '2023-08-11 00:00:00', !!timestamp '2023-08-04
+              00:00:00', !!timestamp '2023-07-28 00:00:00', !!timestamp '2023-07-21
+              00:00:00', !!timestamp '2023-07-14 00:00:00', !!timestamp '2023-07-07
+              00:00:00', !!timestamp '2023-06-30 00:00:00', !!timestamp '2023-06-23
+              00:00:00', !!timestamp '2023-06-16 00:00:00', !!timestamp '2023-06-09
+              00:00:00', !!timestamp '2023-06-02 00:00:00', !!timestamp '2023-05-26
+              00:00:00', !!timestamp '2023-05-19 00:00:00', !!timestamp '2023-05-12
+              00:00:00', !!timestamp '2023-05-05 00:00:00', !!timestamp '2023-04-28
+              00:00:00', !!timestamp '2023-04-21 00:00:00', !!timestamp '2023-04-14
+              00:00:00', !!timestamp '2023-04-07 00:00:00', !!timestamp '2023-03-31
+              00:00:00', !!timestamp '2023-03-24 00:00:00', !!timestamp '2023-03-17
+              00:00:00', !!timestamp '2023-03-10 00:00:00', !!timestamp '2023-03-03
+              00:00:00', !!timestamp '2023-02-24 00:00:00', !!timestamp '2023-02-17
+              00:00:00', !!timestamp '2023-02-10 00:00:00', !!timestamp '2023-02-03
+              00:00:00', !!timestamp '2023-01-27 00:00:00', !!timestamp '2023-01-20
+              00:00:00', !!timestamp '2023-01-13 00:00:00', !!timestamp '2023-01-06
+              00:00:00', !!timestamp '2022-12-30 00:00:00', !!timestamp '2022-12-23
+              00:00:00', !!timestamp '2022-12-16 00:00:00', !!timestamp '2022-12-09
+              00:00:00', !!timestamp '2022-12-02 00:00:00', !!timestamp '2022-11-25
+              00:00:00', !!timestamp '2022-11-18 00:00:00', !!timestamp '2022-11-11
+              00:00:00', !!timestamp '2022-11-04 00:00:00', !!timestamp '2022-10-28
+              00:00:00', !!timestamp '2022-10-21 00:00:00', !!timestamp '2022-10-14
+              00:00:00', !!timestamp '2022-10-07 00:00:00', !!timestamp '2022-09-30
+              00:00:00', !!timestamp '2022-09-23 00:00:00', !!timestamp '2022-09-16
+              00:00:00', !!timestamp '2022-09-09 00:00:00', !!timestamp '2022-09-02
+              00:00:00', !!timestamp '2022-08-26 00:00:00', !!timestamp '2022-08-19
+              00:00:00', !!timestamp '2022-08-12 00:00:00', !!timestamp '2022-08-05
+              00:00:00', !!timestamp '2022-07-29 00:00:00', !!timestamp '2022-07-22
+              00:00:00', !!timestamp '2022-07-15 00:00:00', !!timestamp '2022-07-08
+              00:00:00', !!timestamp '2022-07-01 00:00:00', !!timestamp '2022-06-24
+              00:00:00', !!timestamp '2022-06-17 00:00:00', !!timestamp '2022-06-10
+              00:00:00', !!timestamp '2022-06-03 00:00:00', !!timestamp '2022-05-27
+              00:00:00', !!timestamp '2022-05-20 00:00:00', !!timestamp '2022-05-13
+              00:00:00', !!timestamp '2022-05-06 00:00:00', !!timestamp '2022-04-29
+              00:00:00', !!timestamp '2022-04-22 00:00:00', !!timestamp '2022-04-15
+              00:00:00', !!timestamp '2022-04-08 00:00:00', !!timestamp '2022-04-01
+              00:00:00', !!timestamp '2022-03-25 00:00:00', !!timestamp '2022-03-18
+              00:00:00', !!timestamp '2022-03-11 00:00:00', !!timestamp '2022-03-04
+              00:00:00', !!timestamp '2022-02-25 00:00:00', !!timestamp '2022-02-18
+              00:00:00', !!timestamp '2022-02-11 00:00:00', !!timestamp '2022-02-04
+              00:00:00', !!timestamp '2022-01-28 00:00:00', !!timestamp '2022-01-21
+              00:00:00', !!timestamp '2022-01-14 00:00:00', !!timestamp '2022-01-07
+              00:00:00', !!timestamp '2021-12-31 00:00:00', !!timestamp '2021-12-24
+              00:00:00', !!timestamp '2021-12-17 00:00:00', !!timestamp '2021-12-10
+              00:00:00', !!timestamp '2021-12-03 00:00:00', !!timestamp '2021-11-26
+              00:00:00', !!timestamp '2021-11-19 00:00:00', !!timestamp '2021-11-12
+              00:00:00', !!timestamp '2021-11-05 00:00:00', !!timestamp '2021-10-29
+              00:00:00', !!timestamp '2021-10-22 00:00:00', !!timestamp '2021-10-15
+              00:00:00', !!timestamp '2021-10-08 00:00:00', !!timestamp '2021-10-01
+              00:00:00', !!timestamp '2021-09-24 00:00:00', !!timestamp '2021-09-17
+              00:00:00', !!timestamp '2021-09-10 00:00:00', !!timestamp '2021-09-03
+              00:00:00', !!timestamp '2021-08-27 00:00:00', !!timestamp '2021-08-20
+              00:00:00', !!timestamp '2021-08-13 00:00:00', !!timestamp '2021-08-06
+              00:00:00', !!timestamp '2021-07-30 00:00:00', !!timestamp '2021-07-23
+              00:00:00', !!timestamp '2021-07-16 00:00:00', !!timestamp '2021-07-09
+              00:00:00', !!timestamp '2021-07-02 00:00:00', !!timestamp '2021-06-25
+              00:00:00', !!timestamp '2021-06-18 00:00:00', !!timestamp '2021-06-11
+              00:00:00', !!timestamp '2021-06-04 00:00:00', !!timestamp '2021-05-28
+              00:00:00', !!timestamp '2021-05-21 00:00:00', !!timestamp '2021-05-14
+              00:00:00', !!timestamp '2021-05-07 00:00:00', !!timestamp '2021-04-30
+              00:00:00', !!timestamp '2021-04-23 00:00:00', !!timestamp '2021-04-16
+              00:00:00', !!timestamp '2021-04-09 00:00:00', !!timestamp '2021-04-02
+              00:00:00', !!timestamp '2021-03-26 00:00:00', !!timestamp '2021-03-19
+              00:00:00', !!timestamp '2021-03-12 00:00:00', !!timestamp '2021-03-05
+              00:00:00', !!timestamp '2021-02-26 00:00:00', !!timestamp '2021-02-19
+              00:00:00', !!timestamp '2021-02-12 00:00:00', !!timestamp '2021-02-05
+              00:00:00', !!timestamp '2021-01-29 00:00:00', !!timestamp '2021-01-22
+              00:00:00', !!timestamp '2021-01-15 00:00:00', !!timestamp '2021-01-08
+              00:00:00', !!timestamp '2021-01-01 00:00:00', !!timestamp '2020-12-25
+              00:00:00', !!timestamp '2020-12-18 00:00:00', !!timestamp '2020-12-11
+              00:00:00', !!timestamp '2020-12-04 00:00:00', !!timestamp '2020-11-27
+              00:00:00', !!timestamp '2020-11-20 00:00:00', !!timestamp '2020-11-13
+              00:00:00', !!timestamp '2020-11-06 00:00:00', !!timestamp '2020-10-30
+              00:00:00', !!timestamp '2020-10-23 00:00:00', !!timestamp '2020-10-16
+              00:00:00', !!timestamp '2020-10-09 00:00:00', !!timestamp '2020-10-02
+              00:00:00', !!timestamp '2020-09-25 00:00:00', !!timestamp '2020-09-18
+              00:00:00', !!timestamp '2020-09-11 00:00:00', !!timestamp '2020-09-04
+              00:00:00', !!timestamp '2020-08-28 00:00:00', !!timestamp '2020-08-21
+              00:00:00', !!timestamp '2020-08-14 00:00:00', !!timestamp '2020-08-07
+              00:00:00', !!timestamp '2020-07-31 00:00:00', !!timestamp '2020-07-24
+              00:00:00', !!timestamp '2020-07-17 00:00:00', !!timestamp '2020-07-10
+              00:00:00', !!timestamp '2020-07-03 00:00:00', !!timestamp '2020-06-26
+              00:00:00', !!timestamp '2020-06-19 00:00:00', !!timestamp '2020-06-12
+              00:00:00', !!timestamp '2020-06-05 00:00:00', !!timestamp '2020-05-29
+              00:00:00', !!timestamp '2020-05-22 00:00:00', !!timestamp '2020-05-15
+              00:00:00', !!timestamp '2020-05-08 00:00:00', !!timestamp '2020-05-01
+              00:00:00', !!timestamp '2020-04-24 00:00:00', !!timestamp '2020-04-17
+              00:00:00', !!timestamp '2020-04-10 00:00:00', !!timestamp '2020-04-03
+              00:00:00', !!timestamp '2020-03-27 00:00:00', !!timestamp '2020-03-20
+              00:00:00', !!timestamp '2020-03-13 00:00:00', !!timestamp '2020-03-06
+              00:00:00', !!timestamp '2020-02-28 00:00:00', !!timestamp '2020-02-21
+              00:00:00', !!timestamp '2020-02-14 00:00:00', !!timestamp '2020-02-07
+              00:00:00', !!timestamp '2020-01-31 00:00:00', !!timestamp '2020-01-24
+              00:00:00', !!timestamp '2020-01-17 00:00:00', !!timestamp '2020-01-10
+              00:00:00', !!timestamp '2020-01-03 00:00:00']]}, xaxis: x, yaxis: y},
+    {line: {color: blue, width: 3}, mode: lines, name: 10y, type: scatter, x: !!python/object/apply:numpy._core.multiarray._reconstruct {
+        args: [*id001, !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [
+          1, !!python/tuple [276], *id003, false, [!!timestamp '2025-04-11 00:00:00',
+            !!timestamp '2025-04-04 00:00:00', !!timestamp '2025-03-28 00:00:00',
+            !!timestamp '2025-03-21 00:00:00', !!timestamp '2025-03-14 00:00:00',
+            !!timestamp '2025-03-07 00:00:00', !!timestamp '2025-02-28 00:00:00',
+            !!timestamp '2025-02-21 00:00:00', !!timestamp '2025-02-14 00:00:00',
+            !!timestamp '2025-02-07 00:00:00', !!timestamp '2025-01-31 00:00:00',
+            !!timestamp '2025-01-24 00:00:00', !!timestamp '2025-01-17 00:00:00',
+            !!timestamp '2025-01-10 00:00:00', !!timestamp '2025-01-03 00:00:00',
+            !!timestamp '2024-12-27 00:00:00', !!timestamp '2024-12-20 00:00:00',
+            !!timestamp '2024-12-13 00:00:00', !!timestamp '2024-12-06 00:00:00',
+            !!timestamp '2024-11-29 00:00:00', !!timestamp '2024-11-22 00:00:00',
+            !!timestamp '2024-11-15 00:00:00', !!timestamp '2024-11-08 00:00:00',
+            !!timestamp '2024-11-01 00:00:00', !!timestamp '2024-10-25 00:00:00',
+            !!timestamp '2024-10-18 00:00:00', !!timestamp '2024-10-11 00:00:00',
+            !!timestamp '2024-10-04 00:00:00', !!timestamp '2024-09-27 00:00:00',
+            !!timestamp '2024-09-20 00:00:00', !!timestamp '2024-09-13 00:00:00',
+            !!timestamp '2024-09-06 00:00:00', !!timestamp '2024-08-30 00:00:00',
+            !!timestamp '2024-08-23 00:00:00', !!timestamp '2024-08-16 00:00:00',
+            !!timestamp '2024-08-09 00:00:00', !!timestamp '2024-08-02 00:00:00',
+            !!timestamp '2024-07-26 00:00:00', !!timestamp '2024-07-19 00:00:00',
+            !!timestamp '2024-07-12 00:00:00', !!timestamp '2024-07-05 00:00:00',
+            !!timestamp '2024-06-28 00:00:00', !!timestamp '2024-06-21 00:00:00',
+            !!timestamp '2024-06-14 00:00:00', !!timestamp '2024-06-07 00:00:00',
+            !!timestamp '2024-05-31 00:00:00', !!timestamp '2024-05-24 00:00:00',
+            !!timestamp '2024-05-17 00:00:00', !!timestamp '2024-05-10 00:00:00',
+            !!timestamp '2024-05-03 00:00:00', !!timestamp '2024-04-26 00:00:00',
+            !!timestamp '2024-04-19 00:00:00', !!timestamp '2024-04-12 00:00:00',
+            !!timestamp '2024-04-05 00:00:00', !!timestamp '2024-03-29 00:00:00',
+            !!timestamp '2024-03-22 00:00:00', !!timestamp '2024-03-15 00:00:00',
+            !!timestamp '2024-03-08 00:00:00', !!timestamp '2024-03-01 00:00:00',
+            !!timestamp '2024-02-23 00:00:00', !!timestamp '2024-02-16 00:00:00',
+            !!timestamp '2024-02-09 00:00:00', !!timestamp '2024-02-02 00:00:00',
+            !!timestamp '2024-01-26 00:00:00', !!timestamp '2024-01-19 00:00:00',
+            !!timestamp '2024-01-12 00:00:00', !!timestamp '2024-01-05 00:00:00',
+            !!timestamp '2023-12-29 00:00:00', !!timestamp '2023-12-22 00:00:00',
+            !!timestamp '2023-12-15 00:00:00', !!timestamp '2023-12-08 00:00:00',
+            !!timestamp '2023-12-01 00:00:00', !!timestamp '2023-11-24 00:00:00',
+            !!timestamp '2023-11-17 00:00:00', !!timestamp '2023-11-10 00:00:00',
+            !!timestamp '2023-11-03 00:00:00', !!timestamp '2023-10-27 00:00:00',
+            !!timestamp '2023-10-20 00:00:00', !!timestamp '2023-10-13 00:00:00',
+            !!timestamp '2023-10-06 00:00:00', !!timestamp '2023-09-29 00:00:00',
+            !!timestamp '2023-09-22 00:00:00', !!timestamp '2023-09-15 00:00:00',
+            !!timestamp '2023-09-08 00:00:00', !!timestamp '2023-09-01 00:00:00',
+            !!timestamp '2023-08-25 00:00:00', !!timestamp '2023-08-18 00:00:00',
+            !!timestamp '2023-08-11 00:00:00', !!timestamp '2023-08-04 00:00:00',
+            !!timestamp '2023-07-28 00:00:00', !!timestamp '2023-07-21 00:00:00',
+            !!timestamp '2023-07-14 00:00:00', !!timestamp '2023-07-07 00:00:00',
+            !!timestamp '2023-06-30 00:00:00', !!timestamp '2023-06-23 00:00:00',
+            !!timestamp '2023-06-16 00:00:00', !!timestamp '2023-06-09 00:00:00',
+            !!timestamp '2023-06-02 00:00:00', !!timestamp '2023-05-26 00:00:00',
+            !!timestamp '2023-05-19 00:00:00', !!timestamp '2023-05-12 00:00:00',
+            !!timestamp '2023-05-05 00:00:00', !!timestamp '2023-04-28 00:00:00',
+            !!timestamp '2023-04-21 00:00:00', !!timestamp '2023-04-14 00:00:00',
+            !!timestamp '2023-04-07 00:00:00', !!timestamp '2023-03-31 00:00:00',
+            !!timestamp '2023-03-24 00:00:00', !!timestamp '2023-03-17 00:00:00',
+            !!timestamp '2023-03-10 00:00:00', !!timestamp '2023-03-03 00:00:00',
+            !!timestamp '2023-02-24 00:00:00', !!timestamp '2023-02-17 00:00:00',
+            !!timestamp '2023-02-10 00:00:00', !!timestamp '2023-02-03 00:00:00',
+            !!timestamp '2023-01-27 00:00:00', !!timestamp '2023-01-20 00:00:00',
+            !!timestamp '2023-01-13 00:00:00', !!timestamp '2023-01-06 00:00:00',
+            !!timestamp '2022-12-30 00:00:00', !!timestamp '2022-12-23 00:00:00',
+            !!timestamp '2022-12-16 00:00:00', !!timestamp '2022-12-09 00:00:00',
+            !!timestamp '2022-12-02 00:00:00', !!timestamp '2022-11-25 00:00:00',
+            !!timestamp '2022-11-18 00:00:00', !!timestamp '2022-11-11 00:00:00',
+            !!timestamp '2022-11-04 00:00:00', !!timestamp '2022-10-28 00:00:00',
+            !!timestamp '2022-10-21 00:00:00', !!timestamp '2022-10-14 00:00:00',
+            !!timestamp '2022-10-07 00:00:00', !!timestamp '2022-09-30 00:00:00',
+            !!timestamp '2022-09-23 00:00:00', !!timestamp '2022-09-16 00:00:00',
+            !!timestamp '2022-09-09 00:00:00', !!timestamp '2022-09-02 00:00:00',
+            !!timestamp '2022-08-26 00:00:00', !!timestamp '2022-08-19 00:00:00',
+            !!timestamp '2022-08-12 00:00:00', !!timestamp '2022-08-05 00:00:00',
+            !!timestamp '2022-07-29 00:00:00', !!timestamp '2022-07-22 00:00:00',
+            !!timestamp '2022-07-15 00:00:00', !!timestamp '2022-07-08 00:00:00',
+            !!timestamp '2022-07-01 00:00:00', !!timestamp '2022-06-24 00:00:00',
+            !!timestamp '2022-06-17 00:00:00', !!timestamp '2022-06-10 00:00:00',
+            !!timestamp '2022-06-03 00:00:00', !!timestamp '2022-05-27 00:00:00',
+            !!timestamp '2022-05-20 00:00:00', !!timestamp '2022-05-13 00:00:00',
+            !!timestamp '2022-05-06 00:00:00', !!timestamp '2022-04-29 00:00:00',
+            !!timestamp '2022-04-22 00:00:00', !!timestamp '2022-04-15 00:00:00',
+            !!timestamp '2022-04-08 00:00:00', !!timestamp '2022-04-01 00:00:00',
+            !!timestamp '2022-03-25 00:00:00', !!timestamp '2022-03-18 00:00:00',
+            !!timestamp '2022-03-11 00:00:00', !!timestamp '2022-03-04 00:00:00',
+            !!timestamp '2022-02-25 00:00:00', !!timestamp '2022-02-18 00:00:00',
+            !!timestamp '2022-02-11 00:00:00', !!timestamp '2022-02-04 00:00:00',
+            !!timestamp '2022-01-28 00:00:00', !!timestamp '2022-01-21 00:00:00',
+            !!timestamp '2022-01-14 00:00:00', !!timestamp '2022-01-07 00:00:00',
+            !!timestamp '2021-12-31 00:00:00', !!timestamp '2021-12-24 00:00:00',
+            !!timestamp '2021-12-17 00:00:00', !!timestamp '2021-12-10 00:00:00',
+            !!timestamp '2021-12-03 00:00:00', !!timestamp '2021-11-26 00:00:00',
+            !!timestamp '2021-11-19 00:00:00', !!timestamp '2021-11-12 00:00:00',
+            !!timestamp '2021-11-05 00:00:00', !!timestamp '2021-10-29 00:00:00',
+            !!timestamp '2021-10-22 00:00:00', !!timestamp '2021-10-15 00:00:00',
+            !!timestamp '2021-10-08 00:00:00', !!timestamp '2021-10-01 00:00:00',
+            !!timestamp '2021-09-24 00:00:00', !!timestamp '2021-09-17 00:00:00',
+            !!timestamp '2021-09-10 00:00:00', !!timestamp '2021-09-03 00:00:00',
+            !!timestamp '2021-08-27 00:00:00', !!timestamp '2021-08-20 00:00:00',
+            !!timestamp '2021-08-13 00:00:00', !!timestamp '2021-08-06 00:00:00',
+            !!timestamp '2021-07-30 00:00:00', !!timestamp '2021-07-23 00:00:00',
+            !!timestamp '2021-07-16 00:00:00', !!timestamp '2021-07-09 00:00:00',
+            !!timestamp '2021-07-02 00:00:00', !!timestamp '2021-06-25 00:00:00',
+            !!timestamp '2021-06-18 00:00:00', !!timestamp '2021-06-11 00:00:00',
+            !!timestamp '2021-06-04 00:00:00', !!timestamp '2021-05-28 00:00:00',
+            !!timestamp '2021-05-21 00:00:00', !!timestamp '2021-05-14 00:00:00',
+            !!timestamp '2021-05-07 00:00:00', !!timestamp '2021-04-30 00:00:00',
+            !!timestamp '2021-04-23 00:00:00', !!timestamp '2021-04-16 00:00:00',
+            !!timestamp '2021-04-09 00:00:00', !!timestamp '2021-04-02 00:00:00',
+            !!timestamp '2021-03-26 00:00:00', !!timestamp '2021-03-19 00:00:00',
+            !!timestamp '2021-03-12 00:00:00', !!timestamp '2021-03-05 00:00:00',
+            !!timestamp '2021-02-26 00:00:00', !!timestamp '2021-02-19 00:00:00',
+            !!timestamp '2021-02-12 00:00:00', !!timestamp '2021-02-05 00:00:00',
+            !!timestamp '2021-01-29 00:00:00', !!timestamp '2021-01-22 00:00:00',
+            !!timestamp '2021-01-15 00:00:00', !!timestamp '2021-01-08 00:00:00',
+            !!timestamp '2021-01-01 00:00:00', !!timestamp '2020-12-25 00:00:00',
+            !!timestamp '2020-12-18 00:00:00', !!timestamp '2020-12-11 00:00:00',
+            !!timestamp '2020-12-04 00:00:00', !!timestamp '2020-11-27 00:00:00',
+            !!timestamp '2020-11-20 00:00:00', !!timestamp '2020-11-13 00:00:00',
+            !!timestamp '2020-11-06 00:00:00', !!timestamp '2020-10-30 00:00:00',
+            !!timestamp '2020-10-23 00:00:00', !!timestamp '2020-10-16 00:00:00',
+            !!timestamp '2020-10-09 00:00:00', !!timestamp '2020-10-02 00:00:00',
+            !!timestamp '2020-09-25 00:00:00', !!timestamp '2020-09-18 00:00:00',
+            !!timestamp '2020-09-11 00:00:00', !!timestamp '2020-09-04 00:00:00',
+            !!timestamp '2020-08-28 00:00:00', !!timestamp '2020-08-21 00:00:00',
+            !!timestamp '2020-08-14 00:00:00', !!timestamp '2020-08-07 00:00:00',
+            !!timestamp '2020-07-31 00:00:00', !!timestamp '2020-07-24 00:00:00',
+            !!timestamp '2020-07-17 00:00:00', !!timestamp '2020-07-10 00:00:00',
+            !!timestamp '2020-07-03 00:00:00', !!timestamp '2020-06-26 00:00:00',
+            !!timestamp '2020-06-19 00:00:00', !!timestamp '2020-06-12 00:00:00',
+            !!timestamp '2020-06-05 00:00:00', !!timestamp '2020-05-29 00:00:00',
+            !!timestamp '2020-05-22 00:00:00', !!timestamp '2020-05-15 00:00:00',
+            !!timestamp '2020-05-08 00:00:00', !!timestamp '2020-05-01 00:00:00',
+            !!timestamp '2020-04-24 00:00:00', !!timestamp '2020-04-17 00:00:00',
+            !!timestamp '2020-04-10 00:00:00', !!timestamp '2020-04-03 00:00:00',
+            !!timestamp '2020-03-27 00:00:00', !!timestamp '2020-03-20 00:00:00',
+            !!timestamp '2020-03-13 00:00:00', !!timestamp '2020-03-06 00:00:00',
+            !!timestamp '2020-02-28 00:00:00', !!timestamp '2020-02-21 00:00:00',
+            !!timestamp '2020-02-14 00:00:00', !!timestamp '2020-02-07 00:00:00',
+            !!timestamp '2020-01-31 00:00:00', !!timestamp '2020-01-24 00:00:00',
+            !!timestamp '2020-01-17 00:00:00', !!timestamp '2020-01-10 00:00:00',
+            !!timestamp '2020-01-03 00:00:00']]}, xaxis: x, y: !!python/object/apply:numpy._core.multiarray._reconstruct {
+        args: [*id001, !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [
+          1, !!python/tuple [276], *id002, false, !!binary "UrgehetREUCF61G4HoUQQFK4HoXrURFAFK5H4XoUEUAfhetRuB4RQAAAAAAAABFAMzMzMzMzEUAA\n\
+            AAAAAAASQB+F61G4HhJA9ihcj8L1EUAzMzMzMzMSQHE9CtejcBJAw/UoXI/CEkC4HoXrUbgSQFK4\n\
+            HoXrURJAZmZmZmZmEkDsUbgehesRQB+F61G4HhFAw/UoXI/CEEAAAAAAAAARQKRwPQrXoxFAuB6F\n\
+            61G4EUBI4XoUrkcRQDMzMzMzMxFA4XoUrkfhEEA9CtejcD0QQD0K16NwPRBApHA9CtejDkAUrkfh\n\
+            ehQOQIXrUbgehQ1AXI/C9ShcDUApXI/C9SgOQM3MzMzMzA5ApHA9CtejDkAK16NwPQoPQEjhehSu\n\
+            Rw9AKVyPwvUoEEAAAAAAAAARQM3MzMzMzBBAAAAAAAAAEUCPwvUoXI8RQClcj8L1KBFAAAAAAAAA\n\
+            EUBI4XoUrkcRQGZmZmZmZhFAMzMzMzMzEkDD9Shcj8IRQK5H4XoUrhFA7FG4HoXrEUBxPQrXo3AS\n\
+            QJqZmZmZmRJAhetRuB6FEkDsUbgehesRQGZmZmZmZhFA4XoUrkfhEEAfhetRuB4RQNejcD0K1xBA\n\
+            hetRuB6FEEAK16NwPQoRQDMzMzMzMxFACtejcD0KEUCF61G4HoUQQArXo3A9ChBAj8L1KFyPEEB7\n\
+            FK5H4XoQQAAAAAAAABBA16NwPQrXD0DNzMzMzMwOQEjhehSuRw9APQrXo3A9EEDD9Shcj8IQQEjh\n\
+            ehSuRxFAuB6F61G4EUAAAAAAAAASQFyPwvUoXBJAAAAAAAAAE0B7FK5H4XoTQHsUrkfhehNAj8L1\n\
+            KFyPEkAAAAAAAAATQFK4HoXrURJAj8L1KFyPEUApXI/C9SgRQB+F61G4HhFAj8L1KFyPEEAUrkfh\n\
+            ehQRQAAAAAAAABFASOF6FK5HEEBI4XoUrkcQQFyPwvUoXA9AexSuR+F6DkAfhetRuB4PQNejcD0K\n\
+            1w9AKVyPwvUoDkAAAAAAAAAOQD0K16NwPQ5A16NwPQrXDUBI4XoUrkcNQBSuR+F6FA5AuB6F61G4\n\
+            DEDD9Shcj8ILQIXrUbgehQtArkfhehSuC0CkcD0K16MMQIXrUbgehQtAzczMzMzMCkBSuB6F61EM\n\
+            QK5H4XoUrgtAPQrXo3A9DEBI4XoUrkcPQNejcD0K1w9AcT0K16NwD0BmZmZmZmYOQFyPwvUoXA1A\n\
+            16NwPQrXC0DsUbgehesLQIXrUbgehQtAKVyPwvUoDECF61G4HoUNQOF6FK5H4Q5AXI/C9ShcDUAU\n\
+            rkfhehQMQClcj8L1KAxACtejcD0KDUAAAAAAAAAOQFK4HoXrUQ5AUrgehetREEB7FK5H4XoQQEjh\n\
+            ehSuRxBAexSuR+F6EECamZmZmZkPQAAAAAAAAA5ApHA9CtejDkC4HoXrUbgMQFyPwvUoXAtAexSu\n\
+            R+F6CkBcj8L1KFwJQGZmZmZmZghA9ihcj8L1BkB7FK5H4XoGQMP1KFyPwgVAAAAAAAAABkCF61G4\n\
+            HoUHQJqZmZmZmQdArkfhehSuB0CPwvUoXI8IQFyPwvUoXAlA4XoUrkfhCkBmZmZmZmYIQFyPwvUo\n\
+            XAdAKVyPwvUoBkD2KFyPwvUGQIXrUbgehQdAFK5H4XoUCECkcD0K16MGQB+F61G4HgdAFK5H4XoU\n\
+            BkC4HoXrUbgEQB+F61G4HgNA9ihcj8L1AkBI4XoUrkcBQI/C9Shcj/4/zczMzMzM/D+F61G4HoX/\n\
+            P9ejcD0K1/8/MzMzMzMz/z9I4XoUrkf9P6RwPQrXo/w/H4XrUbge/T8AAAAAAAD8PzMzMzMzM/s/\n\
+            KVyPwvUo+D+F61G4HoX3PwrXo3A9Cvc/rkfhehSu9z/hehSuR+H2P8P1KFyPwvk/mpmZmZmZ+T97\n\
+            FK5H4Xr4P6RwPQrXo/g/cT0K16Nw+T9mZmZmZmb6Px+F61G4Hvk/zczMzMzM+D8pXI/C9Sj4P+xR\n\
+            uB6F6/U/SOF6FK5H9T+amZmZmZn1P83MzMzMzPQ/9ihcj8L19D8pXI/C9Sj0P3E9CtejcPU/hetR\n\
+            uB6F8z8pXI/C9Sj0Pylcj8L1KPQ/w/UoXI/C9T9xPQrXo3D1P4XrUbgehfc/AAAAAAAA+D8pXI/C\n\
+            9Sj4PwAAAAAAAPg/mpmZmZmZ+T9xPQrXo3D5Pz0K16NwPfo/ZmZmZmZm+j+amZmZmZn5PxSuR+F6\n\
+            FPo/SOF6FK5H+T/sUbgehev5P+F6FK5H4fo/hetRuB6F+z9mZmZmZmb6P4/C9Shcj/o/H4XrUbge\n\
+            +T/Xo3A9Ctf3P7gehetRuPY/9ihcj8L19D/hehSuR+HyPz0K16NwPfI/9ihcj8L18D/D9Shcj8Lx\n\
+            PxSuR+F6FPI/exSuR+F68D8UrkfhehTuP2ZmZmZmZu4/w/UoXI/C7T/D9Shcj8LtP3E9CtejcO0/\n\
+            16NwPQrX6z/Xo3A9CtfrP8P1KFyPwu0/j8L1KFyP6j89CtejcD3qP4/C9Shcj+o/rkfhehSu5z/2\n\
+            KFyPwvXoP8P1KFyPwuU/cT0K16Nw5T8UrkfhehTmPxSuR+F6FOY/w/UoXI/C5T9mZmZmZmbmP3E9\n\
+            CtejcOU/cT0K16Nw5T+amZmZmZnhP4/C9Shcj+I/MzMzMzMz4z8pXI/C9SjkPx+F61G4HuU/cT0K\n\
+            16Nw5T8UrkfhehTmPwrXo3A9Cuc/pHA9Ctej6D+kcD0K16PoP8P1KFyPwuU/FK5H4XoU5j9xPQrX\n\
+            o3DlP3E9CtejcOU/exSuR+F65D+F61G4HoXjP8P1KFyPwuU/XI/C9Shc5z/NzMzMzMzkP+xRuB6F\n\
+            6+k/rkfhehSu7z9I4XoUrkfpP7gehetRuO4/pHA9Ctej9D9SuB6F61H4P3E9CtejcPk/w/UoXI/C\n\
+            +T9xPQrXo3D5PwAAAAAAAPw/H4XrUbge/T9xPQrXo3D9PxSuR+F6FP4/\n"]}, yaxis: y2},
+    {line: {color: gray, width: 3}, mode: lines, name: ffr, type: scatter, x: !!python/object/apply:numpy._core.multiarray._reconstruct {
+        args: [*id001, !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [
+          1, !!python/tuple [276], *id003, false, [!!timestamp '2025-04-16 00:00:00',
+            !!timestamp '2025-04-09 00:00:00', !!timestamp '2025-04-02 00:00:00',
+            !!timestamp '2025-03-26 00:00:00', !!timestamp '2025-03-19 00:00:00',
+            !!timestamp '2025-03-12 00:00:00', !!timestamp '2025-03-05 00:00:00',
+            !!timestamp '2025-02-26 00:00:00', !!timestamp '2025-02-19 00:00:00',
+            !!timestamp '2025-02-12 00:00:00', !!timestamp '2025-02-05 00:00:00',
+            !!timestamp '2025-01-29 00:00:00', !!timestamp '2025-01-22 00:00:00',
+            !!timestamp '2025-01-15 00:00:00', !!timestamp '2025-01-08 00:00:00',
+            !!timestamp '2025-01-01 00:00:00', !!timestamp '2024-12-25 00:00:00',
+            !!timestamp '2024-12-18 00:00:00', !!timestamp '2024-12-11 00:00:00',
+            !!timestamp '2024-12-04 00:00:00', !!timestamp '2024-11-27 00:00:00',
+            !!timestamp '2024-11-20 00:00:00', !!timestamp '2024-11-13 00:00:00',
+            !!timestamp '2024-11-06 00:00:00', !!timestamp '2024-10-30 00:00:00',
+            !!timestamp '2024-10-23 00:00:00', !!timestamp '2024-10-16 00:00:00',
+            !!timestamp '2024-10-09 00:00:00', !!timestamp '2024-10-02 00:00:00',
+            !!timestamp '2024-09-25 00:00:00', !!timestamp '2024-09-18 00:00:00',
+            !!timestamp '2024-09-11 00:00:00', !!timestamp '2024-09-04 00:00:00',
+            !!timestamp '2024-08-28 00:00:00', !!timestamp '2024-08-21 00:00:00',
+            !!timestamp '2024-08-14 00:00:00', !!timestamp '2024-08-07 00:00:00',
+            !!timestamp '2024-07-31 00:00:00', !!timestamp '2024-07-24 00:00:00',
+            !!timestamp '2024-07-17 00:00:00', !!timestamp '2024-07-10 00:00:00',
+            !!timestamp '2024-07-03 00:00:00', !!timestamp '2024-06-26 00:00:00',
+            !!timestamp '2024-06-19 00:00:00', !!timestamp '2024-06-12 00:00:00',
+            !!timestamp '2024-06-05 00:00:00', !!timestamp '2024-05-29 00:00:00',
+            !!timestamp '2024-05-22 00:00:00', !!timestamp '2024-05-15 00:00:00',
+            !!timestamp '2024-05-08 00:00:00', !!timestamp '2024-05-01 00:00:00',
+            !!timestamp '2024-04-24 00:00:00', !!timestamp '2024-04-17 00:00:00',
+            !!timestamp '2024-04-10 00:00:00', !!timestamp '2024-04-03 00:00:00',
+            !!timestamp '2024-03-27 00:00:00', !!timestamp '2024-03-20 00:00:00',
+            !!timestamp '2024-03-13 00:00:00', !!timestamp '2024-03-06 00:00:00',
+            !!timestamp '2024-02-28 00:00:00', !!timestamp '2024-02-21 00:00:00',
+            !!timestamp '2024-02-14 00:00:00', !!timestamp '2024-02-07 00:00:00',
+            !!timestamp '2024-01-31 00:00:00', !!timestamp '2024-01-24 00:00:00',
+            !!timestamp '2024-01-17 00:00:00', !!timestamp '2024-01-10 00:00:00',
+            !!timestamp '2024-01-03 00:00:00', !!timestamp '2023-12-27 00:00:00',
+            !!timestamp '2023-12-20 00:00:00', !!timestamp '2023-12-13 00:00:00',
+            !!timestamp '2023-12-06 00:00:00', !!timestamp '2023-11-29 00:00:00',
+            !!timestamp '2023-11-22 00:00:00', !!timestamp '2023-11-15 00:00:00',
+            !!timestamp '2023-11-08 00:00:00', !!timestamp '2023-11-01 00:00:00',
+            !!timestamp '2023-10-25 00:00:00', !!timestamp '2023-10-18 00:00:00',
+            !!timestamp '2023-10-11 00:00:00', !!timestamp '2023-10-04 00:00:00',
+            !!timestamp '2023-09-27 00:00:00', !!timestamp '2023-09-20 00:00:00',
+            !!timestamp '2023-09-13 00:00:00', !!timestamp '2023-09-06 00:00:00',
+            !!timestamp '2023-08-30 00:00:00', !!timestamp '2023-08-23 00:00:00',
+            !!timestamp '2023-08-16 00:00:00', !!timestamp '2023-08-09 00:00:00',
+            !!timestamp '2023-08-02 00:00:00', !!timestamp '2023-07-26 00:00:00',
+            !!timestamp '2023-07-19 00:00:00', !!timestamp '2023-07-12 00:00:00',
+            !!timestamp '2023-07-05 00:00:00', !!timestamp '2023-06-28 00:00:00',
+            !!timestamp '2023-06-21 00:00:00', !!timestamp '2023-06-14 00:00:00',
+            !!timestamp '2023-06-07 00:00:00', !!timestamp '2023-05-31 00:00:00',
+            !!timestamp '2023-05-24 00:00:00', !!timestamp '2023-05-17 00:00:00',
+            !!timestamp '2023-05-10 00:00:00', !!timestamp '2023-05-03 00:00:00',
+            !!timestamp '2023-04-26 00:00:00', !!timestamp '2023-04-19 00:00:00',
+            !!timestamp '2023-04-12 00:00:00', !!timestamp '2023-04-05 00:00:00',
+            !!timestamp '2023-03-29 00:00:00', !!timestamp '2023-03-22 00:00:00',
+            !!timestamp '2023-03-15 00:00:00', !!timestamp '2023-03-08 00:00:00',
+            !!timestamp '2023-03-01 00:00:00', !!timestamp '2023-02-22 00:00:00',
+            !!timestamp '2023-02-15 00:00:00', !!timestamp '2023-02-08 00:00:00',
+            !!timestamp '2023-02-01 00:00:00', !!timestamp '2023-01-25 00:00:00',
+            !!timestamp '2023-01-18 00:00:00', !!timestamp '2023-01-11 00:00:00',
+            !!timestamp '2023-01-04 00:00:00', !!timestamp '2022-12-28 00:00:00',
+            !!timestamp '2022-12-21 00:00:00', !!timestamp '2022-12-14 00:00:00',
+            !!timestamp '2022-12-07 00:00:00', !!timestamp '2022-11-30 00:00:00',
+            !!timestamp '2022-11-23 00:00:00', !!timestamp '2022-11-16 00:00:00',
+            !!timestamp '2022-11-09 00:00:00', !!timestamp '2022-11-02 00:00:00',
+            !!timestamp '2022-10-26 00:00:00', !!timestamp '2022-10-19 00:00:00',
+            !!timestamp '2022-10-12 00:00:00', !!timestamp '2022-10-05 00:00:00',
+            !!timestamp '2022-09-28 00:00:00', !!timestamp '2022-09-21 00:00:00',
+            !!timestamp '2022-09-14 00:00:00', !!timestamp '2022-09-07 00:00:00',
+            !!timestamp '2022-08-31 00:00:00', !!timestamp '2022-08-24 00:00:00',
+            !!timestamp '2022-08-17 00:00:00', !!timestamp '2022-08-10 00:00:00',
+            !!timestamp '2022-08-03 00:00:00', !!timestamp '2022-07-27 00:00:00',
+            !!timestamp '2022-07-20 00:00:00', !!timestamp '2022-07-13 00:00:00',
+            !!timestamp '2022-07-06 00:00:00', !!timestamp '2022-06-29 00:00:00',
+            !!timestamp '2022-06-22 00:00:00', !!timestamp '2022-06-15 00:00:00',
+            !!timestamp '2022-06-08 00:00:00', !!timestamp '2022-06-01 00:00:00',
+            !!timestamp '2022-05-25 00:00:00', !!timestamp '2022-05-18 00:00:00',
+            !!timestamp '2022-05-11 00:00:00', !!timestamp '2022-05-04 00:00:00',
+            !!timestamp '2022-04-27 00:00:00', !!timestamp '2022-04-20 00:00:00',
+            !!timestamp '2022-04-13 00:00:00', !!timestamp '2022-04-06 00:00:00',
+            !!timestamp '2022-03-30 00:00:00', !!timestamp '2022-03-23 00:00:00',
+            !!timestamp '2022-03-16 00:00:00', !!timestamp '2022-03-09 00:00:00',
+            !!timestamp '2022-03-02 00:00:00', !!timestamp '2022-02-23 00:00:00',
+            !!timestamp '2022-02-16 00:00:00', !!timestamp '2022-02-09 00:00:00',
+            !!timestamp '2022-02-02 00:00:00', !!timestamp '2022-01-26 00:00:00',
+            !!timestamp '2022-01-19 00:00:00', !!timestamp '2022-01-12 00:00:00',
+            !!timestamp '2022-01-05 00:00:00', !!timestamp '2021-12-29 00:00:00',
+            !!timestamp '2021-12-22 00:00:00', !!timestamp '2021-12-15 00:00:00',
+            !!timestamp '2021-12-08 00:00:00', !!timestamp '2021-12-01 00:00:00',
+            !!timestamp '2021-11-24 00:00:00', !!timestamp '2021-11-17 00:00:00',
+            !!timestamp '2021-11-10 00:00:00', !!timestamp '2021-11-03 00:00:00',
+            !!timestamp '2021-10-27 00:00:00', !!timestamp '2021-10-20 00:00:00',
+            !!timestamp '2021-10-13 00:00:00', !!timestamp '2021-10-06 00:00:00',
+            !!timestamp '2021-09-29 00:00:00', !!timestamp '2021-09-22 00:00:00',
+            !!timestamp '2021-09-15 00:00:00', !!timestamp '2021-09-08 00:00:00',
+            !!timestamp '2021-09-01 00:00:00', !!timestamp '2021-08-25 00:00:00',
+            !!timestamp '2021-08-18 00:00:00', !!timestamp '2021-08-11 00:00:00',
+            !!timestamp '2021-08-04 00:00:00', !!timestamp '2021-07-28 00:00:00',
+            !!timestamp '2021-07-21 00:00:00', !!timestamp '2021-07-14 00:00:00',
+            !!timestamp '2021-07-07 00:00:00', !!timestamp '2021-06-30 00:00:00',
+            !!timestamp '2021-06-23 00:00:00', !!timestamp '2021-06-16 00:00:00',
+            !!timestamp '2021-06-09 00:00:00', !!timestamp '2021-06-02 00:00:00',
+            !!timestamp '2021-05-26 00:00:00', !!timestamp '2021-05-19 00:00:00',
+            !!timestamp '2021-05-12 00:00:00', !!timestamp '2021-05-05 00:00:00',
+            !!timestamp '2021-04-28 00:00:00', !!timestamp '2021-04-21 00:00:00',
+            !!timestamp '2021-04-14 00:00:00', !!timestamp '2021-04-07 00:00:00',
+            !!timestamp '2021-03-31 00:00:00', !!timestamp '2021-03-24 00:00:00',
+            !!timestamp '2021-03-17 00:00:00', !!timestamp '2021-03-10 00:00:00',
+            !!timestamp '2021-03-03 00:00:00', !!timestamp '2021-02-24 00:00:00',
+            !!timestamp '2021-02-17 00:00:00', !!timestamp '2021-02-10 00:00:00',
+            !!timestamp '2021-02-03 00:00:00', !!timestamp '2021-01-27 00:00:00',
+            !!timestamp '2021-01-20 00:00:00', !!timestamp '2021-01-13 00:00:00',
+            !!timestamp '2021-01-06 00:00:00', !!timestamp '2020-12-30 00:00:00',
+            !!timestamp '2020-12-23 00:00:00', !!timestamp '2020-12-16 00:00:00',
+            !!timestamp '2020-12-09 00:00:00', !!timestamp '2020-12-02 00:00:00',
+            !!timestamp '2020-11-25 00:00:00', !!timestamp '2020-11-18 00:00:00',
+            !!timestamp '2020-11-11 00:00:00', !!timestamp '2020-11-04 00:00:00',
+            !!timestamp '2020-10-28 00:00:00', !!timestamp '2020-10-21 00:00:00',
+            !!timestamp '2020-10-14 00:00:00', !!timestamp '2020-10-07 00:00:00',
+            !!timestamp '2020-09-30 00:00:00', !!timestamp '2020-09-23 00:00:00',
+            !!timestamp '2020-09-16 00:00:00', !!timestamp '2020-09-09 00:00:00',
+            !!timestamp '2020-09-02 00:00:00', !!timestamp '2020-08-26 00:00:00',
+            !!timestamp '2020-08-19 00:00:00', !!timestamp '2020-08-12 00:00:00',
+            !!timestamp '2020-08-05 00:00:00', !!timestamp '2020-07-29 00:00:00',
+            !!timestamp '2020-07-22 00:00:00', !!timestamp '2020-07-15 00:00:00',
+            !!timestamp '2020-07-08 00:00:00', !!timestamp '2020-07-01 00:00:00',
+            !!timestamp '2020-06-24 00:00:00', !!timestamp '2020-06-17 00:00:00',
+            !!timestamp '2020-06-10 00:00:00', !!timestamp '2020-06-03 00:00:00',
+            !!timestamp '2020-05-27 00:00:00', !!timestamp '2020-05-20 00:00:00',
+            !!timestamp '2020-05-13 00:00:00', !!timestamp '2020-05-06 00:00:00',
+            !!timestamp '2020-04-29 00:00:00', !!timestamp '2020-04-22 00:00:00',
+            !!timestamp '2020-04-15 00:00:00', !!timestamp '2020-04-08 00:00:00',
+            !!timestamp '2020-04-01 00:00:00', !!timestamp '2020-03-25 00:00:00',
+            !!timestamp '2020-03-18 00:00:00', !!timestamp '2020-03-11 00:00:00',
+            !!timestamp '2020-03-04 00:00:00', !!timestamp '2020-02-26 00:00:00',
+            !!timestamp '2020-02-19 00:00:00', !!timestamp '2020-02-12 00:00:00',
+            !!timestamp '2020-02-05 00:00:00', !!timestamp '2020-01-29 00:00:00',
+            !!timestamp '2020-01-22 00:00:00', !!timestamp '2020-01-15 00:00:00',
+            !!timestamp '2020-01-08 00:00:00']]}, xaxis: x, y: !!python/object/apply:numpy._core.multiarray._reconstruct {
+        args: [*id001, !!python/tuple [0], !!binary "Yg==\n"], state: !!python/tuple [
+          1, !!python/tuple [276], *id002, false, !!binary "UrgehetREUBSuB6F61ERQFK4HoXrURFAUrgehetREUBSuB6F61ERQFK4HoXrURFAUrgehetREUBS\n\
+            uB6F61ERQFK4HoXrURFAUrgehetREUBSuB6F61ERQFK4HoXrURFAUrgehetREUBSuB6F61ERQFK4\n\
+            HoXrURFAUrgehetREUBSuB6F61ERQFK4HoXrURJAUrgehetREkBSuB6F61ESQFK4HoXrURJAUrge\n\
+            hetREkB7FK5H4XoSQFK4HoXrURNAUrgehetRE0BSuB6F61ETQFK4HoXrURNAUrgehetRE0BSuB6F\n\
+            61ETQFK4HoXrURNAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXr\n\
+            URVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetR\n\
+            FUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EV\n\
+            QFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVA\n\
+            UrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBS\n\
+            uB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4\n\
+            HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrge\n\
+            hetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFUBSuB6F\n\
+            61EVQFK4HoXrURVAUrgehetRFUBSuB6F61EVQFK4HoXrURVAUrgehetRFEBSuB6F61EUQFK4HoXr\n\
+            URRAUrgehetRFEBI4XoUrkcUQFK4HoXrURRAUrgehetRFEBSuB6F61EUQFK4HoXrURRAUrgehetR\n\
+            FEBSuB6F61EUQFK4HoXrURRAUrgehetRE0BSuB6F61ETQFK4HoXrURNAUrgehetRE0BSuB6F61ET\n\
+            QFK4HoXrURNAUrgehetREkBI4XoUrkcSQEjhehSuRxJAUrgehetREkBSuB6F61ESQFK4HoXrURJA\n\
+            UrgehetREkBSuB6F61ERQFK4HoXrURFAUrgehetREUBSuB6F61ERQFK4HoXrURFAUrgehetREUBS\n\
+            uB6F61ERQKRwPQrXow5ApHA9CtejDkCkcD0K16MOQKRwPQrXow5ApHA9CtejDkCkcD0K16MOQKRw\n\
+            PQrXowhApHA9CtejCECkcD0K16MIQKRwPQrXowhApHA9CtejCECkcD0K16MIQKRwPQrXowJApHA9\n\
+            CtejAkCkcD0K16MCQKRwPQrXowJApHA9CtejAkCkcD0K16MCQKRwPQrXowJApHA9CtejAkBI4XoU\n\
+            rkf5P0jhehSuR/k/SOF6FK5H+T9I4XoUrkf5P0jhehSuR/k/SOF6FK5H+T+PwvUoXI/qP4/C9Shc\n\
+            j+o/j8L1KFyP6j+PwvUoXI/qP4/C9Shcj+o/j8L1KFyP6j8fhetRuB7VPx+F61G4HtU/H4XrUbge\n\
+            1T8fhetRuB7VPx+F61G4HtU/H4XrUbge1T8fhetRuB7VP3sUrkfherQ/exSuR+F6tD97FK5H4Xq0\n\
+            P3sUrkfherQ/exSuR+F6tD97FK5H4Xq0P3sUrkfherQ/exSuR+F6tD97FK5H4Xq0P3sUrkfherQ/\n\
+            exSuR+F6tD97FK5H4Xq0P3sUrkfherQ/exSuR+F6tD97FK5H4Xq0P3sUrkfherQ/exSuR+F6tD97\n\
+            FK5H4Xq0P3sUrkfherQ/exSuR+F6tD97FK5H4Xq0P3sUrkfherQ/exSuR+F6tD97FK5H4Xq0P3sU\n\
+            rkfherQ/exSuR+F6tD97FK5H4Xq0P3sUrkfherQ/exSuR+F6tD8K16NwPQq3P5qZmZmZmbk/mpmZ\n\
+            mZmZuT8K16NwPQq3P5qZmZmZmbk/mpmZmZmZuT+amZmZmZm5P5qZmZmZmbk/mpmZmZmZuT+amZmZ\n\
+            mZm5P7gehetRuK4/uB6F61G4rj+amZmZmZmpP7gehetRuK4/uB6F61G4rj+4HoXrUbiuP7gehetR\n\
+            uK4/7FG4HoXrsT/sUbgeheuxP+xRuB6F67E/7FG4HoXrsT/sUbgeheuxP+xRuB6F67E/7FG4HoXr\n\
+            sT/sUbgeheuxP+xRuB6F67E/7FG4HoXrsT97FK5H4Xq0P3sUrkfherQ/7FG4HoXrsT97FK5H4Xq0\n\
+            PwrXo3A9Crc/CtejcD0Ktz8K16NwPQq3PwrXo3A9Crc/CtejcD0Ktz8K16NwPQq3PwrXo3A9Crc/\n\
+            exSuR+F6tD97FK5H4Xq0PwrXo3A9Crc/CtejcD0Ktz8K16NwPQq3PwrXo3A9Crc/CtejcD0Ktz8K\n\
+            16NwPQq3PwrXo3A9Crc/CtejcD0Ktz8K16NwPQq3PwrXo3A9Crc/CtejcD0Ktz8K16NwPQq3PwrX\n\
+            o3A9Crc/mpmZmZmZuT+amZmZmZm5P5qZmZmZmbk/CtejcD0Ktz8K16NwPQq3PwrXo3A9Crc/Ctej\n\
+            cD0Ktz97FK5H4Xq0PwrXo3A9Crc/exSuR+F6tD/sUbgeheuxP5qZmZmZmak/mpmZmZmZqT+amZmZ\n\
+            mZmpP5qZmZmZmak/mpmZmZmZqT97FK5H4XqkP5qZmZmZmak/mpmZmZmZqT+amZmZmZmpPwrXo3A9\n\
+            Crc/MzMzMzMzwz+uR+F6FK7nP3E9CtejcPE/KVyPwvUo+D9I4XoUrkf5P0jhehSuR/k/SOF6FK5H\n\
+            +T9xPQrXo3D5P83MzMzMzPg/zczMzMzM+D+kcD0K16P4P83MzMzMzPg/\n"]}, yaxis: y2}],
+  layout: {hovermode: x, template: {data: {bar: [{error_x: {color: '#2a3f5f'}, error_y: {
+              color: '#2a3f5f'}, marker: {line: {color: '#E5ECF6', width: 0.5}, pattern: {
+                fillmode: overlay, size: 10, solidity: 0.2}}, type: bar}], barpolar: [
+          {marker: {line: {color: '#E5ECF6', width: 0.5}, pattern: {fillmode: overlay,
+                size: 10, solidity: 0.2}}, type: barpolar}], carpet: [{aaxis: {endlinecolor: '#2a3f5f',
+              gridcolor: white, linecolor: white, minorgridcolor: white, startlinecolor: '#2a3f5f'},
+            baxis: {endlinecolor: '#2a3f5f', gridcolor: white, linecolor: white, minorgridcolor: white,
+              startlinecolor: '#2a3f5f'}, type: carpet}], choropleth: [{colorbar: {
+              outlinewidth: 0, ticks: ''}, type: choropleth}], contour: [{colorbar: {
+              outlinewidth: 0, ticks: ''}, colorscale: [[0.0, '#0d0887'], [0.1111111111111111,
+                '#46039f'], [0.2222222222222222, '#7201a8'], [0.3333333333333333,
+                '#9c179e'], [0.4444444444444444, '#bd3786'], [0.5555555555555556,
+                '#d8576b'], [0.6666666666666666, '#ed7953'], [0.7777777777777778,
+                '#fb9f3a'], [0.8888888888888888, '#fdca26'], [1.0, '#f0f921']], type: contour}],
+        contourcarpet: [{colorbar: {outlinewidth: 0, ticks: ''}, type: contourcarpet}],
+        heatmap: [{colorbar: {outlinewidth: 0, ticks: ''}, colorscale: [[0.0, '#0d0887'],
+              [0.1111111111111111, '#46039f'], [0.2222222222222222, '#7201a8'], [
+                0.3333333333333333, '#9c179e'], [0.4444444444444444, '#bd3786'], [
+                0.5555555555555556, '#d8576b'], [0.6666666666666666, '#ed7953'], [
+                0.7777777777777778, '#fb9f3a'], [0.8888888888888888, '#fdca26'], [
+                1.0, '#f0f921']], type: heatmap}], heatmapgl: [{colorbar: {outlinewidth: 0,
+              ticks: ''}, colorscale: [[0.0, '#0d0887'], [0.1111111111111111, '#46039f'],
+              [0.2222222222222222, '#7201a8'], [0.3333333333333333, '#9c179e'], [
+                0.4444444444444444, '#bd3786'], [0.5555555555555556, '#d8576b'], [
+                0.6666666666666666, '#ed7953'], [0.7777777777777778, '#fb9f3a'], [
+                0.8888888888888888, '#fdca26'], [1.0, '#f0f921']], type: heatmapgl}],
+        histogram: [{marker: {pattern: {fillmode: overlay, size: 10, solidity: 0.2}},
+            type: histogram}], histogram2d: [{colorbar: {outlinewidth: 0, ticks: ''},
+            colorscale: [[0.0, '#0d0887'], [0.1111111111111111, '#46039f'], [0.2222222222222222,
+                '#7201a8'], [0.3333333333333333, '#9c179e'], [0.4444444444444444,
+                '#bd3786'], [0.5555555555555556, '#d8576b'], [0.6666666666666666,
+                '#ed7953'], [0.7777777777777778, '#fb9f3a'], [0.8888888888888888,
+                '#fdca26'], [1.0, '#f0f921']], type: histogram2d}], histogram2dcontour: [
+          {colorbar: {outlinewidth: 0, ticks: ''}, colorscale: [[0.0, '#0d0887'],
+              [0.1111111111111111, '#46039f'], [0.2222222222222222, '#7201a8'], [
+                0.3333333333333333, '#9c179e'], [0.4444444444444444, '#bd3786'], [
+                0.5555555555555556, '#d8576b'], [0.6666666666666666, '#ed7953'], [
+                0.7777777777777778, '#fb9f3a'], [0.8888888888888888, '#fdca26'], [
+                1.0, '#f0f921']], type: histogram2dcontour}], mesh3d: [{colorbar: {
+              outlinewidth: 0, ticks: ''}, type: mesh3d}], parcoords: [{line: {colorbar: {
+                outlinewidth: 0, ticks: ''}}, type: parcoords}], pie: [{automargin: true,
+            type: pie}], scatter: [{fillpattern: {fillmode: overlay, size: 10, solidity: 0.2},
+            type: scatter}], scatter3d: [{line: {colorbar: {outlinewidth: 0, ticks: ''}},
+            marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scatter3d}], scattercarpet: [
+          {marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scattercarpet}],
+        scattergeo: [{marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scattergeo}],
+        scattergl: [{marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scattergl}],
+        scattermapbox: [{marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scattermapbox}],
+        scatterpolar: [{marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scatterpolar}],
+        scatterpolargl: [{marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scatterpolargl}],
+        scatterternary: [{marker: {colorbar: {outlinewidth: 0, ticks: ''}}, type: scatterternary}],
+        surface: [{colorbar: {outlinewidth: 0, ticks: ''}, colorscale: [[0.0, '#0d0887'],
+              [0.1111111111111111, '#46039f'], [0.2222222222222222, '#7201a8'], [
+                0.3333333333333333, '#9c179e'], [0.4444444444444444, '#bd3786'], [
+                0.5555555555555556, '#d8576b'], [0.6666666666666666, '#ed7953'], [
+                0.7777777777777778, '#fb9f3a'], [0.8888888888888888, '#fdca26'], [
+                1.0, '#f0f921']], type: surface}], table: [{cells: {fill: {color: '#EBF0F8'},
+              line: {color: white}}, header: {fill: {color: '#C8D4E3'}, line: {color: white}},
+            type: table}]}, layout: {annotationdefaults: {arrowcolor: '#2a3f5f', arrowhead: 0,
+          arrowwidth: 1}, autotypenumbers: strict, coloraxis: {colorbar: {outlinewidth: 0,
+            ticks: ''}}, colorscale: {diverging: [[0, '#8e0152'], [0.1, '#c51b7d'],
+            [0.2, '#de77ae'], [0.3, '#f1b6da'], [0.4, '#fde0ef'], [0.5, '#f7f7f7'],
+            [0.6, '#e6f5d0'], [0.7, '#b8e186'], [0.8, '#7fbc41'], [0.9, '#4d9221'],
+            [1, '#276419']], sequential: [[0.0, '#0d0887'], [0.1111111111111111, '#46039f'],
+            [0.2222222222222222, '#7201a8'], [0.3333333333333333, '#9c179e'], [0.4444444444444444,
+              '#bd3786'], [0.5555555555555556, '#d8576b'], [0.6666666666666666, '#ed7953'],
+            [0.7777777777777778, '#fb9f3a'], [0.8888888888888888, '#fdca26'], [1.0,
+              '#f0f921']], sequentialminus: [[0.0, '#0d0887'], [0.1111111111111111,
+              '#46039f'], [0.2222222222222222, '#7201a8'], [0.3333333333333333, '#9c179e'],
+            [0.4444444444444444, '#bd3786'], [0.5555555555555556, '#d8576b'], [0.6666666666666666,
+              '#ed7953'], [0.7777777777777778, '#fb9f3a'], [0.8888888888888888, '#fdca26'],
+            [1.0, '#f0f921']]}, colorway: ['#636efa', '#EF553B', '#00cc96', '#ab63fa',
+          '#FFA15A', '#19d3f3', '#FF6692', '#B6E880', '#FF97FF', '#FECB52'], font: {
+          color: '#2a3f5f'}, geo: {bgcolor: white, lakecolor: white, landcolor: '#E5ECF6',
+          showlakes: true, showland: true, subunitcolor: white}, hoverlabel: {align: left},
+        hovermode: closest, mapbox: {style: light}, paper_bgcolor: white, plot_bgcolor: '#E5ECF6',
+        polar: {angularaxis: {gridcolor: white, linecolor: white, ticks: ''}, bgcolor: '#E5ECF6',
+          radialaxis: {gridcolor: white, linecolor: white, ticks: ''}}, scene: {xaxis: {
+            backgroundcolor: '#E5ECF6', gridcolor: white, gridwidth: 2, linecolor: white,
+            showbackground: true, ticks: '', zerolinecolor: white}, yaxis: {backgroundcolor: '#E5ECF6',
+            gridcolor: white, gridwidth: 2, linecolor: white, showbackground: true,
+            ticks: '', zerolinecolor: white}, zaxis: {backgroundcolor: '#E5ECF6',
+            gridcolor: white, gridwidth: 2, linecolor: white, showbackground: true,
+            ticks: '', zerolinecolor: white}}, shapedefaults: {line: {color: '#2a3f5f'}},
+        ternary: {aaxis: {gridcolor: white, linecolor: white, ticks: ''}, baxis: {
+            gridcolor: white, linecolor: white, ticks: ''}, bgcolor: '#E5ECF6', caxis: {
+            gridcolor: white, linecolor: white, ticks: ''}}, title: {x: 0.05}, xaxis: {
+          automargin: true, gridcolor: white, linecolor: white, ticks: '', title: {
+            standoff: 15}, zerolinecolor: white, zerolinewidth: 2}, yaxis: {automargin: true,
+          gridcolor: white, linecolor: white, ticks: '', title: {standoff: 15}, zerolinecolor: white,
+          zerolinewidth: 2}}}, xaxis: {anchor: y, domain: [0.0, 0.94]}, yaxis: {anchor: x,
+      domain: [0.0, 1.0], range: [100, 170], tickvals: [100, 120, 140, 160]}, yaxis2: {
+      anchor: x, overlaying: y, range: [0, 7], side: right, tickcolor: blue, tickvals: [
+        0, 2, 4, 6]}}}
