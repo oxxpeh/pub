@@ -1,0 +1,1 @@
+# Plotlyのfigureオブジェクトをyamlファイルで読み込み描画
