@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotly.js with YAML</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/3.0.1/plotly.min.js"></script>
+</head>
+<body>
+    <div id="plot" style="width: 100%; height: 100%;"></div>
+
+    <script>
+        // YAMLファイルを読み込む関数
+        async function ff_loadYAML(url) {
+            const response = await fetch(url);
+            const text = await response.text();
+            return jsyaml.load(text);
+        }
+
+        // Plotlyで描画する関数
+        async function ff_drawPlot() {
+            const figure = await ff_loadYAML('https://raw.githubusercontent.com/oxxpeh/pub/main/javascript/2025_04_fetch_plorly/fig.yaml'); // YAMLファイルのパスを指定
+            Plotly.newPlot('plot', figure.data, figure.layout);
+        }
+
+        // ページが読み込まれたら描画を実行
+        window.onload = ff_drawPlot;
+    </script>
+</body>
+</html>
