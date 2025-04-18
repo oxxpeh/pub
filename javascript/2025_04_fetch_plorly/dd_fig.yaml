@@ -1,5 +1,5 @@
 # -- Test
-{data: [{close: !!python/object/apply:numpy._core.multiarray._reconstruct {args: [
+data: [{close: !!python/object/apply:numpy._core.multiarray._reconstruct {args: [
           &id001 !!python/name:numpy.ndarray '', !!python/tuple [0], !!binary "Yg==\n"],
         state: !!python/tuple [1, !!python/tuple [277], &id002 !!python/object/apply:numpy.dtype {
             args: [f8, false, true], state: !!python/tuple [3, <, null, null, null,
@@ -763,4 +763,4 @@
           zerolinewidth: 2}}}, xaxis: {anchor: y, domain: [0.0, 0.94]}, yaxis: {anchor: x,
       domain: [0.0, 1.0], range: [100, 170], tickvals: [100, 120, 140, 160]}, yaxis2: {
       anchor: x, overlaying: y, range: [0, 7], side: right, tickcolor: blue, tickvals: [
-        0, 2, 4, 6]}}}
+        0, 2, 4, 6]}}
