@@ -5,15 +5,16 @@
 [githubpagesで動作ページ](https://oxxpeh.github.io/2025/03_pys_ch.html)  
 上記ページの参照データ(ここにアップされてるgmo_sck_tck_BTC_JPY.pck)は更新されないので  
 データ受信するがグラフの変化はなし  
-「開始は2025年03月15日 19:20:07.326000です。」な表示が出たら準備完了(結構時間がかかる)「選択」で開始  
-更新間隔は30秒にしてるので最初の描画も遅いです  
+「02:25:50.217 PyScript boot」な表示が出たら「btc_jpy」選択し「submit」  
+<del>「開始は2025年03月15日 19:20:07.326000です。」な表示が出たらな表示が出たら準備完了(結構時間がかかる)</del> 
+更新間隔は30秒にしてるので最初の描画も遅いかも 
 ## 補足
 webサーバから価格情報を取得しローソク足などを描画する  
 価格情報はwebサーバ側で業者提供の「Public WebSocket API」と接続し生成  
   
 ファイルリスト  
 ・pys_ch.html ->ブラウザが要求するhtmlファイル  
-・pys_ch.toml ->PyScriptの設定ファイル  
+~~・pys_ch.toml ->PyScriptの設定ファイル~~ (config='{"packages": ["pandas","panel"]}'と書くほうが楽かも)
 ・pys_ch.py ->PyScriptとして実行してるPythonコード  
 ・gmo_sck_tck_BTC_JPY.pck ->価格情報データ  
 
