@@ -166,9 +166,9 @@ function ffp_add_obj() {
 // ショートカットキー追加
 function ffp_add_shk() {
     //const ele_bt_tgt = document.getElementsByClassName("absolute py-editor-run-button")[0];
-    const ele_bt_tgt = document.getElementsById("elep_bt_e");
+    const ele_bt_tgt = document.getElementById("elep_bt_e");
     //alert("Ctrl + @ が押されました！");
-    //ffp_wr_io();
+    ffp_wr_io();
     ele_bt_tgt.click()
 }
 
