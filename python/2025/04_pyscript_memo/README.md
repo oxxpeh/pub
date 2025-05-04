@@ -305,7 +305,7 @@ javascript内のオブジェクト(?)のtypeは「pyodide.ffi.JsProxy」で始�
 ### やられたこと
 #### py-clickはeditorでは使えない
 `Uncaught (in promise) Error: The interpreter "py" was not found. There are no interpreters in this page.`  
-typeが「py-editor」のみのときに発生、空で「<script type="py"></script>」追加  
+typeが「py-editor」のみのときに発生、「<script type="py"></script>」追加や  
 「@when」や「XXX.onclick=YYY」とか使う
 ```python
 # py-click
