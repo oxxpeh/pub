@@ -325,5 +325,9 @@ ii_pys.document.querySelector('#ele_bt_c').onclcik = ff_t
 ```
 #### クリックイベントの引数
 引数付で渡されるので忘れずに
+#### styleの追加
+bodyなどへの追加で装飾はいじれるが、clickイベントなどの関連付けができなかった気がする。  
+(head内ならok)  
+pyscript.web以下にelement作成する関数(?)ありますがhtmlで追加が私は楽…
 #### 「getElementById」とか
 「queryselector」や「querySelectorAll」でCSSセレクタ使用するのが良いような
