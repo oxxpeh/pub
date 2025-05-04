@@ -1,4 +1,5 @@
 # PyScriptのメモいろいろ(ver 2025.3.1にて)
+いろいろやってみて、html、CSS、DOM(?)のお試しとして使うのには良いと思いました
 ## 使い方
 htmlに以下のように書く
 ```html
@@ -14,7 +15,9 @@ ii_pg.body.innerHTML =('@ -- Pyscript')
 </body>
 
 ```
-「type」を「[py-editor」にすると
+<img src="etc/pys_01.jpg" alt="無印" width="700"/><br />
+「type」を「[py-editor」にすると  
+<img src="etc/pys_00.jpg" alt="editor" width="700"/><br />
 
 いろいろ試した結果以下に
 ```html
@@ -57,7 +60,8 @@ ff_wr_log('PyScript boot')
     <div id="ele_d_pe0" class="cl_d_pye">
     &#91id:elep_pe_0&#93<br />
     <script type="py-editor" id = "elep_pe_0" env="pys-1">
-print('PyScript')
+from pyscript.web import page as ii_pg
+ii_pg.body.innerHTML =('@ -- Pyscript')
     </script></div></td></tr>
     <tr><td style="vertical-align: top; ">
     <div id="ele_d_pe1" class="cl_d_pye">
@@ -72,9 +76,96 @@ print('PyScript')
     </script></div></td></tr></table>
     </section><br />
 ```
+<img src="etc/pys_02.jpg" alt="editor_add" width="700"/><br />
+
 「pyeditor_add.js」で出力やログの「div」とボタンなどの追加を  
 「env=xx」で同じ環境にして、「setup」でページロード時に自動実行するものも追加  
-クリック時にカウントするアプリを以下で作成
+クリック時にカウントするアプリを以下のように作成<br />  
+<img src="etc/pys_03.jpg" alt="editor_0" width="700"/><br />
+「[id:elep_pe_0]」と「[id:elep_pe_2]」を実行すると
+<img src="etc/pys_04.jpg" alt="editor_1" width="700"/><br />
+それぞれの内容<br />  
+```python
+# -- [id:elep_pe_0]
+import pyscript as ii_pys
+
+# -- add ele
+aas_ele="""<div id="ele_d_c">
+    <input id="ele_ip_c" placeholder="init"></input>
+    <button id="ele_bt_c">add</button>
+    &nbsp;&nbsp;count:<span id="ele_s_c"></span>
+<div/>"""
+ii_pys.document.querySelector('#elep_d_out').innerHTML += aas_ele
+ele_ip_c = ii_pys.document.querySelector('#ele_ip_c')
+ele_bt_c = ii_pys.document.querySelector('#ele_bt_c')
+ele_s_c = ii_pys.document.querySelector('#ele_s_c')
+
+# -- add func func
+def ff_get_c():
+    try:
+        aai_cnt = int(ele_ip_c.value)
+    except ValueError as e:
+        aai_cnt = 0
+    return aai_cnt
+
+def ff_add_c(e):
+    aai_n = ff_get_c() + 1
+    #print(aai_n)
+    ele_ip_c.value = aai_n
+    ele_s_c.innerText=aai_n
+
+ele_bt_c.onclick = ff_add_c
+
+# -- [id:elep_pe_0]
+# 移動と色付
+# -- pst move
+aas_st="""
+.st_pst {
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    background-color: red;
+}
+</style>"""
+from pyscript.web import page as ii_pg
+aas_hd = ii_pg.head.innerHTML
+#from pyscript import web as ii_web
+#aas_hd = ii_pys.web.page.head.innerHTML
+#aas_hd = ii_web.page.head.innerHTML
+aas_hdn = aas_hd.replace('</style>', aas_st)
+ii_pg.head.innerHTML = aas_hdn
+#ii_pys.web.page.head.innerHTML = aas_hdn
+#ii_web.page.head.innerHTML = aas_hdn
+ele_d_c = ii_pys.document.querySelector('#ele_d_c')
+ele_d_c.classList.toggle("st_pst", True)
+```
+[pyscriptappsでのページ](https://oxxpeh.pyscriptapps.com/ex-xx/latest/pys_cnte.html)<br />
+作正したカウントページをiframeとして挿入しリサイズ表示したもの  <br />
+<img src="etc/pys_05.jpg" alt="iframe" width="700"/> <br /> 
+コード  
+```python
+# -- iframeとして挿入
+import pyscript as ii_pys
+from pyscript.web import page as ii_pg
+# -- add ele
+aas_if="""<iframe id="ele_if" src="https://oxxpeh.pyscriptapps.com/compare-with-counter/latest/pys_countm.html"></iframe>"""
+ii_pys.document.querySelector('#elep_d_out').innerHTML = aas_if
+
+# -- リサイズ
+aas_hd = (ii_pg.head.innerHTML)
+aas_hd_n = aas_hd.replace('</style>', """.if_scl {
+    width: 100%; 
+    height: 100%; 
+    transform: scale(0.7); 
+    transform-origin: top left; 
+}</style>""")
+ii_pg.head.innerHTML = aas_hd_n
+print(ii_pg.head.innerHTML)
+ele_if = ii_pys.document.querySelector('#ele_if')
+ele_if.classList.toggle("if_scl", True)
+```
+iframeへの挿入は同一ホストに限られると思う…<br />
+[pyscriptappsでのページ](https://oxxpeh.pyscriptapps.com/ex-xx/latest/pys_cntfe.html)
 ## パッケージの追加など
 `config='{"packages": ["pandas","plotly"]}'`や`config='conf.toml'`  
 tomlの内容
@@ -95,8 +186,9 @@ packages = ["pandas", "plotly", "panel"]
 ## typeの比較
 「py」「mpy」「py-editor」の指定が可能、「mpy」が起動早いけどパッケージが少なさそう  
 「mpy」は「micropython」、「py」と「py-editor」は「pyodide」  
-起動の比較
-
+起動の比較  
+<img src="etc/pys_10.jpg" alt="type comp" width="400"/><br />
+[pyscriptappsでのページ](https://oxxpeh.pyscriptapps.com/compare-with-counter/latest/)
 ## ファイルの取得
 「設定ファイルに書く」、「pyscriptのfetch」、「requestsとか」、「requestsとか」については省略  
 「設定ファイルに書く」だとURLのファイルをpyscript内のファイル名として登録、  
@@ -140,10 +232,11 @@ rt = await ii_pys.fetch(aas_url).bytearray()
 ddf = ii_pc.loads(rt)
 print(ddf)
 ```
+[pyscriptappsでのページ](https://oxxpeh.pyscriptapps.com/ex-xx/latest/pys_fe.html)
 ## pyodide.ffi.JsProxyとか
 「pyscript.window」「pyscript.document」でjavascript内の「window」「document」とリンク(？)してそう
 ```
-# -- 開発ツールなどのコンソール
+# -- ブラウザの開発ツールなどのコンソール
 console.log('@@')
 alert('@@')
 document.querySelector('#xxx')
@@ -201,6 +294,8 @@ ll_ele_d[-2] <pyscript.web.div object at 0xf601d0>
 ll_jele_d[-2] [object HTMLDivElement]
 ```
 javascript内のオブジェクト(?)のtypeは「pyodide.ffi.JsProxy」で始まるものになるようで  
+[pyscriptappsでのページ](https://oxxpeh.pyscriptapps.com/ex-xx/latest/pys_oe.html)
+
 
 ## その他
 ### 参照サイト
