@@ -303,6 +303,26 @@ javascript内のオブジェクト(?)のtypeは「pyodide.ffi.JsProxy」で始�
 最初は何書かれてるのか理解できなかった…   
 ここに書いてる内容もほとんど書かれてる…   
 <span style="color: #38761d;"><br>(参)<br>Using Panel in Pyodide & PyScript — Panel v1.6.3<br>https://panel.holoviz.org/how_to/wasm/standalone.html</span><br>
+### colabでjavascript
+ちょっとずれるけどカウンタアプリをcolabで動作させるには以下の入力でよさそう。  
+`%%html`で書いたときは`document.querySelector("#output-area").innerHTML = `に代入されてる感じ。  
+documentは各セルのiframeの中が対象、違うセルを指定する方法は…
+<span style="color: #38761d;"><br>(参)<br>colab-js-sample - Colab<br>https://colab.research.google.com/drive/1OzlbKiDHoO8P6nISgR7lVRsmAnwOvvxO?usp=sharing</span><br>
+```html
+%%html
+<div id="ele_d_c">
+  <input id="ele_ip_c" value=0></input>
+  <button id="ele_bt_c" onclick="ff_add();" >add</button>
+  &nbsp;&nbsp;count:<span id="ele_s_c"></span>
+<div/>
+<script>
+  function ff_add(){
+    let ele_ip = document.querySelector("#ele_ip_c");
+    //let ele_ip = document.querySelector("#ele_ip_c");
+    ele_ip.value = Number(ele_ip.value) + 1 ;
+  }
+</script>
+```
 ### やられたこと
 #### py-clickはeditorでは使えない
 `Uncaught (in promise) Error: The interpreter "py" was not found. There are no interpreters in this page.`  
@@ -339,3 +359,4 @@ bodyなどへの追加で装飾はいじれるが、clickイベントなどの�
 pyscript.web以下にelement作成する関数(?)ありますがhtmlで追加が私は楽…
 #### 「getElementById」とか
 「queryselector」や「querySelectorAll」でCSSセレクタ使用するのが良いような
+
