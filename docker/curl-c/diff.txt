@@ -1,0 +1,44 @@
+--- a/docs/cmdline-opts/compressed.md
++++ b/docs/cmdline-opts/compressed.md
+@@ -1,6 +1,7 @@
+ ---
+ c: Copyright (C) Daniel Stenberg, <daniel@haxx.se>, et al.
+ SPDX-License-Identifier: curl
++Short: 9
+ Long: compressed
+ Help: Request compressed response
+ Protocols: HTTP
+--- a/src/tool_getparam.c
++++ b/src/tool_getparam.c
+@@ -104,7 +104,7 @@ static const struct LongShort aliases[]= {
+   {"cert-type",                  ARG_STRG|ARG_TLS, ' ', C_CERT_TYPE},
+   {"ciphers",                    ARG_STRG|ARG_TLS, ' ', C_CIPHERS},
+   {"clobber",                    ARG_BOOL|ARG_NO, ' ', C_CLOBBER},
+-  {"compressed",                 ARG_BOOL, ' ', C_COMPRESSED},
++  {"compressed",                 ARG_BOOL, '9', C_COMPRESSED},
+   {"compressed-ssh",             ARG_BOOL, ' ', C_COMPRESSED_SSH},
+   {"config",                     ARG_FILE, 'K', C_CONFIG},
+   {"connect-timeout",            ARG_STRG, ' ', C_CONNECT_TIMEOUT},
+--- a/src/tool_listhelp.c.org
++++ b/src/tool_listhelp.c
+@@ -72,7 +72,7 @@ const struct helptxt helptext[] = {
+   {"    --ciphers <list>",
+    "TLS 1.2 (1.1, 1.0) ciphers to use",
+    CURLHELP_TLS},
++  {"-9, --compressed",
+-  {"    --compressed",
+    "Request compressed response",
+    CURLHELP_HTTP},
+   {"    --compressed-ssh",
+--- a/docs/options-in-versions
++++ b/docs/options-in-versions
+@@ -23,7 +23,7 @@
+ --cert-status                        7.41.0
+ --cert-type                          7.9.3
+ --ciphers                            7.9
+---compressed                         7.10
++--compressed (-9)                    7.10
+ --compressed-ssh                     7.56.0
+ --config (-K)                        4.10
+ --connect-timeout                    7.7
+
