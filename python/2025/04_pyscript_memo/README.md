@@ -18,7 +18,7 @@ ii_pg.body.innerHTML =('@ -- Pyscript')
 <img src="etc/pys_01.jpg" alt="無印" width="700"/><br />
 「type」を「[py-editor」にすると  
 <img src="etc/pys_00.jpg" alt="editor" width="700"/><br />
-
+[mpy-editor」はやってない…  
 いろいろ試した結果以下に
 ```html
 <head>
@@ -302,6 +302,7 @@ javascript内のオブジェクト(?)のtypeは「pyodide.ffi.JsProxy」で始�
 <span style="color: #38761d;"><br>(参)<br>PyScript<br>https://docs.pyscript.net/2025.3.1/</span><br>
 最初は何書かれてるのか理解できなかった…   
 ここに書いてる内容もほとんど書かれてる…   
+<span style="color: #38761d;"><br>(参)<br>Using Panel in Pyodide & PyScript — Panel v1.6.3<br>https://panel.holoviz.org/how_to/wasm/standalone.html</span><br>
 ### やられたこと
 #### py-clickはeditorでは使えない
 `Uncaught (in promise) Error: The interpreter "py" was not found. There are no interpreters in this page.`  
@@ -323,6 +324,13 @@ def ff_t(event):
     ii_pys.window.alert("I've been clicked!")
 ii_pys.document.querySelector('#ele_bt_c').onclcik = ff_t
 ```
+#### editorで実行
+>The editor has listeners for Ctrl-Enter or Cmd-Enter, and Shift-Enter to shortcut the execution of all the code.
+>These shortcuts make no sense in the terminal as each line is
+  
+効かない…  
+<span style="color: #38761d;"><br>(参)<br>Python editor - PyScript<br>https://docs.pyscript.net/2025.3.1/user-guide/editor/</span><br>
+
 #### クリックイベントの引数
 引数付で渡されるので忘れずに
 #### styleの追加
