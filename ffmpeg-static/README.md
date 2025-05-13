@@ -4,10 +4,10 @@ https://www.gyan.dev/ffmpeg/builds/  か
 https://github.com/BtbN/FFmpeg-Builds/releases  から落とすのが良いかと  
 linuxの配布版は「arribb24」が入ってなさそうなので  
 ~native(linux)は作れなかったので~ちょっとがんばった<BR>
-ubuntu24.10で確認<BR>
-ffmpegは「n7.1」<BR>
+ubuntu25.04で確認<BR>
+ffmpegは「n7.1.1」<BR>
 (Dokcerファイルで取得時に指定)<BR>
-「svtav1」「x265」 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
+「svtav1」~~「x265」 「x264」~~ 「aribb24」 「fdk_aac」を有効化<BR>
 (スクリプトmk-ffm.shでconfigure時に指定)
 
 dockerはほとんど使ったことがない…<BR>
@@ -61,8 +61,6 @@ cp /FFmpeg/ffmpeg /host-tmp/
     --enable-libdav1d \    
     --enable-libfdk-aac \
     --enable-libsvtav1 \
-    --enable-libx264 \
-    --enable-libx265 \
     --disable-encoder=aac
 ```
 ### コンテナにaptで入れてるパッケージ
@@ -89,11 +87,6 @@ apt install -y
    libpng-dev\
    libfdk-aac-dev\
    libnuma-dev \
-   libsvtav1-dev \
-   libsvtav1dec-dev \
-   libsvtav1enc-dev \
-   libx264-dev\
-   libx265-dev\
    libtool\
    make\
    meson\
@@ -194,7 +187,7 @@ gcc -lz -Wl,--as-needed -Wl,-z,noexecstack -I/usr/local/include -L/usr/local/lib
 #### libsvtav1
 aptで「dev」入れると、「libdav1d.a 」と「libSvtAv1Enc.a」が無い。  
 「.so」はあるのでスタティックのときにダメになるもよう  
-それぞれ「git clone」して「make」などしてできたもののコピー
+それぞれ ~~「git clone」~~ 「tar.bz2」取得して「make」 ~~などしてできたもののコピー~~ 「install」
 
 ### ソースから作成
 #### x265
@@ -214,31 +207,74 @@ make -j && make install
 ```
 ### dav1d
 ```
-git clone --depth 1 https://code.videolan.org/videolan/dav1d.git
+#git clone --depth 1 https://code.videolan.org/videolan/dav1d.git
+curl -O https://code.videolan.org/videolan/dav1d/-/archive/1.5.1/dav1d-1.5.1.tar.bz2
 cd dav1d/
 mkdir build && cd build
 meson setup ..  --default-library=static
 ninja
-cp src/libdav1d.a /usr/lib/x86_64-linux-gnu/
+ninja install
+# cp src/libdav1d.a /usr/lib/x86_64-linux-gnu/
 ```
 ### SVT-AV1
 ```
-git clone --depth 1 https://gitlab.com/AOMediaCodec/SVT-AV1.git
+#git clone --depth 1 https://gitlab.com/AOMediaCodec/SVT-AV1.git
+curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v2.3.0/SVT-AV1-v2.3.0.tar.bz2
 cd SVT-AV1/
 mkdir build
 cd build/
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ..
-make -j 
-cp ../Bin/Release/libSvtAv1Enc.a /usr/lib/x86_64-linux-gnu/
+make -j
+make instsall
+#cp ../Bin/Release/libSvtAv1Enc.a /usr/lib/x86_64-linux-gnu/
 
 ```
 ## 履歴
+### 2025/05/13
+ubuntu 25.04で確認  
+stvav1 2.3.0  
+dav1d 1.5.1  
+stvav1 3.0.2ではmake時以下のエラー  
+```
+libavcodec/libsvtav1.c: In function 'eb_enc_init':
+libavcodec/libsvtav1.c:438:61: error: passing argument 2 of 'svt_av1_enc_init_handle' from incompatible pointer type [-Wincompatible-pointer-types]
+  438 |     svt_ret = svt_av1_enc_init_handle(&svt_enc->svt_handle, svt_enc, &svt_enc->enc_params);
+      |                                                             ^~~~~~~
+      |                                                             |
+      |                                                             SvtContext *
+In file included from libavcodec/libsvtav1.c:25:
+/usr/local/include/svt-av1/EbSvtAv1Enc.h:969:31: note: expected 'EbSvtAv1EncConfiguration *' but argument is of type 'SvtContext *'
+  969 |     EbSvtAv1EncConfiguration *config_ptr); // config_ptr will be loaded with default params from the library
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+libavcodec/libsvtav1.c:438:15: error: too many arguments to function 'svt_av1_enc_init_handle'
+  438 |     svt_ret = svt_av1_enc_init_handle(&svt_enc->svt_handle, svt_enc, &svt_enc->enc_params);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/svt-av1/EbSvtAv1Enc.h:967:20: note: declared here
+  967 | EB_API EbErrorType svt_av1_enc_init_handle(
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [ffbuild/common.mak:81: libavcodec/libsvtav1.o] Error 1
+make: *** Waiting for unfinished jobs....
+```
+h264とh265を削除  
+crfの既定値を「0(35)」から「40」になるようソース修正  
+crfの指定なし「0」の場合stvav1の既定値35になる
+```
+$ diff libavcodec/libsvtav1.c.org libavcodec/libsvtav1.c
+730c730
+<       AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 63, VE },
+---
+>       AV_OPT_TYPE_INT, { .i64 = 40 }, 0, 63, VE },
+```
+
+サイズ30M切った [Dockerfile](https://github.com/oxxpeh/pub/blob/5a490fa669a1393f7b0704d6afab77d0a4949aa9/ffmpeg-static/Dockerfile)  
+SHA: 5a490fa669a1393f7b0704d6afab77d0a4949aa9
 ### 2024/11/20
 svtav1は早い気がするので「svtav1」追加  
 svtav1は「-crf 40」ぐらいが良いような  
 (デフォルトは35) 
 movenc.cの変更も修正(hevc->av1)  
 40M超えてる…「hevc」とか消しても良いかも  
+
 ```
 $ diff movenc.c.org movenc.c
 <     .p.video_codec     = CONFIG_LIBX264_ENCODER ?
@@ -246,6 +282,7 @@ $ diff movenc.c.org movenc.c
 ---
 >     .p.video_codec     = AV_CODEC_ID_AV1,
 ```
+
 [Dockerfile](https://raw.githubusercontent.com/oxxpeh/pub/3cab2e596dffcaf2383b5e06b2b73ae4725d665d/ffmpeg-static/Dockerfile)
 SHA:3cab2e596dffcaf2383b5e06b2b73ae4725d665d  
 
