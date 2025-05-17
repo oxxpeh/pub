@@ -229,6 +229,24 @@ make instsall
 #cp ../Bin/Release/libSvtAv1Enc.a /usr/lib/x86_64-linux-gnu/
 
 ```
+### libxcbとlibpulse
+`--enable-libxcb`と`--enable-libpulse`の追加でいけそうだが  
+aptで「libxcb1-dev」「libpulse-dev」入れると「libpulse.a」とかないのでスタティックで作成できず  
+ソースから作成しようとしても作り方がわからなかった…  
+「libxcb」だけいけてもなんなのでaptで入るので利用予定    
+(ubuntu25.04で2025/05/17 やってみた)
+```
+# libsndfile1-dev libtdb-dev  check doxygen aptで追加
+curl -O https://freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz
+tar xf pulseaudio-17.0.tar.xz
+cd pulseaudio-17.0
+mkdir build
+cd build
+meson setup .. -Ddefault_library=static -Ddefault_both_libraries=static
+ninja
+# src配下に「libpulse.a」見つからずダメもとでinstallしてみたけどなかった…
+ninja install
+```
 ## 履歴
 ### 2025/05/13
 ubuntu 25.04で確認  
