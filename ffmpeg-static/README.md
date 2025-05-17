@@ -209,6 +209,7 @@ make -j && make install
 ```
 #git clone --depth 1 https://code.videolan.org/videolan/dav1d.git
 curl -O https://code.videolan.org/videolan/dav1d/-/archive/1.5.1/dav1d-1.5.1.tar.bz2
+ln -s dav1d-1.5.1 dav1d
 cd dav1d/
 mkdir build && cd build
 meson setup ..  --default-library=static
@@ -220,6 +221,7 @@ ninja install
 ```
 #git clone --depth 1 https://gitlab.com/AOMediaCodec/SVT-AV1.git
 curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v2.3.0/SVT-AV1-v2.3.0.tar.bz2
+ln -s SVT-AV1-v2.3.0 SVT-AV1
 cd SVT-AV1/
 mkdir build
 cd build/
