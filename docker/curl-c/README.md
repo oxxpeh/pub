@@ -16,7 +16,7 @@ docker run -it  --name curl-b1 --hostname curl-b1 curl-b-img bash
 ```
 ### その他
 #### configure
-「configure.ac」から`cutoreconf -i`で作成されること  
+「configure.ac」から`autoreconf -i`で作成されること  
 その際「config.guess」「config.fig」も使用されると知った  
 「configure」はtar.gzに入ってたけど`git clone`の結果には入ってなかった  
 #### ショートオプションの空き確認
