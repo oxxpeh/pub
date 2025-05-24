@@ -1,8 +1,8 @@
-# gitにclone --depth 1の別コマンドを追加
+# gitに「clone --depth 1」の同義の別コマンドを追加
 「clone --depth」の別コマンドとして「sc」を追加するソース修正するDockerFile  
 ## 使い方
 ```
-curl -L --compressed -O ""
+curl -L --compressed -O "https://raw.githubusercontent.com/oxxpeh/pub/main/docker/git_add/Dockerfile"
 docker build -t gitadd-img .
 docker run -it  --name gitadd --hostname gitadd gitadd-img bash
 # 以下コンテナ
