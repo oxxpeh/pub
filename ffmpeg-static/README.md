@@ -229,7 +229,7 @@ mkdir build
 cd build/
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ..
 make -j
-make instsall
+make install
 #cp ../Bin/Release/libSvtAv1Enc.a /usr/lib/x86_64-linux-gnu/
 
 ```
