@@ -1,7 +1,7 @@
-ARG UB_VER=25.04
+ARG UB_VER=25.10
 FROM ubuntu:${UB_VER}
 ENV DEBIAN_FRONTEND noninteractive
-ENV FF_VER 7.1.1
+ENV FF_VER 8.0.1
 RUN apt update && apt install -y \
     autoconf \
     autoconf-archive \
@@ -49,15 +49,15 @@ RUN update-ca-certificates
 RUN curl -O "https://ffmpeg.org/releases/ffmpeg-${FF_VER}.tar.xz" 
 RUN tar fx ffmpeg-${FF_VER}.tar.xz
 RUN ln -s ffmpeg-${FF_VER} FFmpeg
-RUN cd FFmpeg ; curl -O https://code.videolan.org/videolan/dav1d/-/archive/1.5.1/dav1d-1.5.1.tar.bz2
+RUN cd FFmpeg ; curl -O https://code.videolan.org/videolan/dav1d/-/archive/1.5.3/dav1d-1.5.3.tar.bz2
 #RUN cd FFmpeg ; curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.0.2/SVT-AV1-v3.0.2.tar.bz2
-RUN cd FFmpeg ; curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v2.3.0/SVT-AV1-v2.3.0.tar.bz2
-RUN cd FFmpeg ; tar xf dav1d-1.5.1.tar.bz2
+RUN cd FFmpeg ; curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.1.2/SVT-AV1-v3.1.2.tar.bz2
+RUN cd FFmpeg ; tar xf dav1d-1.5.3.tar.bz2
 #RUN cd FFmpeg ; tar xf SVT-AV1-v3.0.2.tar.bz2
-RUN cd FFmpeg ; tar xf SVT-AV1-v2.3.0.tar.bz2
-RUN cd FFmpeg ; ln -s  dav1d-1.5.1 dav1d
-#RUN cd FFmpeg ; ln -s  SVT-AV1-v3.0.2 SVT-AV1
-RUN cd FFmpeg ; ln -s  SVT-AV1-v2.3.0 SVT-AV1
+RUN cd FFmpeg ; tar xf SVT-AV1-v3.1.2.tar.bz2
+RUN cd FFmpeg ; ln -s  dav1d-1.5.3 dav1d
+RUN cd FFmpeg ; ln -s  SVT-AV1-v3.1.2 SVT-AV1
+#RUN cd FFmpeg ; ln -s  SVT-AV1-v2.3.0 SVT-AV1
 RUN cp /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc \
   /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc.org
 RUN echo "Libs.private: -lm -lpng -lz -lm" >> \
