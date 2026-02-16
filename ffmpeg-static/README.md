@@ -252,6 +252,13 @@ ninja
 ninja install
 ```
 ## 履歴
+### 2026/02/16  
+ubuntu 25.10で確認  
+ffmpeg 8.0.1  
+stvav1 3.1.2  
+4.0.1はエラー出た…  
+dav1d 1.5.3  
+
 ### 2025/05/13
 ubuntu 25.04で確認  
 stvav1 2.3.0  
