@@ -4,10 +4,10 @@ https://www.gyan.dev/ffmpeg/builds/  か
 https://github.com/BtbN/FFmpeg-Builds/releases  から落とすのが良いかと  
 linuxの配布版は「arribb24」が入ってなさそうなので  
 ~native(linux)は作れなかったので~ちょっとがんばった<BR>
-ubuntu25.04で確認<BR>
-ffmpegは「n7.1.1」<BR>
+ubuntu26.04で確認<BR>
+ffmpegは「n8.1.2」<BR>
 (Dokcerファイルで取得時に指定)<BR>
-「svtav1」~~「x265」 「x264」~~ 「aribb24」 「fdk_aac」を有効化<BR>
+「svtav1」~~「x265」~~ 「x264」 「aribb24」 「fdk_aac」を有効化<BR>
 (スクリプトmk-ffm.shでconfigure時に指定)
 
 dockerはほとんど使ったことがない…<BR>
@@ -28,12 +28,12 @@ docker build -t ffm-b-img .
 # -- 「docker.io」だけではなく「docker-buildx」もaptでinstallしておく
 docker run -it  --name ffm-b --hostname ffm-b --mount "type=bind,src=/tmp/,dst=/host-tmp" ffm-b-img bash
 # -- ホスト側のマウント場所とか変更したい場合は修正を
-/mk-lib.sh
+# -- /mk-lib.sh
 # -- 「./mk-lib.sh 6」 とかでmake 時の job数の指定が可能と思う
 # -- 「./mk-lib.sh」だと無制限でjob作成
 # --
 /mk-ffm.sh
-# -- configureとmakeします
+# -- パッチあてたり configureとmakeします
 # -- 「./mk-ffm.sh 6」 とかでmake 時の job数の指定が可能と思う
 # -- 「./mk-ffm.sh」だと無制限でjob作成
 cp /FFmpeg/ffmpeg /host-tmp/
@@ -252,6 +252,18 @@ ninja
 ninja install
 ```
 ## 履歴
+### 2026/06/19  
+ubuntu 26.04で確認  
+ffmpeg 8.1.2  
+stvav1 4.1.0  
+4.1.0はエラー出た…  
+dav1d 1.5.3  
+aptのx264-devに「/usr/lib/x86_64-linux-gnu/libx264.a」がないので  
+gitして作成  
+aptのソース変更してみたり
+[Dockerfile](https://github.com/oxxpeh/pub/blob/07b0645cf8837600bb32ecdebee8746dc3366ef9/ffmpeg-static/Dockerfile)  
+SHA:07b0645cf8837600bb32ecdebee8746dc3366ef9  
+
 ### 2026/02/16  
 ubuntu 25.10で確認  
 ffmpeg 8.0.1  
