@@ -256,7 +256,6 @@ ninja install
 ubuntu 26.04で確認  
 ffmpeg 8.1.2  
 stvav1 4.1.0  
-4.1.0はエラー出た…  
 dav1d 1.5.3  
 aptのx264-devに「/usr/lib/x86_64-linux-gnu/libx264.a」がないので  
 gitして作成  
