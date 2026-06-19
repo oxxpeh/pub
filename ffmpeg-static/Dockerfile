@@ -1,7 +1,14 @@
-ARG UB_VER=25.10
+ARG UB_VER=26.04
 FROM ubuntu:${UB_VER}
-ENV DEBIAN_FRONTEND noninteractive
-ENV FF_VER 8.0.1
+ENV DEBIAN_FRONTEND=noninteractive
+ENV DAV_VER=1.5.3
+ENV FF_VER=8.1.2
+ENV SVT_VER=4.1.0
+RUN apt update && apt install -y ca-certificates
+COPY ./squid-b.crt /usr/local/share/ca-certificates/squid-b.crt
+RUN update-ca-certificates
+
+RUN sed -i 's|http://archive.ubuntu.com/ubuntu/|https://ftp.udx.icscoe.jp/Linux/ubuntu/|g' /etc/apt/sources.list.d/ubuntu.sources
 RUN apt update && apt install -y \
     autoconf \
     autoconf-archive \
@@ -19,8 +26,9 @@ RUN apt update && apt install -y \
     git \
     gperf \
     g++ \
-    libaribb24-dev \
     libfdk-aac-dev \
+    libx264-dev \
+    libaribb24-dev \
     libnuma-dev \
     libpng-dev \
     libtool \
@@ -40,34 +48,21 @@ RUN apt update && apt install -y \
     zlib1g-dev
 
 # RUN git clone https://github.com/FFmpeg/FFmpeg.git -b n7.1
-# -- bump squid cert start
-RUN mkdir /usr/share/ca-certificates/oreore
-COPY squid-b.crt /usr/share/ca-certificates/oreore
-RUN echo "oreore/squid-b.crt" >> /etc/ca-certificates.conf
-RUN update-ca-certificates
-# -- bump squid cert end
 RUN curl -O "https://ffmpeg.org/releases/ffmpeg-${FF_VER}.tar.xz" 
-RUN tar fx ffmpeg-${FF_VER}.tar.xz
+RUN tar xf ffmpeg-${FF_VER}.tar.xz
 RUN ln -s ffmpeg-${FF_VER} FFmpeg
-RUN cd FFmpeg ; curl -O https://code.videolan.org/videolan/dav1d/-/archive/1.5.3/dav1d-1.5.3.tar.bz2
-#RUN cd FFmpeg ; curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.0.2/SVT-AV1-v3.0.2.tar.bz2
-RUN cd FFmpeg ; curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v3.1.2/SVT-AV1-v3.1.2.tar.bz2
-RUN cd FFmpeg ; tar xf dav1d-1.5.3.tar.bz2
-#RUN cd FFmpeg ; tar xf SVT-AV1-v3.0.2.tar.bz2
-RUN cd FFmpeg ; tar xf SVT-AV1-v3.1.2.tar.bz2
-RUN cd FFmpeg ; ln -s  dav1d-1.5.3 dav1d
-RUN cd FFmpeg ; ln -s  SVT-AV1-v3.1.2 SVT-AV1
-#RUN cd FFmpeg ; ln -s  SVT-AV1-v2.3.0 SVT-AV1
 RUN cp /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc \
   /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc.org
 RUN echo "Libs.private: -lm -lpng -lz -lm" >> \
   /usr/lib/x86_64-linux-gnu/pkgconfig/aribb24.pc
 # RUN sed -i.org  "s/-lgcc_s //g" /usr/lib/x86_64-linux-gnu/pkgconfig/x265.pc
-RUN cp /FFmpeg/libavformat/movenc.c /FFmpeg/libavformat/movenc.c.org
-RUN cp /FFmpeg/libavcodec/libsvtav1.c /FFmpeg/libavcodec/libsvtav1.c.org
+RUN curl -O https://code.videolan.org/videolan/dav1d/-/archive/${DAV_VER}/dav1d-${DAV_VER}.tar.bz2
+RUN curl -O https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${SVT_VER}/SVT-AV1-v${SVT_VER}.tar.bz2
+RUN git clone --depth 1  https://code.videolan.org/videolan/x264.git
 RUN mkdir host-tmp
+RUN cp /FFmpeg/libavformat/movenc.c /FFmpeg/libavformat/movenc.c.org
 RUN <<EOF
-cat <<- _eof_ > pat.sh
+cat <<- _eof_ > pat1.sh
 #!/bin/bash
 cd /FFmpeg/libavformat
 ll_ln=(\$(grep -n ".p.video_codec"   movenc.c.org | grep -o "^[0-9]*"))
@@ -81,7 +76,7 @@ for nn in \${ll_ln[@]} ; do
 done
 no_ed=\$(( \${no_st} + 1 ))
 # echo "\${no_st}--${no_ed}"
-cat <<- END > patch.txt
+cat << END > patch.txt
 \${no_st},\${no_ed}c\${no_st},\${no_st}
 <     .p.video_codec     = CONFIG_LIBX264_ENCODER ?
 <                          AV_CODEC_ID_H264 : AV_CODEC_ID_MPEG4,
@@ -89,54 +84,69 @@ cat <<- END > patch.txt
 >     .p.video_codec     = AV_CODEC_ID_AV1,
 END
 patch movenc.c < patch.txt
-cd /FFmpeg/libavcodec
-no_st=\$(grep -n ' "crf", "Constant Rate' libsvtav1.c | grep -o "^[0-9]*")
-no_st=\$(( \${no_st} + 1 ))
-cat <<- END > patch2.txt
-\${no_st}c\${no_st}
-<       AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 63, VE },
----
->       AV_OPT_TYPE_INT, { .i64 = 40 }, 0, 63, VE },
-END
-patch libsvtav1.c < patch2.txt
 cd /
 _eof_
 
 EOF
-RUN chmod +x  pat.sh
-RUN /pat.sh
+RUN chmod +x  pat1.sh
+RUN ./pat1.sh
 
-RUN <<EOF 
-cat <<- _eof_ > mk-lib.sh
+RUN <<EOF
+cat << _eof_ > pat2.sh
 #!/bin/bash
-cd /FFmpeg
+cd /FFmpeg/libavcodec
+cp libsvtav1.c libsvtav1.c.org
+nn=\$( grep -n "Constant Rate Factor value" libsvtav1.c | grep ^[0-9]* -o )
+nn=\$(( \$nn + 1 ))
+
+cat << _END_ > patch.txt
+\${nn}c\${nn}
+<       AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 63, VE },
+---
+>       AV_OPT_TYPE_INT, { .i64 = 40 }, 0, 63, VE },
+_END_
+patch libsvtav1.c < patch.txt
+cd /
+_eof_
+
+EOF
+
+RUN chmod +x  pat2.sh
+RUN ./pat2.sh
+
+RUN <<EOF
+cat << _eof_ > mk-ffm.sh
+#!/bin/bash
+
+tar xf dav1d-${DAV_VER}.tar.bz2
+ln -s dav1d-${DAV_VER} dav1d
 cd dav1d/
 mkdir build && cd build
 meson setup ..  --default-library=static
 ninja
 ninja install
 
-#cp src/libdav1d.a /usr/lib/x86_64-linux-gnu/
+cd /
 
-cd /FFmpeg
+tar xf SVT-AV1-v${SVT_VER}.tar.bz2
+ln -s SVT-AV1-v${SVT_VER} SVT-AV1
 cd SVT-AV1/
 mkdir build
 cd build/
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ..
-make -j $1
-#cp /FFmpeg/SVT-AV1/Bin/Release/libSvtAv1Enc.a /usr/lib/x86_64-linux-gnu/
+make -j \$1
 make install
 
-_eof_
+cd /
 
-EOF
-RUN chmod +x  mk-lib.sh
+cd x264
+./configure --enable-static --enable-pic
+make -j \$1
+make install
 
-RUN <<EOF 
-cat <<- _eof_ > mk-ffm.sh
-#!/bin/bash
-export LD_LIBRARY_PATH+=":/usr/local/lib"
-export PKG_CONFIG_PATH+=":/usr/local/lib/pkgconfig"
+cd /
+
+
 ST=\$(date)
 cd FFmpeg
 ./configure \
@@ -155,10 +165,11 @@ cd FFmpeg
     --enable-libdav1d \
     --enable-libfdk-aac \
     --enable-libsvtav1 \
+    --enable-libx264 \
     --disable-encoder=aac &&
     make -j \$1 && echo -e "\n@@ ldd ffmpeg" ; ldd ffmpeg ; \
-    echo -e "\n@@ ffmpeg -codecs grep av1|x26|aac|arib" ; \
-    ./ffmpeg -codecs | grep "av1\|x26\|aac\|arib"
+    echo -e "\n@@ ffmpeg -codecs grep x26|aac|arib|svt" ; \
+    ./ffmpeg -codecs | grep "x26\|aac\|arib\|svt"
 echo -e "\n@@ Start \${ST}"
 echo "@@ End \$(date)"
 _eof_
@@ -167,10 +178,17 @@ EOF
 RUN chmod +x  mk-ffm.sh
 
 RUN <<EOF 
-cat <<- _eof_ >> ~/.bashrc
+cat << _eof_ >> ~/.bashrc
+export PRXY_ADD=http://192.168.1.100:3128
+export HTTPS_PROXY=${PRXY_ADD}
+export HTTP_PROXY=${PRXY_ADD}
+export http_proxy=${PRXY_ADD}
+export https_proxy=${PRXY_ADD}
+export no_proxy=127.0.0.1,localhost,172.16.0.0/12
+export NO_PROXY=127.0.0.1,localhost,172.16.0.0/12
 export PS1='\u@\h:\W\n# '
 _eof_
 EOF
 RUN unset FF_VER 
-CMD echo "Start"
+CMD ["echo", "Start"]
 
